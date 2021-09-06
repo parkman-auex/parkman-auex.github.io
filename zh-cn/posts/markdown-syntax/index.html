@@ -1,142 +1,143 @@
-<!doctype html><html lang=zh-cn>
+<!DOCTYPE html>
+<html lang="zh-cn">
 <head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<title>Markdown Syntax Guide - Hugo Bootstrap</title><link rel=apple-touch-icon href=https://parkman-auex.github.io/images/favicons/apple-touch-icon.png sizes=180x180>
-<link rel=icon href=https://parkman-auex.github.io/images/favicons/favicon-32x32.png sizes=32x32 type=image/png>
-<link rel=icon href=https://parkman-auex.github.io/images/favicons/favicon-16x16.png sizes=16x16 type=image/png>
-<link rel=manifest href=https://parkman-auex.github.io/images/favicons/manifest.json>
-<link rel=icon href=https://parkman-auex.github.io/images/favicons/favicon.ico>
-<meta name=keywords content>
-<meta name=description content="Sample article showcasing basic Markdown syntax and formatting for HTML elements."><meta itemprop=name content="Markdown Syntax Guide">
-<meta itemprop=description content="Sample article showcasing basic Markdown syntax and formatting for HTML elements."><meta itemprop=datePublished content="2020-11-09T00:00:00+00:00">
-<meta itemprop=dateModified content="2020-11-09T00:00:00+00:00">
-<meta itemprop=wordCount content="429"><meta itemprop=image content="https://parkman-auex.github.io/images/markdown.png">
-<meta itemprop=keywords content="Markdown,CSS,HTML,"><meta property="og:title" content="Markdown Syntax Guide">
-<meta property="og:description" content="Sample article showcasing basic Markdown syntax and formatting for HTML elements.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://parkman-auex.github.io/zh-cn/posts/markdown-syntax/"><meta property="og:image" content="https://parkman-auex.github.io/images/markdown.png"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2020-11-09T00:00:00+00:00">
-<meta property="article:modified_time" content="2020-11-09T00:00:00+00:00"><meta property="og:site_name" content="Hugo Bootstrap">
-<meta name=twitter:card content="summary_large_image">
-<meta name=twitter:image content="https://parkman-auex.github.io/images/markdown.png">
-<meta name=twitter:title content="Markdown Syntax Guide">
-<meta name=twitter:description content="Sample article showcasing basic Markdown syntax and formatting for HTML elements.">
-<meta data-name=palette content="red"><link rel=preload href=https://parkman-auex.github.io/css/bundle.min.a23cb7a4fbae89dc78de2a936152a28a0cfd8a2d4763f0b1a6b59ac478b721f8.css integrity="sha256-ojy3pPuuidx43iqTYVKiigz9ii1HY/CxprWaxHi3Ifg=" crossorigin=anonymous as=style onload="this.rel='stylesheet'">
-<noscript><link rel=stylesheet href=https://parkman-auex.github.io/css/bundle.min.a23cb7a4fbae89dc78de2a936152a28a0cfd8a2d4763f0b1a6b59ac478b721f8.css integrity="sha256-ojy3pPuuidx43iqTYVKiigz9ii1HY/CxprWaxHi3Ifg=" crossorigin=anonymous></noscript><script src=https://parkman-auex.github.io/js/bundle.min.e0e9496764c4e36e4779facfd87376ece2400caf430c059f6b5895f30f62e753.js integrity="sha256-4OlJZ2TE425HefrP2HN27OJADK9DDAWfa1iV8w9i51M=" crossorigin=anonymous></script>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-206544824-1','auto'),ga('send','pageview'))</script>
-<script async src=https://www.google-analytics.com/analytics.js></script>
-<link rel=stylesheet href=https://parkman-auex.github.io/css/tabbed-pane.css crossorigin=anonymous><script src=https://parkman-auex.github.io/js/tabpane-persist.js crossorigin=anonymous></script><script src=https://parkman-auex.github.io/js/typeit.min.js crossorigin=anonymous></script><script src=https://parkman-auex.github.io/js/echarts.min.js crossorigin=anonymous></script><script src=https://parkman-auex.github.io/js/macarons.js crossorigin=anonymous></script><script src=https://parkman-auex.github.io/js/decrypt.js crossorigin=anonymous></script>
-<script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
-<script src=//cdn.bootcss.com/jquery/3.2.1/jquery.min.js></script>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Markdown Syntax Guide - Hugo Bootstrap</title><link href="https://parkman-auex.github.io/images/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="https://parkman-auex.github.io/images/favicons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://parkman-auex.github.io/images/favicons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://parkman-auex.github.io/images/favicons/manifest.json" rel="manifest"/>
+<link href="https://parkman-auex.github.io/images/favicons/favicon.ico" rel="icon"/>
+<meta content="" name="keywords"/>
+<meta content="Sample article showcasing basic Markdown syntax and formatting for HTML elements." name="description"/><meta content="Markdown Syntax Guide" itemprop="name"/>
+<meta content="Sample article showcasing basic Markdown syntax and formatting for HTML elements." itemprop="description"/><meta content="2020-11-09T00:00:00+00:00" itemprop="datePublished"/>
+<meta content="2020-11-09T00:00:00+00:00" itemprop="dateModified"/>
+<meta content="429" itemprop="wordCount"/><meta content="https://parkman-auex.github.io/images/markdown.png" itemprop="image"/>
+<meta content="Markdown,CSS,HTML," itemprop="keywords"/><meta content="Markdown Syntax Guide" property="og:title"/>
+<meta content="Sample article showcasing basic Markdown syntax and formatting for HTML elements." property="og:description"/>
+<meta content="article" property="og:type"/>
+<meta content="https://parkman-auex.github.io/zh-cn/posts/markdown-syntax/" property="og:url"/><meta content="https://parkman-auex.github.io/images/markdown.png" property="og:image"/><meta content="posts" property="article:section"/>
+<meta content="2020-11-09T00:00:00+00:00" property="article:published_time"/>
+<meta content="2020-11-09T00:00:00+00:00" property="article:modified_time"/><meta content="Hugo Bootstrap" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://parkman-auex.github.io/images/markdown.png" name="twitter:image"/>
+<meta content="Markdown Syntax Guide" name="twitter:title"/>
+<meta content="Sample article showcasing basic Markdown syntax and formatting for HTML elements." name="twitter:description"/>
+<meta content="red" data-name="palette"/><link as="style" crossorigin="anonymous" href="https://parkman-auex.github.io/css/bundle.min.a23cb7a4fbae89dc78de2a936152a28a0cfd8a2d4763f0b1a6b59ac478b721f8.css" integrity="sha256-ojy3pPuuidx43iqTYVKiigz9ii1HY/CxprWaxHi3Ifg=" onload="this.rel='stylesheet'" rel="preload"/>
+<noscript><link crossorigin="anonymous" href="https://parkman-auex.github.io/css/bundle.min.a23cb7a4fbae89dc78de2a936152a28a0cfd8a2d4763f0b1a6b59ac478b721f8.css" integrity="sha256-ojy3pPuuidx43iqTYVKiigz9ii1HY/CxprWaxHi3Ifg=" rel="stylesheet"/></noscript><script crossorigin="anonymous" integrity="sha256-4OlJZ2TE425HefrP2HN27OJADK9DDAWfa1iV8w9i51M=" src="https://parkman-auex.github.io/js/bundle.min.e0e9496764c4e36e4779facfd87376ece2400caf430c059f6b5895f30f62e753.js"></script>
+<script type="application/javascript">var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-206544824-1','auto'),ga('send','pageview'))</script>
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<link crossorigin="anonymous" href="https://parkman-auex.github.io/css/tabbed-pane.css" rel="stylesheet"/><script crossorigin="anonymous" src="https://parkman-auex.github.io/js/tabpane-persist.js"></script><script crossorigin="anonymous" src="https://parkman-auex.github.io/js/typeit.min.js"></script><script crossorigin="anonymous" src="https://parkman-auex.github.io/js/echarts.min.js"></script><script crossorigin="anonymous" src="https://parkman-auex.github.io/js/macarons.js"></script><script crossorigin="anonymous" src="https://parkman-auex.github.io/js/decrypt.js"></script>
+<script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 <script>$(document).ready(function(){var a=setInterval(c,100),b=0;function c(){$("#busuanzi_container_site_pv").css("display")!="none"&&(clearInterval(a),$("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html())+b))}})</script>
 </head><body><header><nav class="navbar navbar-expand-xl fixed-top">
-<div class=container>
-<a class=navbar-brand href=https://parkman-auex.github.io/zh-cn/>
-<img class=logo alt=Logo src=https://parkman-auex.github.io/images/logo.png width=2409 height=2409 loading=lazy>
+<div class="container">
+<a class="navbar-brand" href="https://parkman-auex.github.io/zh-cn/">
+<img alt="Logo" class="logo" height="2409" loading="lazy" src="https://parkman-auex.github.io/images/logo.png" width="2409"/>
 PARKMAN</a>
-<button class=navbar-toggler type=button data-bs-toggle=collapse data-bs-target=#navbarSupportedContent aria-controls=navbarSupportedContent aria-expanded=false aria-label="Toggle navigation">
-<span class=navbar-toggler-icon></span>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
 </button>
-<div class="collapse navbar-collapse" id=navbarSupportedContent>
-<ul class="navbar-nav me-1 mb-2 mb-lg-0"><form class="search-bar d-flex ms-1" action=https://parkman-auex.github.io/zh-cn/search>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav me-1 mb-2 mb-lg-0"></ul><form action="https://parkman-auex.github.io/zh-cn/search" class="search-bar d-flex ms-1">
 <div class="input-group input-group-sm">
-<button class="btn btn-search disabled position-absolute left-0" type=submit aria-label=submit><i class="fas fa-fw fa-search"></i></button>
-<input class="form-control rounded-pill" id=searchQuery name=q type=search aria-label=Search>
+<button aria-label="submit" class="btn btn-search disabled position-absolute left-0" type="submit"><i class="fas fa-fw fa-search"></i></button>
+<input aria-label="Search" class="form-control rounded-pill" id="searchQuery" name="q" type="search"/>
 </div>
-</form></ul><ul class="navbar-nav me-1 mb-2 mb-lg-0 me-1 ms-auto">
-<li class=nav-item>
-<a class=nav-link href=https://parkman-auex.github.io/zh-cn/archives/>
+</form><ul class="navbar-nav me-1 mb-2 mb-lg-0 me-1 ms-auto">
+<li class="nav-item">
+<a class="nav-link" href="https://parkman-auex.github.io/zh-cn/archives/">
 <i class="fas fa-fw fa-file-archive"></i>归档
 </a>
 </li>
-<li class=nav-item>
-<a class=nav-link href=https://parkman-auex.github.io/zh-cn/categories/>
+<li class="nav-item">
+<a class="nav-link" href="https://parkman-auex.github.io/zh-cn/categories/">
 <i class="fas fa-fw fa-folder"></i>分类
 </a>
 </li>
-<li class=nav-item>
-<a class=nav-link href=https://parkman-auex.github.io/zh-cn/tags/>
+<li class="nav-item">
+<a class="nav-link" href="https://parkman-auex.github.io/zh-cn/tags/">
 <i class="fas fa-fw fa-tags"></i>标签
 </a>
 </li>
-<li class=nav-item>
-<a class=nav-link href=https://parkman-auex.github.io/zh-cn/series/>
+<li class="nav-item">
+<a class="nav-link" href="https://parkman-auex.github.io/zh-cn/series/">
 <i class="fas fa-fw fa-columns"></i>专栏
 </a>
 </li>
 <li class="nav-item dropdown">
-<a class=nav-link id=navbarDropdown-dropdown role=button data-bs-toggle=dropdown aria-expanded=false>
+<a aria-expanded="false" class="nav-link" data-bs-toggle="dropdown" id="navbarDropdown-dropdown" role="button">
 <i class="fas fa-fw fa-chevron-circle-down"></i>下拉菜单
 </a>
-<ul class=dropdown-menu aria-labelledby=navbarDropdown-dropdown><li>
-<a class=dropdown-item href=https://github.com/razonyang/hugo-theme-bootstrap target=_blank rel="noopener noreferrer">
+<ul aria-labelledby="navbarDropdown-dropdown" class="dropdown-menu"><li>
+<a class="dropdown-item" href="https://github.com/razonyang/hugo-theme-bootstrap" rel="noopener noreferrer" target="_blank">
 Github
 </a>
 </li></ul>
 </li><li class="nav-item dropdown">
-<a class=nav-link href=# id=languageDropdown role=button data-bs-toggle=dropdown aria-expanded=false>
+<a aria-expanded="false" class="nav-link" data-bs-toggle="dropdown" href="#" id="languageDropdown" role="button">
 <i class="fas fa-fw fa-language"></i> 简体中文
 </a>
-<ul class=dropdown-menu aria-labelledby=languageDropdown><li><a class=dropdown-item href=https://parkman-auex.github.io/en/>English</a></li></ul>
+<ul aria-labelledby="languageDropdown" class="dropdown-menu"><li><a class="dropdown-item" href="https://parkman-auex.github.io/en/">English</a></li></ul>
 </li>
-<li class=nav-item>
-<a class=nav-link data-bs-toggle=offcanvas href=#offcanvasSettings role=button aria-controls=offcanvasSettings>
+<li class="nav-item">
+<a aria-controls="offcanvasSettings" class="nav-link" data-bs-toggle="offcanvas" href="#offcanvasSettings" role="button">
 <i class="fas fa-fw fa-sliders-h"></i> 设置
 </a>
 </li>
-<div class="offcanvas offcanvas-end surface h-100" tabindex=-1 id=offcanvasSettings aria-labelledby=offcanvasSettingsLabel>
-<div class=offcanvas-header>
-<h5 class=offcanvas-title w id=offcanvasSettingsLabel><i class="fas fa-fw fa-sliders-h"></i> 设置</h5>
-<a role=button data-bs-dismiss=offcanvas aria-label=Close>
+<div aria-labelledby="offcanvasSettingsLabel" class="offcanvas offcanvas-end surface h-100" id="offcanvasSettings" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="offcanvasSettingsLabel" w=""><i class="fas fa-fw fa-sliders-h"></i> 设置</h5>
+<a aria-label="Close" data-bs-dismiss="offcanvas" role="button">
 <span class="fas fa-2x fa-fw fa-times"></span>
 </a>
 </div>
-<div class=offcanvas-body><section class=setting>
-<form class=row>
-<div class=col-auto>
+<div class="offcanvas-body"><section class="setting">
+<form class="row">
+<div class="col-auto">
 <label><i class="fas fa-fw fa-adjust"></i> 模式</label>
 </div>
 <div class="col-auto ms-auto">
 <div class="form-check form-switch">
-<input class=form-check-input type=checkbox id=modeSwitcher>
+<input class="form-check-input" id="modeSwitcher" type="checkbox"/>
 </div>
 </div>
 </form>
 </section>
-<section class=setting>
+<section class="setting">
 <form class="font-size-switcher-form row">
-<div class=col-auto>
-<label for=fontSize class=form-label><i class="fas fa-fw fa-font"></i> 字体大小</label>
+<div class="col-auto">
+<label class="form-label" for="fontSize"><i class="fas fa-fw fa-font"></i> 字体大小</label>
 </div>
 <div class="col-auto ms-auto">
-<input type=range class=form-range min=-2 max=2 id=fontSize>
+<input class="form-range" id="fontSize" max="2" min="-2" type="range"/>
 </div>
 </form>
 </section>
 <section class="setting palettes">
-<form class=row>
-<div class=col-auto>
+<form class="row">
+<div class="col-auto">
 <label><i class="fas fa-fw fa-palette"></i> 配色</label>
 </div>
 <div class="col-auto ms-auto">
-<span id=btnPalette class="btn btn-sm"><i class="fas fa-eye-dropper"></i></span>
+<span class="btn btn-sm" id="btnPalette"><i class="fas fa-eye-dropper"></i></span>
 </div>
 </form>
-<div class="container mt-2 visually-hidden" id=palettePicker>
-<div class=btn-group><button type=button id=palette-blue title=蓝色 class="btn btn-sm palette bg-blue d-flex align-items-center justify-content-center">
-</button><button type=button id=palette-blue-gray title=蓝灰色 class="btn btn-sm palette bg-blue-gray d-flex align-items-center justify-content-center">
-</button><button type=button id=palette-brown title=棕色 class="btn btn-sm palette bg-brown d-flex align-items-center justify-content-center">
-</button><button type=button id=palette-cyan title=青色 class="btn btn-sm palette bg-cyan d-flex align-items-center justify-content-center">
-</button><button type=button id=palette-green title=绿色 class="btn btn-sm palette bg-green d-flex align-items-center justify-content-center">
-</button><button type=button id=palette-indigo title=靛青色 class="btn btn-sm palette bg-indigo d-flex align-items-center justify-content-center">
-</button><button type=button id=palette-orange title=橙色 class="btn btn-sm palette bg-orange d-flex align-items-center justify-content-center">
-</button><button type=button id=palette-pink title=粉色 class="btn btn-sm palette bg-pink d-flex align-items-center justify-content-center">
-</button><button type=button id=palette-purple title=紫色 class="btn btn-sm palette bg-purple d-flex align-items-center justify-content-center">
-</button><button type=button id=palette-red title=红色 class="btn btn-sm palette bg-red d-flex align-items-center justify-content-center">
-</button><button type=button id=palette-teal title=蓝绿色 class="btn btn-sm palette bg-teal d-flex align-items-center justify-content-center">
-</button><button type=button id=palette-yellow title=黄色 class="btn btn-sm palette bg-yellow d-flex align-items-center justify-content-center">
-</button></button>
+<div class="container mt-2 visually-hidden" id="palettePicker">
+<div class="btn-group"><button class="btn btn-sm palette bg-blue d-flex align-items-center justify-content-center" id="palette-blue" title="蓝色" type="button">
+</button><button class="btn btn-sm palette bg-blue-gray d-flex align-items-center justify-content-center" id="palette-blue-gray" title="蓝灰色" type="button">
+</button><button class="btn btn-sm palette bg-brown d-flex align-items-center justify-content-center" id="palette-brown" title="棕色" type="button">
+</button><button class="btn btn-sm palette bg-cyan d-flex align-items-center justify-content-center" id="palette-cyan" title="青色" type="button">
+</button><button class="btn btn-sm palette bg-green d-flex align-items-center justify-content-center" id="palette-green" title="绿色" type="button">
+</button><button class="btn btn-sm palette bg-indigo d-flex align-items-center justify-content-center" id="palette-indigo" title="靛青色" type="button">
+</button><button class="btn btn-sm palette bg-orange d-flex align-items-center justify-content-center" id="palette-orange" title="橙色" type="button">
+</button><button class="btn btn-sm palette bg-pink d-flex align-items-center justify-content-center" id="palette-pink" title="粉色" type="button">
+</button><button class="btn btn-sm palette bg-purple d-flex align-items-center justify-content-center" id="palette-purple" title="紫色" type="button">
+</button><button class="btn btn-sm palette bg-red d-flex align-items-center justify-content-center" id="palette-red" title="红色" type="button">
+</button><button class="btn btn-sm palette bg-teal d-flex align-items-center justify-content-center" id="palette-teal" title="蓝绿色" type="button">
+</button><button class="btn btn-sm palette bg-yellow d-flex align-items-center justify-content-center" id="palette-yellow" title="黄色" type="button">
+</button>
 </div>
 </div>
 </section></div>
@@ -146,24 +147,24 @@ Github
 </div>
 </nav>
 </header>
-<main role=main class=container>
+<main class="container" role="main">
 <div class="row content">
-<div class=col-lg-8>
-<div class=container><nav class=row aria-label=breadcrumb>
-<ol class="breadcrumb surface"><li class=breadcrumb-item><a href=https://parkman-auex.github.io/zh-cn/>主页</a></li><li class=breadcrumb-item><a href=https://parkman-auex.github.io/zh-cn/posts/>文章</a></li><li class="breadcrumb-item active">Markdown Syntax Guide</li></ol>
-</nav><article class="post row surface"><div class=post-panel-wrapper>
+<div class="col-lg-8">
+<div class="container"><nav aria-label="breadcrumb" class="row">
+<ol class="breadcrumb surface"><li class="breadcrumb-item"><a href="https://parkman-auex.github.io/zh-cn/">主页</a></li><li class="breadcrumb-item"><a href="https://parkman-auex.github.io/zh-cn/posts/">文章</a></li><li class="breadcrumb-item active">Markdown Syntax Guide</li></ol>
+</nav><article class="post row surface"><div class="post-panel-wrapper">
 <div class="post-panel d-flex flex-column">
-<a id=sidebarToggler class="action d-none d-lg-block" role=button>
+<a class="action d-none d-lg-block" id="sidebarToggler" role="button">
 <i class="fas fa-fw fa-expand-alt fa-rotate-45"></i>
 </a>
-<a class="action btn-reward" role=button data-bs-toggle=modal data-bs-target=#rewardModal title=打赏>
+<a class="action btn-reward" data-bs-target="#rewardModal" data-bs-toggle="modal" role="button" title="打赏">
 <i class="fas fa-fw fa-medal"></i>
 </a>
-<a class=action data-bs-container=body data-bs-toggle=popover data-bs-html=true data-bs-placement=bottom data-bs-trigger=focus tabindex=0 data-bs-content='<a target="_blank" rel="license noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh">CC BY-NC-ND 4.0 <i class="fab fa-fw fa-creative-commons"></i><i class="fab fa-fw fa-creative-commons-by"></i><i class="fab fa-fw fa-creative-commons-nc"></i><i class="fab fa-fw fa-creative-commons-nd"></i></a>
-'>
+<a class="action" data-bs-container="body" data-bs-content='&lt;a target="_blank" rel="license noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh"&gt;CC BY-NC-ND 4.0 &lt;i class="fab fa-fw fa-creative-commons"&gt;&lt;/i&gt;&lt;i class="fab fa-fw fa-creative-commons-by"&gt;&lt;/i&gt;&lt;i class="fab fa-fw fa-creative-commons-nc"&gt;&lt;/i&gt;&lt;i class="fab fa-fw fa-creative-commons-nd"&gt;&lt;/i&gt;&lt;/a&gt;
+' data-bs-html="true" data-bs-placement="bottom" data-bs-toggle="popover" data-bs-trigger="focus" tabindex="0">
 <i class="fas fa-fw fa-copyright"></i>
 </a>
-<a id=btnTOC class="fas fa-fw fa-list-alt" data-bs-toggle=offcanvas href=#offcanvasTOC aria-controls=offcanvasTOC role=button>
+<a aria-controls="offcanvasTOC" class="fas fa-fw fa-list-alt" data-bs-toggle="offcanvas" href="#offcanvasTOC" id="btnTOC" role="button">
 </a>
 </div>
 </div>
@@ -172,82 +173,82 @@ Github
 <i class="fas fa-fw fa-calendar-alt"></i>2020-11-09
 </span><span class="post-reading-time me-2">
 <i class="fas fa-fw fa-coffee"></i>3 分钟阅读
-</span><span class=post-taxonomies><a href=https://parkman-auex.github.io/zh-cn/categories/templete/ class=post-taxonomy>Templete</a><a href=https://parkman-auex.github.io/zh-cn/series/manual/ class=post-taxonomy>Manual</a><a href=https://parkman-auex.github.io/zh-cn/tags/markdown/ class=post-taxonomy>Markdown</a><a href=https://parkman-auex.github.io/zh-cn/tags/css/ class=post-taxonomy>CSS</a><a href=https://parkman-auex.github.io/zh-cn/tags/html/ class=post-taxonomy>HTML</a></span>
+</span><span class="post-taxonomies"><a class="post-taxonomy" href="https://parkman-auex.github.io/zh-cn/categories/templete/">Templete</a><a class="post-taxonomy" href="https://parkman-auex.github.io/zh-cn/series/manual/">Manual</a><a class="post-taxonomy" href="https://parkman-auex.github.io/zh-cn/tags/markdown/">Markdown</a><a class="post-taxonomy" href="https://parkman-auex.github.io/zh-cn/tags/css/">CSS</a><a class="post-taxonomy" href="https://parkman-auex.github.io/zh-cn/tags/html/">HTML</a></span>
 </div>
-<div class="post-share mb-3"><div class=addthis_inline_share_toolbox></div></div><div class="offcanvas offcanvas-end surface" tabindex=-1 id=offcanvasTOC aria-labelledby=offcanvasTOCLabel>
-<div class=offcanvas-header>
-<h5 class=offcanvas-title id=offcanvasTOCLabel>目录</h5>
-<a role=button data-bs-dismiss=offcanvas aria-label=Close>
+<div class="post-share mb-3"><div class="addthis_inline_share_toolbox"></div></div><div aria-labelledby="offcanvasTOCLabel" class="offcanvas offcanvas-end surface" id="offcanvasTOC" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="offcanvasTOCLabel">目录</h5>
+<a aria-label="Close" data-bs-dismiss="offcanvas" role="button">
 <span class="fas fa-2x fa-fw fa-times"></span>
 </a>
 </div>
-<div class=offcanvas-body>
-<nav id=TableOfContents>
+<div class="offcanvas-body">
+<nav id="TableOfContents">
 <ul>
-<li><a href=#headings>Headings</a></li>
+<li><a href="#headings">Headings</a></li>
 </ul>
 <ul>
-<li><a href=#h2>H2</a>
+<li><a href="#h2">H2</a>
 <ul>
-<li><a href=#h3>H3</a></li>
-</ul>
-</li>
-<li><a href=#paragraph>Paragraph</a></li>
-<li><a href=#blockquotes>Blockquotes</a>
-<ul>
-<li><a href=#blockquote-without-attribution>Blockquote without attribution</a></li>
-<li><a href=#blockquote-with-attribution>Blockquote with attribution</a></li>
+<li><a href="#h3">H3</a></li>
 </ul>
 </li>
-<li><a href=#tables>Tables</a>
+<li><a href="#paragraph">Paragraph</a></li>
+<li><a href="#blockquotes">Blockquotes</a>
 <ul>
-<li><a href=#inline-markdown-within-tables>Inline Markdown within tables</a></li>
+<li><a href="#blockquote-without-attribution">Blockquote without attribution</a></li>
+<li><a href="#blockquote-with-attribution">Blockquote with attribution</a></li>
 </ul>
 </li>
-<li><a href=#code-blocks>Code Blocks</a>
+<li><a href="#tables">Tables</a>
 <ul>
-<li><a href=#code-block-with-backticks>Code block with backticks</a></li>
-<li><a href=#code-block-with-hugos-internal-highlight-shortcode>Code block with Hugo&rsquo;s internal highlight shortcode</a></li>
+<li><a href="#inline-markdown-within-tables">Inline Markdown within tables</a></li>
 </ul>
 </li>
-<li><a href=#list-types>List Types</a>
+<li><a href="#code-blocks">Code Blocks</a>
 <ul>
-<li><a href=#ordered-list>Ordered List</a></li>
-<li><a href=#unordered-list>Unordered List</a></li>
-<li><a href=#nested-list>Nested List</a></li>
-<li><a href=#todo-list>TODO List</a></li>
+<li><a href="#code-block-with-backticks">Code block with backticks</a></li>
+<li><a href="#code-block-with-hugos-internal-highlight-shortcode">Code block with Hugo’s internal highlight shortcode</a></li>
 </ul>
 </li>
-<li><a href=#other-elements--abbr-sub-sup-kbd-mark>Other Elements — abbr, sub, sup, kbd, mark</a></li>
+<li><a href="#list-types">List Types</a>
+<ul>
+<li><a href="#ordered-list">Ordered List</a></li>
+<li><a href="#unordered-list">Unordered List</a></li>
+<li><a href="#nested-list">Nested List</a></li>
+<li><a href="#todo-list">TODO List</a></li>
+</ul>
+</li>
+<li><a href="#other-elements--abbr-sub-sup-kbd-mark">Other Elements — abbr, sub, sup, kbd, mark</a></li>
 </ul>
 </nav>
 </div>
 </div><div class="post-content mb-3"><p>This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.</p>
-<h2 id=headings>Headings</h2>
-<p>The following HTML <code>&lt;h1></code>—<code>&lt;h6></code> elements represent six levels of section headings. <code>&lt;h1></code> is the highest section level while <code>&lt;h6></code> is the lowest.</p>
-<h1 id=h1>H1</h1>
-<h2 id=h2>H2</h2>
-<h3 id=h3>H3</h3>
-<h4 id=h4>H4</h4>
-<h5 id=h5>H5</h5>
-<h6 id=h6>H6</h6>
-<h2 id=paragraph>Paragraph</h2>
+<h2 id="headings">Headings</h2>
+<p>The following HTML <code>&lt;h1&gt;</code>—<code>&lt;h6&gt;</code> elements represent six levels of section headings. <code>&lt;h1&gt;</code> is the highest section level while <code>&lt;h6&gt;</code> is the lowest.</p>
+<h1 id="h1">H1</h1>
+<h2 id="h2">H2</h2>
+<h3 id="h3">H3</h3>
+<h4 id="h4">H4</h4>
+<h5 id="h5">H5</h5>
+<h6 id="h6">H6</h6>
+<h2 id="paragraph">Paragraph</h2>
 <p>Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.</p>
 <p>Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.</p>
-<h2 id=blockquotes>Blockquotes</h2>
+<h2 id="blockquotes">Blockquotes</h2>
 <p>The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a <code>footer</code> or <code>cite</code> element, and optionally with in-line changes such as annotations and abbreviations.</p>
-<h3 id=blockquote-without-attribution>Blockquote without attribution</h3>
+<h3 id="blockquote-without-attribution">Blockquote without attribution</h3>
 <blockquote>
 <p>Tiam, ad mint andaepu dandae nostion secatur sequo quae.
 <strong>Note</strong> that you can use <em>Markdown syntax</em> within a blockquote.</p>
 </blockquote>
-<h3 id=blockquote-with-attribution>Blockquote with attribution</h3>
+<h3 id="blockquote-with-attribution">Blockquote with attribution</h3>
 <blockquote>
-<p>Don&rsquo;t communicate by sharing memory, share memory by communicating.
-— Rob Pike<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup></p>
+<p>Don’t communicate by sharing memory, share memory by communicating.
+— Rob Pike<sup id="fnref:1"><a class="footnote-ref" href="#fn:1" role="doc-noteref">1</a></sup></p>
 </blockquote>
-<h2 id=tables>Tables</h2>
-<p>Tables aren&rsquo;t part of the core Markdown spec, but Hugo supports supports them out-of-the-box.</p>
+<h2 id="tables">Tables</h2>
+<p>Tables aren’t part of the core Markdown spec, but Hugo supports supports them out-of-the-box.</p>
 <table>
 <thead>
 <tr>
@@ -266,7 +267,7 @@ Github
 </tr>
 </tbody>
 </table>
-<h3 id=inline-markdown-within-tables>Inline Markdown within tables</h3>
+<h3 id="inline-markdown-within-tables">Inline Markdown within tables</h3>
 <table>
 <thead>
 <tr>
@@ -283,43 +284,43 @@ Github
 </tr>
 </tbody>
 </table>
-<h2 id=code-blocks>Code Blocks</h2>
-<h3 id=code-block-with-backticks>Code block with backticks</h3>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=ln> 1</span><span class=cp>&lt;!doctype html&gt;</span>
-<span class=ln> 2</span><span class=p>&lt;</span><span class=nt>html</span> <span class=na>lang</span><span class=o>=</span><span class=s>&#34;en&#34;</span><span class=p>&gt;</span>
-<span class=ln> 3</span><span class=p>&lt;</span><span class=nt>head</span><span class=p>&gt;</span>
-<span class=ln> 4</span>  <span class=p>&lt;</span><span class=nt>meta</span> <span class=na>charset</span><span class=o>=</span><span class=s>&#34;utf-8&#34;</span><span class=p>&gt;</span>
-<span class=ln> 5</span>  <span class=p>&lt;</span><span class=nt>title</span><span class=p>&gt;</span>Example HTML5 Document<span class=p>&lt;/</span><span class=nt>title</span><span class=p>&gt;</span>
-<span class=ln> 6</span><span class=p>&lt;/</span><span class=nt>head</span><span class=p>&gt;</span>
-<span class=ln> 7</span><span class=p>&lt;</span><span class=nt>body</span><span class=p>&gt;</span>
-<span class=ln> 8</span>  <span class=p>&lt;</span><span class=nt>p</span><span class=p>&gt;</span>Test<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
-<span class=ln> 9</span><span class=p>&lt;/</span><span class=nt>body</span><span class=p>&gt;</span>
-<span class=ln>10</span><span class=p>&lt;/</span><span class=nt>html</span><span class=p>&gt;</span>
-</code></pre></div><h3 id=code-block-with-hugos-internal-highlight-shortcode>Code block with Hugo&rsquo;s internal highlight shortcode</h3>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=ln> 1</span><span class=cp>&lt;!doctype html&gt;</span>
-<span class=ln> 2</span><span class=p>&lt;</span><span class=nt>html</span> <span class=na>lang</span><span class=o>=</span><span class=s>&#34;en&#34;</span><span class=p>&gt;</span>
-<span class=ln> 3</span><span class=p>&lt;</span><span class=nt>head</span><span class=p>&gt;</span>
-<span class=ln> 4</span>  <span class=p>&lt;</span><span class=nt>meta</span> <span class=na>charset</span><span class=o>=</span><span class=s>&#34;utf-8&#34;</span><span class=p>&gt;</span>
-<span class=ln> 5</span>  <span class=p>&lt;</span><span class=nt>title</span><span class=p>&gt;</span>Another Example HTML5 Document<span class=p>&lt;/</span><span class=nt>title</span><span class=p>&gt;</span>
-<span class=ln> 6</span><span class=p>&lt;/</span><span class=nt>head</span><span class=p>&gt;</span>
-<span class=ln> 7</span><span class=p>&lt;</span><span class=nt>body</span><span class=p>&gt;</span>
-<span class=ln> 8</span>  <span class=p>&lt;</span><span class=nt>p</span><span class=p>&gt;</span>A looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong text<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
-<span class=ln> 9</span><span class=p>&lt;/</span><span class=nt>body</span><span class=p>&gt;</span>
-<span class=ln>10</span><span class=p>&lt;/</span><span class=nt>html</span><span class=p>&gt;</span></code></pre></div>
-<h2 id=list-types>List Types</h2>
-<h3 id=ordered-list>Ordered List</h3>
+<h2 id="code-blocks">Code Blocks</h2>
+<h3 id="code-block-with-backticks">Code block with backticks</h3>
+<div class="highlight"><pre class="chroma" tabindex="0"><code class="language-html" data-lang="html"><span class="ln"> 1</span><span class="cp">&lt;!doctype html&gt;</span>
+<span class="ln"> 2</span><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">"en"</span><span class="p">&gt;</span>
+<span class="ln"> 3</span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="ln"> 4</span>  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"utf-8"</span><span class="p">&gt;</span>
+<span class="ln"> 5</span>  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Example HTML5 Document<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="ln"> 6</span><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="ln"> 7</span><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="ln"> 8</span>  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Test<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="ln"> 9</span><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="ln">10</span><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div><h3 id="code-block-with-hugos-internal-highlight-shortcode">Code block with Hugo’s internal highlight shortcode</h3>
+<div class="highlight"><pre class="chroma" tabindex="0"><code class="language-html" data-lang="html"><span class="ln"> 1</span><span class="cp">&lt;!doctype html&gt;</span>
+<span class="ln"> 2</span><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">"en"</span><span class="p">&gt;</span>
+<span class="ln"> 3</span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="ln"> 4</span>  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"utf-8"</span><span class="p">&gt;</span>
+<span class="ln"> 5</span>  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Another Example HTML5 Document<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="ln"> 6</span><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="ln"> 7</span><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="ln"> 8</span>  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>A looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong text<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="ln"> 9</span><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="ln">10</span><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span></code></pre></div>
+<h2 id="list-types">List Types</h2>
+<h3 id="ordered-list">Ordered List</h3>
 <ol>
 <li>First item</li>
 <li>Second item</li>
 <li>Third item</li>
 </ol>
-<h3 id=unordered-list>Unordered List</h3>
+<h3 id="unordered-list">Unordered List</h3>
 <ul>
 <li>List item</li>
 <li>Another item</li>
 <li>And another item</li>
 </ul>
-<h3 id=nested-list>Nested List</h3>
+<h3 id="nested-list">Nested List</h3>
 <ul>
 <li>Fruit
 <ul>
@@ -335,118 +336,118 @@ Github
 </ul>
 </li>
 </ul>
-<h3 id=todo-list>TODO List</h3>
+<h3 id="todo-list">TODO List</h3>
 <ul>
-<li><input checked disabled type=checkbox> Done</li>
-<li><input disabled type=checkbox> WIP</li>
+<li><input checked="" disabled="" type="checkbox"/> Done</li>
+<li><input disabled="" type="checkbox"/> WIP</li>
 </ul>
-<h2 id=other-elements--abbr-sub-sup-kbd-mark>Other Elements — abbr, sub, sup, kbd, mark</h2>
+<h2 id="other-elements--abbr-sub-sup-kbd-mark">Other Elements — abbr, sub, sup, kbd, mark</h2>
 <p>GIF is a bitmap image format.</p>
 <p>H2O</p>
 <p>Xn + Yn = Zn</p>
 <p>Press CTRL+ALT+Delete to end the session.</p>
 <p>Most salamanders are nocturnal, and hunt for insects, worms, and other small creatures.</p>
-<section class=footnotes role=doc-endnotes>
-<hr>
+<section class="footnotes" role="doc-endnotes">
+<hr/>
 <ol>
-<li id=fn:1 role=doc-endnote>
-<p>The above quote is excerpted from Rob Pike&rsquo;s <a href="https://www.youtube.com/watch?v=PAAkCSZUG1c" target=_blank rel="noopener noreferrer">talk</a>
-during Gopherfest, November 18, 2015.&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+<li id="fn:1" role="doc-endnote">
+<p>The above quote is excerpted from Rob Pike’s <a href="https://www.youtube.com/watch?v=PAAkCSZUG1c" rel="noopener noreferrer" target="_blank">talk</a>
+during Gopherfest, November 18, 2015. <a class="footnote-backref" href="#fnref:1" role="doc-backlink">↩︎</a></p>
 </li>
 </ol>
-</section></div><div class="modal fade" id=rewardModal tabindex=-1 aria-labelledby=rewardModalLabel aria-hidden=true>
-<div class=modal-dialog>
+</section></div><div aria-hidden="true" aria-labelledby="rewardModalLabel" class="modal fade" id="rewardModal" tabindex="-1">
+<div class="modal-dialog">
 <div class="modal-content surface">
-<div class=modal-header>
-<h5 class=modal-title id=rewardModalLabel><i class="fas fa-fw fa-medal"></i>打赏</h5>
-<a href=# data-bs-dismiss=modal aria-label=Close><i class="fas fa-fw fa-times"></i></a>
+<div class="modal-header">
+<h5 class="modal-title" id="rewardModalLabel"><i class="fas fa-fw fa-medal"></i>打赏</h5>
+<a aria-label="Close" data-bs-dismiss="modal" href="#"><i class="fas fa-fw fa-times"></i></a>
 </div>
-<div class=modal-body>
-<ul class="nav nav-tabs mb-3" role=tablist><li class=nav-item role=presentation>
-<a class="nav-link active" id=reward-alipay-tab data-bs-toggle=tab href=#reward-alipay role=tab aria-controls=reward-alipay aria-selected=true>
+<div class="modal-body">
+<ul class="nav nav-tabs mb-3" role="tablist"><li class="nav-item" role="presentation">
+<a aria-controls="reward-alipay" aria-selected="true" class="nav-link active" data-bs-toggle="tab" href="#reward-alipay" id="reward-alipay-tab" role="tab">
 <i class="fab fa-fw fa-alipay"></i>支付宝
 </a>
-</li><li class=nav-item role=presentation>
-<a class=nav-link id=reward-wechat-tab data-bs-toggle=tab href=#reward-wechat role=tab aria-controls=reward-wechat aria-selected=true>
+</li><li class="nav-item" role="presentation">
+<a aria-controls="reward-wechat" aria-selected="true" class="nav-link" data-bs-toggle="tab" href="#reward-wechat" id="reward-wechat-tab" role="tab">
 <i class="fab fa-fw fa-weixin"></i>微信
 </a>
 </li></ul>
-<div class=tab-content id=rewardTabContent><div class="tab-pane fade post-reward-content show active" id=reward-alipay role=tabpanel aria-labelledby=reward-alipay-tab>
-<img class="img-fluid post-reward-img" src=https://parkman-auex.github.io/images/reward/alipay.png loading=lazy>
-</div><div class="tab-pane fade post-reward-content show" id=reward-wechat role=tabpanel aria-labelledby=reward-wechat-tab>
-<img class="img-fluid post-reward-img" src=https://parkman-auex.github.io/images/reward/wechat.png loading=lazy>
+<div class="tab-content" id="rewardTabContent"><div aria-labelledby="reward-alipay-tab" class="tab-pane fade post-reward-content show active" id="reward-alipay" role="tabpanel">
+<img class="img-fluid post-reward-img" loading="lazy" src="https://parkman-auex.github.io/images/reward/alipay.png"/>
+</div><div aria-labelledby="reward-wechat-tab" class="tab-pane fade post-reward-content show" id="reward-wechat" role="tabpanel">
+<img class="img-fluid post-reward-img" loading="lazy" src="https://parkman-auex.github.io/images/reward/wechat.png"/>
 </div></div>
 </div>
 </div>
 </div>
-</div><hr></article><div class="post-comments surface row"><script src=https://utteranc.es/client.js repo=parkman-auex/hugoblogtalks issue-term=pathname label=comment theme=github-light crossorigin=anonymous async></script></div></div>
+</div><hr/></article><div class="post-comments surface row"><script async="" crossorigin="anonymous" issue-term="pathname" label="comment" repo="parkman-auex/hugoblogtalks" src="https://utteranc.es/client.js" theme="github-light"></script></div></div>
 </div><aside class="col-lg-4 sidebar d-flex">
-<div class=container><section class="profile surface row text-center">
-<div class="col-12 d-flex align-items-center justify-content-center"><img class="profile-avatar rounded-circle" alt="Xu-Tao Zeng" src=https://parkman-auex.github.io/images/profile.png width=132 height=132 loading=lazy>
+<div class="container"><section class="profile surface row text-center">
+<div class="col-12 d-flex align-items-center justify-content-center"><img alt="Xu-Tao Zeng" class="profile-avatar rounded-circle" height="132" loading="lazy" src="https://parkman-auex.github.io/images/profile.png" width="132"/>
 </div>
-<div class="col-12 profile-meta"><div class=profile-name>Xu-Tao Zeng</div><div class=profile-bio>Student, Ph.D, Tech coolie, coder</div><div class=profile-company><i class="fas fa-fw fa-building"></i>Beihang University</div><div class=profile-location><i class="fas fa-fw fa-map-marker-alt"></i>Beijing, China</div></div>
+<div class="col-12 profile-meta"><div class="profile-name">Xu-Tao Zeng</div><div class="profile-bio">Student, Ph.D, Tech coolie, coder</div><div class="profile-company"><i class="fas fa-fw fa-building"></i>Beihang University</div><div class="profile-location"><i class="fas fa-fw fa-map-marker-alt"></i>Beijing, China</div></div>
 </section>
 <section class="recent-posts row surface">
 <h4>最近文章</h4>
-<ul><li><a href=https://parkman-auex.github.io/zh-cn/posts/markdown-syntax/>Markdown Syntax Guide
+<ul><li><a href="https://parkman-auex.github.io/zh-cn/posts/markdown-syntax/">Markdown Syntax Guide
 </a></li></ul>
 </section><section class="taxonomy-categories row surface">
 <h4>
-<a href=https://parkman-auex.github.io/zh-cn/categories>分类</a>
+<a href="https://parkman-auex.github.io/zh-cn/categories">分类</a>
 </h4>
-<div><a href=https://parkman-auex.github.io/zh-cn/categories/templete/ class="post-taxonomy rounded btn btn-sm me-2 mb-2" title=Templete>
+<div><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman-auex.github.io/zh-cn/categories/templete/" title="Templete">
 Templete <span class="badge rounded-pill">1</span>
 </a></div>
 </section><section class="taxonomy-series row surface">
 <h4>
-<a href=https://parkman-auex.github.io/zh-cn/series>专栏</a>
+<a href="https://parkman-auex.github.io/zh-cn/series">专栏</a>
 </h4>
-<div><a href=https://parkman-auex.github.io/zh-cn/series/manual/ class="post-taxonomy rounded btn btn-sm me-2 mb-2" title=Manual>
+<div><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman-auex.github.io/zh-cn/series/manual/" title="Manual">
 Manual <span class="badge rounded-pill">1</span>
 </a></div>
 </section><section class="taxonomy-tags row surface">
 <h4>
-<a href=https://parkman-auex.github.io/zh-cn/tags>标签</a>
+<a href="https://parkman-auex.github.io/zh-cn/tags">标签</a>
 </h4>
-<div><a href=https://parkman-auex.github.io/zh-cn/tags/css/ class="post-taxonomy rounded btn btn-sm me-2 mb-2" title=CSS>
+<div><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman-auex.github.io/zh-cn/tags/css/" title="CSS">
 CSS <span class="badge rounded-pill">1</span>
-</a><a href=https://parkman-auex.github.io/zh-cn/tags/html/ class="post-taxonomy rounded btn btn-sm me-2 mb-2" title=HTML>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman-auex.github.io/zh-cn/tags/html/" title="HTML">
 HTML <span class="badge rounded-pill">1</span>
-</a><a href=https://parkman-auex.github.io/zh-cn/tags/markdown/ class="post-taxonomy rounded btn btn-sm me-2 mb-2" title=Markdown>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman-auex.github.io/zh-cn/tags/markdown/" title="Markdown">
 Markdown <span class="badge rounded-pill">1</span>
 </a></div>
 </section></div>
 </aside>
-<h5 id=wc style=font-size:1rem;text-align:center>500 Words|This article has been read <span id=busuanzi_value_page_pv></span> times</h5>
-<style type=text/css>.myfriends{text-align:center;background-color:#fff;opacity:.9}.myfriends a{color:#000}.myfriends p{display:none}.friendurl{text-decoration:none!important;color:#000}.myfriend{width:56px!important;height:56px!important;border-radius:50%;border:1px solid #ddd;padding:2px;box-shadow:1px 1px 1px rgba(0,0,0,.15);margin-top:14px!important;margin-left:14px!important;background-color:#fff}.frienddiv{height:92px;margin-top:10px;width:48%;display:inline-block!important}.frienddiv:hover{background:rgba(87,142,224,.15)}.frienddiv:hover .frienddivleft img{transition:.9s!important;-webkit-transition:.9s!important;-moz-transition:.9s!important;-o-transition:.9s!important;-ms-transition:.9s!important;transform:rotate(360deg)!important;-webkit-transform:rotate(360deg)!important;-moz-transform:rotate(360deg)!important;-o-transform:rotate(360deg)!important;-ms-transform:rotate(360deg)!important}.frienddivleft{width:92px;float:left}.frienddivleft{margin-right:2px}.frienddivright{margin-top:18px;margin-right:18px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap}</style>
+<h5 id="wc" style="font-size:1rem;text-align:center">500 Words|This article has been read <span id="busuanzi_value_page_pv"></span> times</h5>
+<style type="text/css">.myfriends{text-align:center;background-color:#fff;opacity:.9}.myfriends a{color:#000}.myfriends p{display:none}.friendurl{text-decoration:none!important;color:#000}.myfriend{width:56px!important;height:56px!important;border-radius:50%;border:1px solid #ddd;padding:2px;box-shadow:1px 1px 1px rgba(0,0,0,.15);margin-top:14px!important;margin-left:14px!important;background-color:#fff}.frienddiv{height:92px;margin-top:10px;width:48%;display:inline-block!important}.frienddiv:hover{background:rgba(87,142,224,.15)}.frienddiv:hover .frienddivleft img{transition:.9s!important;-webkit-transition:.9s!important;-moz-transition:.9s!important;-o-transition:.9s!important;-ms-transition:.9s!important;transform:rotate(360deg)!important;-webkit-transform:rotate(360deg)!important;-moz-transform:rotate(360deg)!important;-o-transform:rotate(360deg)!important;-ms-transform:rotate(360deg)!important}.frienddivleft{width:92px;float:left}.frienddivleft{margin-right:2px}.frienddivright{margin-top:18px;margin-right:18px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap}</style>
 </div>
-</main><footer class="footer mt-auto py-3 text-center container"><nav class="social-links nav my-2 justify-content-center"><a class="nav-link social-link" target=_blank href=https://space.bilibili.com/72389145 title=bilibili rel="noopener noreferrer">
+</main><footer class="footer mt-auto py-3 text-center container"><nav class="social-links nav my-2 justify-content-center"><a class="nav-link social-link" href="https://space.bilibili.com/72389145" rel="noopener noreferrer" target="_blank" title="bilibili">
 <i class="fa-fw fa-2x fas fa-tv"></i>
-</a><a class="nav-link social-link" href=mailto:parkman@buaa.edu.cn title=Email>
+</a><a class="nav-link social-link" href="mailto:parkman@buaa.edu.cn" title="Email">
 <i class="fas fa-fw fa-2x fa-envelope"></i>
-</a><a class="nav-link social-link" target=_blank href=https://github.com/https://github.com/parkman-auex title=GitHub rel="noopener noreferrer">
+</a><a class="nav-link social-link" href="https://github.com/https://github.com/parkman-auex" rel="noopener noreferrer" target="_blank" title="GitHub">
 <i class="fa-fw fa-2x fab fa-github"></i>
-</a><a class="nav-link social-link" target=_blank href=https://gitlab.com/https://gitlab.com/parkman-auex title=GitLab rel="noopener noreferrer">
+</a><a class="nav-link social-link" href="https://gitlab.com/https://gitlab.com/parkman-auex" rel="noopener noreferrer" target="_blank" title="GitLab">
 <i class="fa-fw fa-2x fab fa-gitlab"></i>
-</a><a class="nav-link social-link" target=_blank href=https://gitee.com/zeng-xutao title=Medium rel="noopener noreferrer">
+</a><a class="nav-link social-link" href="https://gitee.com/zeng-xutao" rel="noopener noreferrer" target="_blank" title="Medium">
 <i class="fab fa-fw fa-2x fa-medium-m"></i>
-</a><a class="nav-link social-link" target=_blank href="http://wpa.qq.com/msgrd?v=3&uin=383793132&site=qq&menu=yes" title=QQ rel="noopener noreferrer">
+</a><a class="nav-link social-link" href="http://wpa.qq.com/msgrd?v=3&amp;uin=383793132&amp;site=qq&amp;menu=yes" rel="noopener noreferrer" target="_blank" title="QQ">
 <i class="fa-fw fa-2x fab fa-qq"></i>
-</a><a class="nav-link social-link" target=_blank href=https://www.zhihu.com/people/parkman-87 title=Zhihu rel="noopener noreferrer">
+</a><a class="nav-link social-link" href="https://www.zhihu.com/people/parkman-87" rel="noopener noreferrer" target="_blank" title="Zhihu">
 <i class="fa-fw fa-2x fab fa-zhihu"></i>
 </a></nav>
-<span id=busuanzi_container_site_pv>
-Visits to this site：<span id=busuanzi_value_site_pv></span>
+<span id="busuanzi_container_site_pv">
+Visits to this site：<span id="busuanzi_value_site_pv"></span>
 </span>
-&nbsp;
-<span id=busuanzi_container_site_uv>
-You are the <span id=busuanzi_value_site_uv></span> th visitor
+ 
+<span id="busuanzi_container_site_uv">
+You are the <span id="busuanzi_value_site_uv"></span> th visitor
 </span><div class="copyright mb-2">
 Copyright © 2021-2021 Xu-Tao Zeng. All Rights Reserved.
 </div>
 </footer>
-<a id=btnScrollToTop class=btn-scroll-to-top>
+<a class="btn-scroll-to-top" id="btnScrollToTop">
 <i class="fas fa-fw fa-chevron-circle-up fa-2x"></i>
 </a>
-<script async src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6130842d8572b712"></script></body>
+<script async="" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6130842d8572b712"></script></body>
 </html>
