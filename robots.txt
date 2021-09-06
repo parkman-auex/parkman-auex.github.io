@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://parkman-auex.github.io/sitemap.xml
