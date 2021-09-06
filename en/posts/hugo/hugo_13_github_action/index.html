@@ -12,7 +12,7 @@
 <meta content="introduce how to install hugo on mac" name="description"/><meta content="Hugo 13 github action" itemprop="name"/>
 <meta content="introduce how to install hugo on mac" itemprop="description"/><meta content="2021-09-06T06:57:35+08:00" itemprop="datePublished"/>
 <meta content="2021-09-06T06:57:35+08:00" itemprop="dateModified"/>
-<meta content="485" itemprop="wordCount"/>
+<meta content="499" itemprop="wordCount"/>
 <meta content="" itemprop="keywords"/><meta content="Hugo 13 github action" property="og:title"/>
 <meta content="introduce how to install hugo on mac" property="og:description"/>
 <meta content="article" property="og:type"/>
@@ -193,6 +193,7 @@ PARKMAN</a>
 <li><a href="#准备部署">[准备部署]</a></li>
 <li><a href="#创建workflow">创建workflow</a></li>
 <li><a href="#test">TEST</a></li>
+<li><a href="#python">python</a></li>
 </ul>
 </li>
 </ul>
@@ -317,7 +318,24 @@ Ref <a href="https://github.com/peaceiris/actions-hugo" rel="noopener noreferrer
 </span><span class="ln">47</span><span class="w">          </span><span class="nt">commit_message</span><span class="p">:</span><span class="w"> </span><span class="l">${{ github.event.head_commit.message }}</span><span class="w">
 </span></code></pre></div><h3 id="test">TEST</h3>
 <p><img alt="Push 前" class="img-fluid" loading="lazy" src="https://raw.githubusercontent.com/parkman-auex/image_host/main/image202109061259429.jpg"/>
-</p></div><div aria-hidden="true" aria-labelledby="rewardModalLabel" class="modal fade" id="rewardModal" tabindex="-1">
+push 后
+(<img alt="Push后" class="img-fluid" loading="lazy" src="https://raw.githubusercontent.com/parkman-auex/image_host/main/image202109061543219.jpg"/>
+)</p>
+<h3 id="python">python</h3>
+<ul>
+<li>未引入 自动加密脚本
+<img alt="未引入 自动加密脚本" class="img-fluid" loading="lazy" src="https://raw.githubusercontent.com/parkman-auex/image_host/main/image202109061602789.jpg"/>
+</li>
+<li>查看网页源代码 可以解析
+<img alt="未引入 自动加密脚本 网页源码" class="img-fluid" loading="lazy" src="https://raw.githubusercontent.com/parkman-auex/image_host/main/image202109061604719.jpg"/>
+</li>
+<li>引入 自动加密脚本</li>
+<li>可以看到网页，有 cookies 记住过密码
+<img alt="引入 自动加密脚本" class="img-fluid" loading="lazy" src="https://raw.githubusercontent.com/parkman-auex/image_host/main/image202109061614594.jpg"/>
+同时源码中这段内容也已经被加密
+<img alt="引入 自动加密脚本 网页源码" class="img-fluid" loading="lazy" src="https://raw.githubusercontent.com/parkman-auex/image_host/main/image202109061614963.jpg"/>
+</li>
+</ul></div><div aria-hidden="true" aria-labelledby="rewardModalLabel" class="modal fade" id="rewardModal" tabindex="-1">
 <div class="modal-dialog">
 <div class="modal-content surface">
 <div class="modal-header">
