@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://parkstory.netlify.app/sitemap.xml
+Sitemap: https://parkman.top/sitemap.xml
