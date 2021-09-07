@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://parkman.top/sitemap.xml
+Sitemap: https://www.parkman.top/sitemap.xml
