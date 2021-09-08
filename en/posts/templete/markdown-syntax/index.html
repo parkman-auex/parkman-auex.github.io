@@ -12,7 +12,7 @@
 <meta content="Sample article showcasing basic Markdown syntax and formatting for HTML elements." name="description"/><meta content="Markdown 1  Syntax Guide" itemprop="name"/>
 <meta content="Sample article showcasing basic Markdown syntax and formatting for HTML elements." itemprop="description"/><meta content="2018-11-09T00:00:00+00:00" itemprop="datePublished"/>
 <meta content="2018-11-09T00:00:00+00:00" itemprop="dateModified"/>
-<meta content="486" itemprop="wordCount"/><meta content="https://parkman.top/images/markdown.png" itemprop="image"/>
+<meta content="549" itemprop="wordCount"/><meta content="https://parkman.top/images/markdown.png" itemprop="image"/>
 <meta content="Markdown," itemprop="keywords"/><meta content="Markdown 1  Syntax Guide" property="og:title"/>
 <meta content="Sample article showcasing basic Markdown syntax and formatting for HTML elements." property="og:description"/>
 <meta content="article" property="og:type"/>
@@ -176,7 +176,13 @@ PARKMAN</a>
 <div class="post-share mb-3"><div class="addthis_inline_share_toolbox"></div></div><div class="post-content mb-3"><p>This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.</p>
 <h2 id="headings">Headings</h2>
 <p>The following HTML <code>&lt;h1&gt;</code>—<code>&lt;h6&gt;</code> elements represent six levels of section headings. <code>&lt;h1&gt;</code> is the highest section level while <code>&lt;h6&gt;</code> is the lowest.</p>
-<h1 id="h1">H1</h1>
+<div class="highlight"><pre class="chroma" tabindex="0"><code class="language-markdown" data-lang="markdown"><span class="ln">1</span><span class="gh"># H1
+</span><span class="ln">2</span><span class="gh"></span><span class="gu">## H2
+</span><span class="ln">3</span><span class="gu">### H3
+</span><span class="ln">4</span><span class="gu">#### H4
+</span><span class="ln">5</span><span class="gu">##### H5
+</span><span class="ln">6</span><span class="gu">###### H6
+</span></code></pre></div><h1 id="h1">H1</h1>
 <h2 id="h2">H2</h2>
 <h3 id="h3">H3</h3>
 <h4 id="h4">H4</h4>
@@ -188,12 +194,18 @@ PARKMAN</a>
 <h2 id="blockquotes">Blockquotes</h2>
 <p>The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a <code>footer</code> or <code>cite</code> element, and optionally with in-line changes such as annotations and abbreviations.</p>
 <h3 id="blockquote-without-attribution">Blockquote without attribution</h3>
-<blockquote>
+<div class="highlight"><pre class="chroma" tabindex="0"><code class="language-markdown" data-lang="markdown"><span class="ln">1</span><span class="k">&gt; </span><span class="ge">Tiam, ad mint andaepu dandae nostion secatur sequo quae.
+</span><span class="ln">2</span><span class="ge"></span><span class="k">&gt; </span><span class="ge">**Note** that you can use *Markdown syntax* within a blockquote.
+</span></code></pre></div><blockquote>
 <p>Tiam, ad mint andaepu dandae nostion secatur sequo quae.
 <strong>Note</strong> that you can use <em>Markdown syntax</em> within a blockquote.</p>
 </blockquote>
 <h3 id="blockquote-with-attribution">Blockquote with attribution</h3>
-<blockquote>
+<div class="highlight"><pre class="chroma" tabindex="0"><code class="language-markdown" data-lang="markdown"><span class="ln">1</span><span class="k">&gt; </span><span class="ge">Don't communicate by sharing memory, share memory by communicating.&lt;br&gt;
+</span><span class="ln">2</span><span class="ge"></span><span class="k">&gt; </span><span class="ge">— &lt;cite&gt;Rob Pike[^1]&lt;/cite&gt;
+</span><span class="ln">3</span><span class="ge"></span>
+<span class="ln">4</span>[^1]: The above quote is excerpted from Rob Pike's [<span class="nt">talk</span>](<span class="na">https://www.youtube.com/watch?v=PAAkCSZUG1c</span>) during Gopherfest, November 18, 2015.
+</code></pre></div><blockquote>
 <p>Don’t communicate by sharing memory, share memory by communicating.
 — Rob Pike<sup id="fnref:1"><a class="footnote-ref" href="#fn:1" role="doc-noteref">1</a></sup></p>
 </blockquote>
@@ -350,11 +362,11 @@ during Gopherfest, November 18, 2015. <a class="footnote-backref" href="#fnref:
 </section>
 <section class="recent-posts row surface">
 <h4>Recent Posts</h4>
-<ul><li><a href="https://parkman.top/en/posts/matlab/vasplib/vasplib_bandplot/">Vasplib Basic Bandplot
-</a></li><li><a href="https://parkman.top/en/posts/matlab/advanced_use/matlab_ppt/">Matlab vs PPT
-</a></li><li><a href="https://parkman.top/en/posts/hugo/hugo_13_github_action/">Hugo 13 Github Action
-</a></li><li><a href="https://parkman.top/en/posts/hugo/hugo_12_online_ide/">Hugo 12 Online Ide
-</a></li><li><a href="https://parkman.top/en/posts/hugo/hugo_11_encrypted_document/">Hugo 11 Encrypted Document
+<ul><li><a href="https://parkman.top/en/posts/matlab/vasplib/vasplib_poscar/">Vasplib InputFile (1) POSCAR
+</a></li><li><a href="https://parkman.top/en/posts/matlab/vasplib/vasplib_hr_2/">Vasplib HR (2) Type of HR Class
+</a></li><li><a href="https://parkman.top/en/posts/matlab/vasplib/vasplib_hr/">Vasplib HR (1) Model Construction
+</a></li><li><a href="https://parkman.top/en/posts/tb/tb_slaterkoster/">TB_SlaterKoster
+</a></li><li><a href="https://parkman.top/en/posts/matlab/vasplib/vasplib_bandplot/">Vasplib Basic Bandplot
 </a></li></ul>
 </section><section class="taxonomy-categories row surface">
 <h4>
@@ -366,6 +378,8 @@ Hugo <span class="badge rounded-pill">13</span>
 Templete <span class="badge rounded-pill">8</span>
 </a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/categories/markdown/" title="Markdown">
 Markdown <span class="badge rounded-pill">1</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/categories/vasplib/" title="vasplib">
+vasplib <span class="badge rounded-pill">1</span>
 </a></div>
 </section><section class="taxonomy-series row surface">
 <h4>
@@ -373,19 +387,29 @@ Markdown <span class="badge rounded-pill">1</span>
 </h4>
 <div><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/series/hugo/" title="Hugo">
 Hugo <span class="badge rounded-pill">13</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/series/hr/" title="HR">
+HR <span class="badge rounded-pill">3</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/series/vasplib/" title="vasplib">
+vasplib <span class="badge rounded-pill">2</span>
 </a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/series/manual/" title="Manual">
 Manual <span class="badge rounded-pill">1</span>
-</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/series/vasplib/" title="vasplib">
-vasplib <span class="badge rounded-pill">1</span>
 </a></div>
 </section><section class="taxonomy-tags row surface">
 <h4>
 <a href="https://parkman.top/en/tags">Tags</a>
 </h4>
-<div><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/markdown/" title="Markdown">
+<div><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/matlab/" title="matlab">
+matlab <span class="badge rounded-pill">5</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/markdown/" title="Markdown">
 Markdown <span class="badge rounded-pill">4</span>
-</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/matlab/" title="matlab">
-matlab <span class="badge rounded-pill">2</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/plot/" title="plot">
+plot <span class="badge rounded-pill">4</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/vasplib/" title="vasplib">
+vasplib <span class="badge rounded-pill">4</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/tb/" title="TB">
+TB <span class="badge rounded-pill">3</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/hr/" title="HR">
+HR <span class="badge rounded-pill">2</span>
 </a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/alert/" title="Alert">
 Alert <span class="badge rounded-pill">1</span>
 </a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/bilibili/" title="Bilibili">
@@ -394,23 +418,18 @@ Bilibili <span class="badge rounded-pill">1</span>
 CodePen <span class="badge rounded-pill">1</span>
 </a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/emoji/" title="Emoji">
 Emoji <span class="badge rounded-pill">1</span>
-</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/image/" title="Image">
-Image <span class="badge rounded-pill">1</span>
-</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/iqiyi/" title="iQiyi">
-iQiyi <span class="badge rounded-pill">1</span>
-</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/jsfiddle/" title="JSFiddle">
-JSFiddle <span class="badge rounded-pill">1</span>
-</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/jsrun/" title="JSRun">
-JSRun <span class="badge rounded-pill">1</span>
 </a></div>
 </section><section class="featured-posts row surface">
 <h4>Featured Posts</h4>
-<ul><li><a href="https://parkman.top/en/posts/matlab/vasplib/vasplib_bandplot/">Vasplib Basic Bandplot
-</a></li><li><a href="https://parkman.top/en/posts/matlab/advanced_use/matlab_ppt/">Matlab vs PPT
+<ul><li><a href="https://parkman.top/en/posts/matlab/vasplib/vasplib_poscar/">Vasplib InputFile (1) POSCAR
+</a></li><li><a href="https://parkman.top/en/posts/matlab/vasplib/vasplib_hr_2/">Vasplib HR (2) Type of HR Class
+</a></li><li><a href="https://parkman.top/en/posts/matlab/vasplib/vasplib_hr/">Vasplib HR (1) Model Construction
+</a></li><li><a href="https://parkman.top/en/posts/tb/tb_slaterkoster/">TB_SlaterKoster
+</a></li><li><a href="https://parkman.top/en/posts/matlab/vasplib/vasplib_bandplot/">Vasplib Basic Bandplot
 </a></li></ul>
 </section></div>
 </aside>
-<h5 id="wc" style="font-size:1rem;text-align:center">500 Words|This article has been read <span id="busuanzi_value_page_pv"></span> times</h5>
+<h5 id="wc" style="font-size:1rem;text-align:center">600 Words|This article has been read <span id="busuanzi_value_page_pv"></span> times</h5>
 <style type="text/css">.myfriends{text-align:center;background-color:#fff;opacity:.9}.myfriends a{color:#000}.myfriends p{display:none}.friendurl{text-decoration:none!important;color:#000}.myfriend{width:56px!important;height:56px!important;border-radius:50%;border:1px solid #ddd;padding:2px;box-shadow:1px 1px 1px rgba(0,0,0,.15);margin-top:14px!important;margin-left:14px!important;background-color:#fff}.frienddiv{height:92px;margin-top:10px;width:48%;display:inline-block!important}.frienddiv:hover{background:rgba(87,142,224,.15)}.frienddiv:hover .frienddivleft img{transition:.9s!important;-webkit-transition:.9s!important;-moz-transition:.9s!important;-o-transition:.9s!important;-ms-transition:.9s!important;transform:rotate(360deg)!important;-webkit-transform:rotate(360deg)!important;-moz-transform:rotate(360deg)!important;-o-transform:rotate(360deg)!important;-ms-transform:rotate(360deg)!important}.frienddivleft{width:92px;float:left}.frienddivleft{margin-right:2px}.frienddivright{margin-top:18px;margin-right:18px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap}</style>
 </div>
 </main><footer class="footer mt-auto py-3 text-center container"><nav class="social-links nav my-2 justify-content-center"><a class="nav-link social-link" href="https://space.bilibili.com/72389145" rel="noopener noreferrer" target="_blank" title="bilibili">

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>vasplib HR (1) Model construction - parkman</title><link href="https://parkman.top/images/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="https://parkman.top/images/favicons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://parkman.top/images/favicons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://parkman.top/images/favicons/manifest.json" rel="manifest"/>
+<link href="https://parkman.top/images/favicons/favicon.ico" rel="icon"/>
+<meta content="" name="keywords"/>
+<meta content="matlab vasplib HR" name="description"/><meta content="vasplib HR (1) Model construction" itemprop="name"/>
+<meta content="matlab vasplib HR" itemprop="description"/><meta content="2021-09-08T09:20:31+08:00" itemprop="datePublished"/>
+<meta content="2021-09-08T09:20:31+08:00" itemprop="dateModified"/>
+<meta content="256" itemprop="wordCount"/><meta content="https://i.loli.net/2021/09/08/RLkmyNcuadfU6Ib.jpg" itemprop="image"/><meta content="https://i.loli.net/2021/09/08/u5HxF1KOIzybQGw.png" itemprop="image"/><meta content="https://i.loli.net/2021/09/08/wLsZpIneW7a8BbG.png" itemprop="image"/>
+<meta content="matlab,vasplib,plot,HR,TB," itemprop="keywords"/><meta content="vasplib HR (1) Model construction" property="og:title"/>
+<meta content="matlab vasplib HR" property="og:description"/>
+<meta content="article" property="og:type"/>
+<meta content="https://parkman.top/en/posts/matlab/vasplib/vasplib_hr/" property="og:url"/><meta content="https://i.loli.net/2021/09/08/RLkmyNcuadfU6Ib.jpg" property="og:image"/><meta content="https://i.loli.net/2021/09/08/u5HxF1KOIzybQGw.png" property="og:image"/><meta content="https://i.loli.net/2021/09/08/wLsZpIneW7a8BbG.png" property="og:image"/><meta content="posts" property="article:section"/>
+<meta content="2021-09-08T09:20:31+08:00" property="article:published_time"/>
+<meta content="2021-09-08T09:20:31+08:00" property="article:modified_time"/>
+<meta content="https://parkman.top/en/posts/matlab/vasplib/vasplib_poscar/" property="og:see_also"/><meta content="https://parkman.top/en/posts/matlab/vasplib/vasplib_hr_2/" property="og:see_also"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://i.loli.net/2021/09/08/RLkmyNcuadfU6Ib.jpg" name="twitter:image"/>
+<meta content="vasplib HR (1) Model construction" name="twitter:title"/>
+<meta content="matlab vasplib HR" name="twitter:description"/>
+<meta content="red" data-name="palette"/><link as="style" crossorigin="anonymous" href="https://parkman.top/css/bundle.min.a23cb7a4fbae89dc78de2a936152a28a0cfd8a2d4763f0b1a6b59ac478b721f8.css" integrity="sha256-ojy3pPuuidx43iqTYVKiigz9ii1HY/CxprWaxHi3Ifg=" onload="this.rel='stylesheet'" rel="preload"/>
+<noscript><link crossorigin="anonymous" href="https://parkman.top/css/bundle.min.a23cb7a4fbae89dc78de2a936152a28a0cfd8a2d4763f0b1a6b59ac478b721f8.css" integrity="sha256-ojy3pPuuidx43iqTYVKiigz9ii1HY/CxprWaxHi3Ifg=" rel="stylesheet"/></noscript><script crossorigin="anonymous" integrity="sha256-4OlJZ2TE425HefrP2HN27OJADK9DDAWfa1iV8w9i51M=" src="https://parkman.top/js/bundle.min.e0e9496764c4e36e4779facfd87376ece2400caf430c059f6b5895f30f62e753.js"></script><script crossorigin="anonymous" defer="" integrity="sha256-Z1pUyhi9q+5YyORYyFGWkX4Els4aW2+VtrnLcNAf4dg=" src="https://parkman.top/js/katex.675a54ca18bdabee58c8e458c85196917e0496ce1a5b6f95b6b9cb70d01fe1d8.js"></script>
+<script type="application/javascript">var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-206544824-1','auto'),ga('send','pageview'))</script>
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<link crossorigin="anonymous" href="https://parkman.top/css/tabbed-pane.css" rel="stylesheet"/><script crossorigin="anonymous" src="https://parkman.top/js/tabpane-persist.js"></script><script crossorigin="anonymous" src="https://parkman.top/js/typeit.min.js"></script><script crossorigin="anonymous" src="https://parkman.top/js/echarts.min.js"></script><script crossorigin="anonymous" src="https://parkman.top/js/macarons.js"></script><script crossorigin="anonymous" src="https://parkman.top/js/decrypt.js"></script>
+<script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>$(document).ready(function(){var a=setInterval(c,100),b=0;function c(){$("#busuanzi_container_site_pv").css("display")!="none"&&(clearInterval(a),$("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html())+b))}})</script>
+</head><body><header><nav class="navbar navbar-expand-xl fixed-top">
+<div class="container">
+<a class="navbar-brand" href="https://parkman.top/en/">
+<img alt="Logo" class="logo" height="2409" loading="lazy" src="https://parkman.top/images/logo.png" width="2409"/>
+PARKMAN</a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav me-1 mb-2 mb-lg-0"></ul><form action="https://parkman.top/en/search" class="search-bar d-flex ms-1">
+<div class="input-group input-group-sm">
+<button aria-label="submit" class="btn btn-search disabled position-absolute left-0" type="submit"><i class="fas fa-fw fa-search"></i></button>
+<input aria-label="Search" class="form-control rounded-pill" id="searchQuery" name="q" type="search"/>
+</div>
+</form><ul class="navbar-nav me-1 mb-2 mb-lg-0 me-1 ms-auto">
+<li class="nav-item">
+<a class="nav-link" href="https://parkman.top/en/archives/">
+<i class="fas fa-fw fa-file-archive"></i>Archives
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://parkman.top/en/categories/">
+<i class="fas fa-fw fa-folder"></i>Categories
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://parkman.top/en/tags/">
+<i class="fas fa-fw fa-tags"></i>Tags
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://parkman.top/en/series/">
+<i class="fas fa-fw fa-columns"></i>Series
+</a>
+</li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" class="nav-link" data-bs-toggle="dropdown" id="navbarDropdown-dropdown" role="button">
+<i class="fas fa-fw fa-chevron-circle-down"></i>Dropdown
+</a>
+<ul aria-labelledby="navbarDropdown-dropdown" class="dropdown-menu"><li>
+<a class="dropdown-item" href="https://github.com/razonyang/hugo-theme-bootstrap" rel="noopener noreferrer" target="_blank">
+<i class="fab fa-fw fa-github"></i>Github
+</a>
+</li></ul>
+</li><li class="nav-item dropdown">
+<a aria-expanded="false" class="nav-link" data-bs-toggle="dropdown" href="#" id="languageDropdown" role="button">
+<i class="fas fa-fw fa-language"></i> English
+</a>
+<ul aria-labelledby="languageDropdown" class="dropdown-menu"><li><a class="dropdown-item" href="https://parkman.top/zh-cn/">简体中文</a></li></ul>
+</li>
+<li class="nav-item">
+<a aria-controls="offcanvasSettings" class="nav-link" data-bs-toggle="offcanvas" href="#offcanvasSettings" role="button">
+<i class="fas fa-fw fa-sliders-h"></i> Settings
+</a>
+</li>
+<div aria-labelledby="offcanvasSettingsLabel" class="offcanvas offcanvas-end surface h-100" id="offcanvasSettings" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="offcanvasSettingsLabel" w=""><i class="fas fa-fw fa-sliders-h"></i> Settings</h5>
+<a aria-label="Close" data-bs-dismiss="offcanvas" role="button">
+<span class="fas fa-2x fa-fw fa-times"></span>
+</a>
+</div>
+<div class="offcanvas-body"><section class="setting">
+<form class="row">
+<div class="col-auto">
+<label><i class="fas fa-fw fa-adjust"></i> Mode</label>
+</div>
+<div class="col-auto ms-auto">
+<div class="form-check form-switch">
+<input class="form-check-input" id="modeSwitcher" type="checkbox"/>
+</div>
+</div>
+</form>
+</section>
+<section class="setting">
+<form class="font-size-switcher-form row">
+<div class="col-auto">
+<label class="form-label" for="fontSize"><i class="fas fa-fw fa-font"></i> Font Size</label>
+</div>
+<div class="col-auto ms-auto">
+<input class="form-range" id="fontSize" max="2" min="-2" type="range"/>
+</div>
+</form>
+</section>
+<section class="setting palettes">
+<form class="row">
+<div class="col-auto">
+<label><i class="fas fa-fw fa-palette"></i> Palette</label>
+</div>
+<div class="col-auto ms-auto">
+<span class="btn btn-sm" id="btnPalette"><i class="fas fa-eye-dropper"></i></span>
+</div>
+</form>
+<div class="container mt-2 visually-hidden" id="palettePicker">
+<div class="btn-group"><button class="btn btn-sm palette bg-blue d-flex align-items-center justify-content-center" id="palette-blue" title="Blue" type="button">
+</button><button class="btn btn-sm palette bg-blue-gray d-flex align-items-center justify-content-center" id="palette-blue-gray" title="Blue Gray" type="button">
+</button><button class="btn btn-sm palette bg-brown d-flex align-items-center justify-content-center" id="palette-brown" title="Brown" type="button">
+</button><button class="btn btn-sm palette bg-cyan d-flex align-items-center justify-content-center" id="palette-cyan" title="Cyan" type="button">
+</button><button class="btn btn-sm palette bg-green d-flex align-items-center justify-content-center" id="palette-green" title="Green" type="button">
+</button><button class="btn btn-sm palette bg-indigo d-flex align-items-center justify-content-center" id="palette-indigo" title="Indigo" type="button">
+</button><button class="btn btn-sm palette bg-orange d-flex align-items-center justify-content-center" id="palette-orange" title="Orange" type="button">
+</button><button class="btn btn-sm palette bg-pink d-flex align-items-center justify-content-center" id="palette-pink" title="Pink" type="button">
+</button><button class="btn btn-sm palette bg-purple d-flex align-items-center justify-content-center" id="palette-purple" title="Purple" type="button">
+</button><button class="btn btn-sm palette bg-red d-flex align-items-center justify-content-center" id="palette-red" title="Red" type="button">
+</button><button class="btn btn-sm palette bg-teal d-flex align-items-center justify-content-center" id="palette-teal" title="Teal" type="button">
+</button><button class="btn btn-sm palette bg-yellow d-flex align-items-center justify-content-center" id="palette-yellow" title="Yellow" type="button">
+</button>
+</div>
+</div>
+</section></div>
+</div>
+</ul>
+</div>
+</div>
+</nav>
+</header>
+<main class="container" role="main">
+<div class="row content">
+<div class="col-lg-8">
+<div class="container"><nav aria-label="breadcrumb" class="row">
+<ol class="breadcrumb surface"><li class="breadcrumb-item"><a href="https://parkman.top/en/">Home</a></li><li class="breadcrumb-item"><a href="https://parkman.top/en/posts/">Posts</a></li><li class="breadcrumb-item active">Vasplib HR (1) Model Construction</li></ol>
+</nav><article class="post row surface"><div class="post-panel-wrapper">
+<div class="post-panel d-flex flex-column">
+<a class="action d-none d-lg-block" id="sidebarToggler" role="button">
+<i class="fas fa-fw fa-expand-alt fa-rotate-45"></i>
+</a>
+<a class="action btn-reward" data-bs-target="#rewardModal" data-bs-toggle="modal" role="button" title="Reward">
+<i class="fas fa-fw fa-medal"></i>
+</a>
+<a class="action" data-bs-container="body" data-bs-content='&lt;a target="_blank" rel="license noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en"&gt;CC BY-NC-ND 4.0 &lt;i class="fab fa-fw fa-creative-commons"&gt;&lt;/i&gt;&lt;i class="fab fa-fw fa-creative-commons-by"&gt;&lt;/i&gt;&lt;i class="fab fa-fw fa-creative-commons-nc"&gt;&lt;/i&gt;&lt;i class="fab fa-fw fa-creative-commons-nd"&gt;&lt;/i&gt;&lt;/a&gt;
+' data-bs-html="true" data-bs-placement="bottom" data-bs-toggle="popover" data-bs-trigger="focus" tabindex="0">
+<i class="fas fa-fw fa-copyright"></i>
+</a>
+</div>
+</div>
+<h1 class="post-title my-3">Vasplib HR (1) Model Construction
+</h1><div class="post-meta mb-3"><span class="post-date me-2">
+<i class="fas fa-fw fa-calendar-alt"></i>Sep 8, 2021
+</span><span class="post-reading-time me-2">
+<i class="fas fa-fw fa-coffee"></i>2 min read
+</span><span class="post-taxonomies"><a class="post-taxonomy" href="https://parkman.top/en/series/hr/">HR</a><a class="post-taxonomy" href="https://parkman.top/en/tags/matlab/">matlab</a><a class="post-taxonomy" href="https://parkman.top/en/tags/vasplib/">vasplib</a><a class="post-taxonomy" href="https://parkman.top/en/tags/plot/">plot</a><a class="post-taxonomy" href="https://parkman.top/en/tags/hr/">HR</a><a class="post-taxonomy" href="https://parkman.top/en/tags/tb/">TB</a></span>
+</div>
+<div class="post-share mb-3"><div class="addthis_inline_share_toolbox"></div></div><div class="post-content mb-3"><p><a href="https://gitee.com/tcmp/vasplib/blob/master/bin/HR.m#L1" rel="noopener noreferrer" target="_blank"><strong>vasplib:HR</strong></a>
+HR - a powerful TB tools</p>
+<div class="hugo-encryptor-container">
+<div class="hugo-encryptor-prompt">
+<p>文章的部分内容被密码保护：</p>
+</div>
+<div class="hugo-encryptor-form">
+<input class="hugo-encryptor-input" placeholder="请输入密码"/>
+<input class="hugo-encryptor-button" onclick="_click_handler(this)" type="button" value="点击验证"/>
+</div>
+<div class="hugo-encryptor-cipher-text" style="display:none">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</div>
+</div></div><div aria-hidden="true" aria-labelledby="rewardModalLabel" class="modal fade" id="rewardModal" tabindex="-1">
+<div class="modal-dialog">
+<div class="modal-content surface">
+<div class="modal-header">
+<h5 class="modal-title" id="rewardModalLabel"><i class="fas fa-fw fa-medal"></i>Reward</h5>
+<a aria-label="Close" data-bs-dismiss="modal" href="#"><i class="fas fa-fw fa-times"></i></a>
+</div>
+<div class="modal-body">
+<ul class="nav nav-tabs mb-3" role="tablist"><li class="nav-item" role="presentation">
+<a aria-controls="reward-alipay" aria-selected="true" class="nav-link active" data-bs-toggle="tab" href="#reward-alipay" id="reward-alipay-tab" role="tab">
+<i class="fab fa-fw fa-alipay"></i>Alipay
+</a>
+</li><li class="nav-item" role="presentation">
+<a aria-controls="reward-wechat" aria-selected="true" class="nav-link" data-bs-toggle="tab" href="#reward-wechat" id="reward-wechat-tab" role="tab">
+<i class="fab fa-fw fa-weixin"></i>WeChat
+</a>
+</li></ul>
+<div class="tab-content" id="rewardTabContent"><div aria-labelledby="reward-alipay-tab" class="tab-pane fade post-reward-content show active" id="reward-alipay" role="tabpanel">
+<img class="img-fluid post-reward-img" loading="lazy" src="https://parkman.top/images/reward/alipay.png"/>
+</div><div aria-labelledby="reward-wechat-tab" class="tab-pane fade post-reward-content show" id="reward-wechat" role="tabpanel">
+<img class="img-fluid post-reward-img" loading="lazy" src="https://parkman.top/images/reward/wechat.png"/>
+</div></div>
+</div>
+</div>
+</div>
+</div><hr/><div class="post-navs d-flex mb-3 justify-content-between">
+<div class="post-nav w-50"><div class="prev-post btn btn-sm">
+<a href="https://parkman.top/en/posts/tb/tb_slaterkoster/">TB_SlaterKoster
+</a>
+</div></div>
+<div class="post-nav flex-row-reverse"><div class="next-post btn btn-sm">
+<a href="https://parkman.top/en/posts/matlab/vasplib/vasplib_hr_2/">Vasplib HR (2) Type of HR Class
+</a>
+</div></div>
+</div><section class="related-posts">
+<h3>Related Posts</h3>
+<ul class="related-posts"><li><a href="https://parkman.top/en/posts/matlab/vasplib/vasplib_bandplot/">Vasplib Basic Bandplot
+</a></li><li><a href="https://parkman.top/en/posts/matlab/advanced_use/matlab_ppt/">Matlab vs PPT
+</a></li><li><a href="https://parkman.top/en/posts/tb/tb_slaterkoster/">TB_SlaterKoster
+</a></li><li><a href="https://parkman.top/en/posts/hugo/hugo_13_github_action/">Hugo 13 Github Action
+</a></li><li><a href="https://parkman.top/en/posts/hugo/hugo_12_online_ide/">Hugo 12 Online Ide
+</a></li></ul>
+</section></article><div class="post-comments surface row"><script async="" crossorigin="anonymous" issue-term="pathname" label="comment" repo="parkman-auex/hugoblogtalks" src="https://utteranc.es/client.js" theme="github-light"></script></div></div>
+</div><aside class="col-lg-4 sidebar d-flex">
+<div class="container"><section class="profile surface row text-center">
+<div class="col-12 d-flex align-items-center justify-content-center"><img alt="Xu-Tao Zeng" class="profile-avatar rounded-circle" height="132" loading="lazy" src="https://parkman.top/images/profile.png" width="132"/>
+</div>
+<div class="col-12 profile-meta"><div class="profile-name">Xu-Tao Zeng</div><div class="profile-bio">Student, Ph.D, Tech coolie, coder</div><div class="profile-company"><i class="fas fa-fw fa-building"></i>Beihang University</div><div class="profile-location"><i class="fas fa-fw fa-map-marker-alt"></i>Beijing, China</div><div class="profile-about"><i class="fas fa-fw fa-info-circle"></i><a href="https://parkman.top/en/about/">About</a></div></div>
+</section>
+<section class="recent-posts row surface">
+<h4>Recent Posts</h4>
+<ul><li><a href="https://parkman.top/en/posts/matlab/vasplib/vasplib_poscar/">Vasplib InputFile (1) POSCAR
+</a></li><li><a href="https://parkman.top/en/posts/matlab/vasplib/vasplib_hr_2/">Vasplib HR (2) Type of HR Class
+</a></li><li><a href="https://parkman.top/en/posts/matlab/vasplib/vasplib_hr/">Vasplib HR (1) Model Construction
+</a></li><li><a href="https://parkman.top/en/posts/tb/tb_slaterkoster/">TB_SlaterKoster
+</a></li><li><a href="https://parkman.top/en/posts/matlab/vasplib/vasplib_bandplot/">Vasplib Basic Bandplot
+</a></li></ul>
+</section><section class="taxonomy-categories row surface">
+<h4>
+<a href="https://parkman.top/en/categories">Categories</a>
+</h4>
+<div><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/categories/hugo/" title="Hugo">
+Hugo <span class="badge rounded-pill">13</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/categories/templete/" title="Templete">
+Templete <span class="badge rounded-pill">8</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/categories/markdown/" title="Markdown">
+Markdown <span class="badge rounded-pill">1</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/categories/vasplib/" title="vasplib">
+vasplib <span class="badge rounded-pill">1</span>
+</a></div>
+</section><section class="taxonomy-series row surface">
+<h4>
+<a href="https://parkman.top/en/series">Series</a>
+</h4>
+<div><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/series/hugo/" title="Hugo">
+Hugo <span class="badge rounded-pill">13</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/series/hr/" title="HR">
+HR <span class="badge rounded-pill">3</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/series/vasplib/" title="vasplib">
+vasplib <span class="badge rounded-pill">2</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/series/manual/" title="Manual">
+Manual <span class="badge rounded-pill">1</span>
+</a></div>
+</section><section class="taxonomy-tags row surface">
+<h4>
+<a href="https://parkman.top/en/tags">Tags</a>
+</h4>
+<div><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/matlab/" title="matlab">
+matlab <span class="badge rounded-pill">5</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/markdown/" title="Markdown">
+Markdown <span class="badge rounded-pill">4</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/plot/" title="plot">
+plot <span class="badge rounded-pill">4</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/vasplib/" title="vasplib">
+vasplib <span class="badge rounded-pill">4</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/tb/" title="TB">
+TB <span class="badge rounded-pill">3</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/hr/" title="HR">
+HR <span class="badge rounded-pill">2</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/alert/" title="Alert">
+Alert <span class="badge rounded-pill">1</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/bilibili/" title="Bilibili">
+Bilibili <span class="badge rounded-pill">1</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/codepen/" title="CodePen">
+CodePen <span class="badge rounded-pill">1</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/emoji/" title="Emoji">
+Emoji <span class="badge rounded-pill">1</span>
+</a></div>
+</section><section class="featured-posts row surface">
+<h4>Featured Posts</h4>
+<ul><li><a href="https://parkman.top/en/posts/matlab/vasplib/vasplib_poscar/">Vasplib InputFile (1) POSCAR
+</a></li><li><a href="https://parkman.top/en/posts/matlab/vasplib/vasplib_hr_2/">Vasplib HR (2) Type of HR Class
+</a></li><li><a href="https://parkman.top/en/posts/matlab/vasplib/vasplib_hr/">Vasplib HR (1) Model Construction
+</a></li><li><a href="https://parkman.top/en/posts/tb/tb_slaterkoster/">TB_SlaterKoster
+</a></li><li><a href="https://parkman.top/en/posts/matlab/vasplib/vasplib_bandplot/">Vasplib Basic Bandplot
+</a></li></ul>
+</section></div>
+</aside>
+<h5 id="wc" style="font-size:1rem;text-align:center">300 Words|This article has been read <span id="busuanzi_value_page_pv"></span> times</h5>
+<style type="text/css">.myfriends{text-align:center;background-color:#fff;opacity:.9}.myfriends a{color:#000}.myfriends p{display:none}.friendurl{text-decoration:none!important;color:#000}.myfriend{width:56px!important;height:56px!important;border-radius:50%;border:1px solid #ddd;padding:2px;box-shadow:1px 1px 1px rgba(0,0,0,.15);margin-top:14px!important;margin-left:14px!important;background-color:#fff}.frienddiv{height:92px;margin-top:10px;width:48%;display:inline-block!important}.frienddiv:hover{background:rgba(87,142,224,.15)}.frienddiv:hover .frienddivleft img{transition:.9s!important;-webkit-transition:.9s!important;-moz-transition:.9s!important;-o-transition:.9s!important;-ms-transition:.9s!important;transform:rotate(360deg)!important;-webkit-transform:rotate(360deg)!important;-moz-transform:rotate(360deg)!important;-o-transform:rotate(360deg)!important;-ms-transform:rotate(360deg)!important}.frienddivleft{width:92px;float:left}.frienddivleft{margin-right:2px}.frienddivright{margin-top:18px;margin-right:18px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap}</style>
+</div>
+</main><footer class="footer mt-auto py-3 text-center container"><nav class="social-links nav my-2 justify-content-center"><a class="nav-link social-link" href="https://space.bilibili.com/72389145" rel="noopener noreferrer" target="_blank" title="bilibili">
+<i class="fa-fw fa-2x fas fa-tv"></i>
+</a><a class="nav-link social-link" href="mailto:parkman@buaa.edu.cn" title="Email">
+<i class="fas fa-fw fa-2x fa-envelope"></i>
+</a><a class="nav-link social-link" href="https://github.com/https://github.com/parkman-auex" rel="noopener noreferrer" target="_blank" title="GitHub">
+<i class="fa-fw fa-2x fab fa-github"></i>
+</a><a class="nav-link social-link" href="https://gitlab.com/https://gitlab.com/parkman-auex" rel="noopener noreferrer" target="_blank" title="GitLab">
+<i class="fa-fw fa-2x fab fa-gitlab"></i>
+</a><a class="nav-link social-link" href="https://gitee.com/zeng-xutao" rel="noopener noreferrer" target="_blank" title="Medium">
+<i class="fab fa-fw fa-2x fa-medium-m"></i>
+</a><a class="nav-link social-link" href="http://wpa.qq.com/msgrd?v=3&amp;uin=383793132&amp;site=qq&amp;menu=yes" rel="noopener noreferrer" target="_blank" title="QQ">
+<i class="fa-fw fa-2x fab fa-qq"></i>
+</a><a class="nav-link social-link" href="https://www.zhihu.com/people/parkman-87" rel="noopener noreferrer" target="_blank" title="Zhihu">
+<i class="fa-fw fa-2x fab fa-zhihu"></i>
+</a></nav>
+<span id="busuanzi_container_site_pv">
+Visits to this site：<span id="busuanzi_value_site_pv"></span>
+</span>
+ 
+<span id="busuanzi_container_site_uv">
+You are the <span id="busuanzi_value_site_uv"></span> th visitor
+</span><div class="copyright mb-2">
+Copyright © 2021-2021 Xu-Tao Zeng. All Rights Reserved.
+</div>
+</footer>
+<a class="btn-scroll-to-top" id="btnScrollToTop">
+<i class="fas fa-fw fa-chevron-circle-up fa-2x"></i>
+</a>
+<script async="" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6130842d8572b712"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script><script src="/decrypt.js"></script></body>
+</html>
