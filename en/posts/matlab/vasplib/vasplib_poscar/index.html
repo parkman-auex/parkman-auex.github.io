@@ -12,7 +12,7 @@
 <meta content="matlab vasplib POSCAR" name="description"/><meta content="vasplib InputFile (1) POSCAR" itemprop="name"/>
 <meta content="matlab vasplib POSCAR" itemprop="description"/><meta content="2021-09-08T11:20:31+08:00" itemprop="datePublished"/>
 <meta content="2021-09-08T11:20:31+08:00" itemprop="dateModified"/>
-<meta content="120" itemprop="wordCount"/><meta content="https://i.loli.net/2021/09/08/SuLypHizO8lt75G.png" itemprop="image"/>
+<meta content="296" itemprop="wordCount"/><meta content="https://i.loli.net/2021/09/08/SuLypHizO8lt75G.png" itemprop="image"/>
 <meta content="matlab,vasplib,plot,POSCAR,TB," itemprop="keywords"/><meta content="vasplib InputFile (1) POSCAR" property="og:title"/>
 <meta content="matlab vasplib POSCAR" property="og:description"/>
 <meta content="article" property="og:type"/>
@@ -166,29 +166,137 @@ PARKMAN</a>
 ' data-bs-html="true" data-bs-placement="bottom" data-bs-toggle="popover" data-bs-trigger="focus" tabindex="0">
 <i class="fas fa-fw fa-copyright"></i>
 </a>
+<a aria-controls="offcanvasTOC" class="fas fa-fw fa-list-alt" data-bs-toggle="offcanvas" href="#offcanvasTOC" id="btnTOC" role="button">
+</a>
 </div>
 </div>
 <h1 class="post-title my-3">Vasplib InputFile (1) POSCAR
 </h1><div class="post-meta mb-3"><span class="post-date me-2">
 <i class="fas fa-fw fa-calendar-alt"></i>Sep 8, 2021
 </span><span class="post-reading-time me-2">
-<i class="fas fa-fw fa-coffee"></i>1 min read
+<i class="fas fa-fw fa-coffee"></i>2 min read
 </span><span class="post-taxonomies"><a class="post-taxonomy" href="https://parkman.top/en/categories/vasplib/">vasplib</a><a class="post-taxonomy" href="https://parkman.top/en/series/vasplib/">vasplib</a><a class="post-taxonomy" href="https://parkman.top/en/series/hr/">HR</a><a class="post-taxonomy" href="https://parkman.top/en/tags/matlab/">matlab</a><a class="post-taxonomy" href="https://parkman.top/en/tags/vasplib/">vasplib</a><a class="post-taxonomy" href="https://parkman.top/en/tags/plot/">plot</a><a class="post-taxonomy" href="https://parkman.top/en/tags/poscar/">POSCAR</a><a class="post-taxonomy" href="https://parkman.top/en/tags/tb/">TB</a></span>
 </div>
-<div class="post-share mb-3"><div class="addthis_inline_share_toolbox"></div></div><div class="post-content mb-3"><p><a href="https://gitee.com/tcmp/vasplib/blob/master/bin/vasplib.m#L452" rel="noopener noreferrer" target="_blank"><strong>vasplib:POSCAR</strong></a>
+<div class="post-share mb-3"><div class="addthis_inline_share_toolbox"></div></div><div aria-labelledby="offcanvasTOCLabel" class="offcanvas offcanvas-end surface" id="offcanvasTOC" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="offcanvasTOCLabel">Table Of Contents</h5>
+<a aria-label="Close" data-bs-dismiss="offcanvas" role="button">
+<span class="fas fa-2x fa-fw fa-times"></span>
+</a>
+</div>
+<div class="offcanvas-body">
+<nav id="TableOfContents">
+<ul>
+<li><a href="#graphene">Graphene</a></li>
+<li><a href="#autofill">Autofill</a></li>
+<li><a href="#format">format</a></li>
+<li><a href="#shortcodes-for-input">shortcodes for input</a></li>
+</ul>
+</nav>
+</div>
+</div><div class="post-content mb-3"><p><a href="https://gitee.com/tcmp/vasplib/blob/master/bin/vasplib.m#L452" rel="noopener noreferrer" target="_blank"><strong>vasplib:POSCAR</strong></a>
 之前在程序使用的过程中，主要的报错都来自于输入文件，可见这部分代码需要重构，增添错误信息，并且最好有个清晰的说明</p>
-<p>
-</p><div class="hugo-encryptor-container">
-<div class="hugo-encryptor-prompt">
-<p>文章的部分内容被密码保护：</p>
+<h1 id="poscar-input">POSCAR input</h1>
+<p><a href="https://www.vasp.at/wiki/index.php/POSCAR" rel="noopener noreferrer" target="_blank">POSCAR</a>
+的格式，官网介绍的非常清楚。</p>
+<h2 id="graphene">Graphene</h2>
+<p>在POSCAR的基础格式上，为了引入轨道的信息，我们需要加入额外的轨道的信息，以石墨烯为例，主要有 $p_z$ 轨道构成，则POSCAR应该在每条轨道后面添上补充的轨道信息</p>
+<p>graphene<br/>
+1.0<br/>
+2.4560000896 0.0000000000 0.0000000000<br/>
+-1.2280000448 2.1269584693 0.0000000000<br/>
+0.0000000000 0.0000000000 20.0000000000<br/>
+C<br/>
+2<br/>
+Direct </p><div class="typeit">
+<div id="myElement"></div><div id="id-1"></div></div>
+<script>new TypeIt("#myElement",{strings:"0.333333333         0.666666667         0.250000000 C p z\u003cbr\u003e\n\u003c!-- raw HTML omitted --\u003e\n0.666666667         0.333333333         0.250000000 C p z"}).go()</script>
+<h2 id="autofill">Autofill</h2>
+<p>再遇到一些大体系的POSCAR，这样一个一个添加 有些麻烦，之前可以用vi块输入的方式解决，现在我们提供更加方便的办法，以<em>21.78TBG</em>为例</p>
+<p><details><summary>‘POSCAR_21.78’</summary>
+<div class="markdown-inner">
+POSCAR<br/>
+1.0<br/>
+6.5307998657 0.0000000000 0.0000000000<br/>
+-3.2653999329 5.6558385907 0.0000000000<br/>
+0.0000000000 0.0000000000 23.0000000000<br/>
+C<br/>
+28<br/>
+Direct<br/>
+0.8095700130000003 0.0476298940000001 0.4271699660000000 C p z<br/>
+0.9523701059999999 0.7619401190000001 0.4271699660000000 C p z<br/>
+0.2380598809999998 0.1904299869999997 0.4271699660000000 C p z<br/>
+0.1904299869999997 0.9523701059999999 0.4271699660000000 C p z<br/>
+0.0476298940000001 0.2380598809999998 0.4271699660000000 C p z<br/>
+0.7619401190000002 0.8095700130000003 0.4271699660000000 C p z<br/>
+0.0476298940000000 0.8095700130000003 0.5728300340000000 C p z<br/>
+0.7619401190000002 0.9523701059999999 0.5728300340000000 C p z<br/>
+0.1904299869999997 0.2380598809999998 0.5728300340000000 C p z<br/>
+0.9523701059999999 0.1904299869999997 0.5728300340000000 C p z<br/>
+0.2380598809999998 0.0476298940000001 0.5728300340000000 C p z<br/>
+0.8095700130000003 0.7619401190000001 0.5728300340000000 C p z<br/>
+0.6190698610000003 0.0952398940000000 0.4271699660000000 C p z<br/>
+0.9047601059999999 0.5238299670000002 0.4271699660000000 C p z<br/>
+0.4761700329999998 0.3809301389999998 0.4271699660000000 C p z<br/>
+0.3809301389999997 0.9047601060000000 0.4271699660000000 C p z<br/>
+0.0952398940000000 0.4761700329999998 0.4271699660000000 C p z<br/>
+0.5238299670000002 0.6190698610000002 0.4271699660000000 C p z<br/>
+0.0952398939999999 0.6190698610000002 0.5728300340000000 C p z<br/>
+0.5238299670000003 0.9047601060000000 0.5728300340000000 C p z<br/>
+0.3809301389999998 0.4761700329999998 0.5728300340000000 C p z<br/>
+0.9047601060000000 0.3809301389999998 0.5728300340000000 C p z<br/>
+0.4761700329999997 0.0952398940000000 0.5728300340000000 C p z<br/>
+0.6190698610000003 0.5238299670000002 0.5728300340000000 C p z<br/>
+0.6666666666666667 0.3333333333333334 0.4271699660000000 C p z<br/>
+0.3333333333333333 0.6666666666666665 0.4271699660000000 C p z<br/>
+0.3333333333333333 0.6666666666666667 0.5728300340000000 C p z<br/>
+0.6666666666666667 0.3333333333333334 0.5728300340000000 C p z
 </div>
-<div class="hugo-encryptor-form">
-<input class="hugo-encryptor-input" placeholder="请输入密码"/>
-<input class="hugo-encryptor-button" onclick="_click_handler(this)" type="button" value="点击验证"/>
-</div>
-<div class="hugo-encryptor-cipher-text" style="display:none">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</div>
-</div>
-–</div><div aria-hidden="true" aria-labelledby="rewardModalLabel" class="modal fade" id="rewardModal" tabindex="-1">
+</details>
+现在我们只需在首行 加入信息即可<br/>
+POSCAR<br/>
+1.0<br/>
+6.5307998657 0.0000000000 0.0000000000<br/>
+-3.2653999329 5.6558385907 0.0000000000<br/>
+0.0000000000 0.0000000000 23.0000000000<br/>
+C<br/>
+28<br/>
+Direct<br/>
+0.8095700130000003 0.0476298940000001 0.4271699660000000
+<mark>C p z</mark><br/>
+&amp;mldr;&amp;mldr;</p>
+<h2 id="format">format</h2>
+<p>每一行需要补充的信息是</p>
+<table>
+<thead>
+<tr>
+<th>element</th>
+<th>L{s,p,d,f}</th>
+<th>basis Function {I,x,y,z,x2-y2,z2,xy,xz,yz,&amp;mldr;}</th>
+<th>spin {1,-1,nan}</th>
+</tr>
+</thead>
+</table>
+<h2 id="shortcodes-for-input">shortcodes for input</h2>
+<p>事实上我们可以略去 basis Function这里不写，在 L{s,p,d,f}这里填入一些短码，来加快我们轨道输入文件POSCAR的修改</p>
+<ul>
+<li>p: $p_z~p_x~p_y$</li>
+<li>pxy: $p_x~p_y$</li>
+<li>sp: $s~p_z~p_x~p_y$</li>
+<li>spz: $s~p_z$</li>
+<li>d: $d$</li>
+<li>sd: $sd$</li>
+<li>pd: $pd$</li>
+<li>f: $not be implemented$</li>
+</ul>
+<h1 id="spglib_matlab">spglib_matlab</h1>
+<p>小编写过一个matlab调用spglib的程序，可以让我们在读取POSCAR的同时，也获得了体系所拥有的对称性，对称操作等信息。
+使用这系列的功能，需要用matlab支持的C编译器在主机上编译spglib.</p>
+<h1 id="element">element</h1>
+<p>在读取POSCAR的同时，我们也同时读取了元素周期表的基本信息作为参考，数据放在vasplib主目录 <em>bin</em>下面的<em>element.txt</em>.</p>
+<h1 id="symbolic">symbolic</h1>
+<p>在处理六角格子的时候，我们的基矢量往往是无理数，这在理论分析与解析分析的时候会带来数值误差。
+我们允许符号化的<code>Rm</code>与<code>orbL</code>, 只要POSCAR的精度达到1e-13，便可以把数值化的POSCAR读取成符号化的晶格基本信息</p></div><div aria-hidden="true" aria-labelledby="rewardModalLabel" class="modal fade" id="rewardModal" tabindex="-1">
 <div class="modal-dialog">
 <div class="modal-content surface">
 <div class="modal-header">
@@ -303,7 +411,7 @@ Emoji <span class="badge rounded-pill">1</span>
 </a></li></ul>
 </section></div>
 </aside>
-<h5 id="wc" style="font-size:1rem;text-align:center">200 Words|This article has been read <span id="busuanzi_value_page_pv"></span> times</h5>
+<h5 id="wc" style="font-size:1rem;text-align:center">300 Words|This article has been read <span id="busuanzi_value_page_pv"></span> times</h5>
 <style type="text/css">.myfriends{text-align:center;background-color:#fff;opacity:.9}.myfriends a{color:#000}.myfriends p{display:none}.friendurl{text-decoration:none!important;color:#000}.myfriend{width:56px!important;height:56px!important;border-radius:50%;border:1px solid #ddd;padding:2px;box-shadow:1px 1px 1px rgba(0,0,0,.15);margin-top:14px!important;margin-left:14px!important;background-color:#fff}.frienddiv{height:92px;margin-top:10px;width:48%;display:inline-block!important}.frienddiv:hover{background:rgba(87,142,224,.15)}.frienddiv:hover .frienddivleft img{transition:.9s!important;-webkit-transition:.9s!important;-moz-transition:.9s!important;-o-transition:.9s!important;-ms-transition:.9s!important;transform:rotate(360deg)!important;-webkit-transform:rotate(360deg)!important;-moz-transform:rotate(360deg)!important;-o-transform:rotate(360deg)!important;-ms-transform:rotate(360deg)!important}.frienddivleft{width:92px;float:left}.frienddivleft{margin-right:2px}.frienddivright{margin-top:18px;margin-right:18px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap}</style>
 </div>
 </main><footer class="footer mt-auto py-3 text-center container"><nav class="social-links nav my-2 justify-content-center"><a class="nav-link social-link" href="https://space.bilibili.com/72389145" rel="noopener noreferrer" target="_blank" title="bilibili">
@@ -334,5 +442,5 @@ Copyright © 2021-2021 Xu-Tao Zeng. All Rights Reserved.
 <a class="btn-scroll-to-top" id="btnScrollToTop">
 <i class="fas fa-fw fa-chevron-circle-up fa-2x"></i>
 </a>
-<script async="" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6130842d8572b712"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script><script src="/decrypt.js"></script></body>
+<script async="" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6130842d8572b712"></script></body>
 </html>

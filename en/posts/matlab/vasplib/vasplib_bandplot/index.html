@@ -12,7 +12,7 @@
 <meta content="matlab vasplib bandplot" name="description"/><meta content="vasplib basic bandplot" itemprop="name"/>
 <meta content="matlab vasplib bandplot" itemprop="description"/><meta content="2021-09-07T18:20:31+08:00" itemprop="datePublished"/>
 <meta content="2021-09-07T18:20:31+08:00" itemprop="dateModified"/>
-<meta content="246" itemprop="wordCount"/><meta content="https://i.loli.net/2021/09/07/bHldtr57xkTe4Oi.png" itemprop="image"/>
+<meta content="335" itemprop="wordCount"/><meta content="https://i.loli.net/2021/09/07/bHldtr57xkTe4Oi.png" itemprop="image"/>
 <meta content="matlab,vasplib,plot," itemprop="keywords"/><meta content="vasplib basic bandplot" property="og:title"/>
 <meta content="matlab vasplib bandplot" property="og:description"/>
 <meta content="article" property="og:type"/>
@@ -165,6 +165,8 @@ PARKMAN</a>
 ' data-bs-html="true" data-bs-placement="bottom" data-bs-toggle="popover" data-bs-trigger="focus" tabindex="0">
 <i class="fas fa-fw fa-copyright"></i>
 </a>
+<a aria-controls="offcanvasTOC" class="fas fa-fw fa-list-alt" data-bs-toggle="offcanvas" href="#offcanvasTOC" id="btnTOC" role="button">
+</a>
 </div>
 </div>
 <h1 class="post-title my-3">Vasplib Basic Bandplot
@@ -174,18 +176,210 @@ PARKMAN</a>
 <i class="fas fa-fw fa-coffee"></i>2 min read
 </span><span class="post-taxonomies"><a class="post-taxonomy" href="https://parkman.top/en/series/vasplib/">vasplib</a><a class="post-taxonomy" href="https://parkman.top/en/tags/matlab/">matlab</a><a class="post-taxonomy" href="https://parkman.top/en/tags/vasplib/">vasplib</a><a class="post-taxonomy" href="https://parkman.top/en/tags/plot/">plot</a></span>
 </div>
-<div class="post-share mb-3"><div class="addthis_inline_share_toolbox"></div></div><div class="post-content mb-3"><p><a href="https://gitee.com/tcmp/vasplib/blob/master/bin/bandplot.m" rel="noopener noreferrer" target="_blank"><strong>vasplib:bandplot</strong></a>
+<div class="post-share mb-3"><div class="addthis_inline_share_toolbox"></div></div><div aria-labelledby="offcanvasTOCLabel" class="offcanvas offcanvas-end surface" id="offcanvasTOC" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="offcanvasTOCLabel">Table Of Contents</h5>
+<a aria-label="Close" data-bs-dismiss="offcanvas" role="button">
+<span class="fas fa-2x fa-fw fa-times"></span>
+</a>
+</div>
+<div class="offcanvas-body">
+<nav id="TableOfContents">
+<ul>
+<li><a href="#label">Label:</a></li>
+<li><a href="#description-of-the-script">Description of the Script:</a>
+<ul>
+<li><a href="#input">Input:</a></li>
+<li><a href="#output">Output:</a></li>
+<li><a href="#note">Note:</a></li>
+<li><a href="#change-log">Change log</a></li>
+<li><a href="#copyright">Copyright</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</div><div class="post-content mb-3"><p><a href="https://gitee.com/tcmp/vasplib/blob/master/bin/bandplot.m" rel="noopener noreferrer" target="_blank"><strong>vasplib:bandplot</strong></a>
 </p>
-<div class="hugo-encryptor-container">
-<div class="hugo-encryptor-prompt">
-<p>文章的部分内容被密码保护：</p>
+<h1 id="bandplot">bandplot</h1>
+<h2 id="label">Label:</h2>
+<ul>
+<li>vasp</li>
+<li>band</li>
+<li>spinless</li>
+</ul>
+<h2 id="description-of-the-script">Description of the Script:</h2>
+<p>plot a band stucture of standard vasp output</p>
+<h3 id="input">Input:</h3>
+<ol>
+<li>Files: POSCAR KPOINTS EIGENVAL/BAND.dat DOSCAR/Efermi</li>
+</ol>
+<h3 id="output">Output:</h3>
+<ol>
+<li>band-structure with nice output</li>
+</ol>
+<h3 id="note">Note:</h3>
+<h3 id="change-log">Change log</h3>
+<ul>
+<li>Document Date: 2020/12/05</li>
+<li>Creation Date: 2020/12/05</li>
+<li>Last updated : 2020/12/05</li>
+</ul>
+<h3 id="copyright">Copyright</h3>
+<ul>
+<li>parkman</li>
+<li><a href="parkman@buaa.edu.cn">parkman@buaa.edu.cn</a>
+</li>
+</ul>
+<p>Let’s begin</p>
+<div class="alert alert-info" role="alert">
+<i class="fas fa-fw fa-info-circle"></i>Example: vasp no SOC
 </div>
-<div class="hugo-encryptor-form">
-<input class="hugo-encryptor-input" placeholder="请输入密码"/>
-<input class="hugo-encryptor-button" onclick="_click_handler(this)" type="button" value="点击验证"/>
+<p><strong>make sure you have copy the POSCAR KPOINTS EIGENVAL DOSCAR in this directory</strong></p>
+<div class="highlight"><pre class="chroma" tabindex="0"><code class="language-matlab" data-lang="matlab"><span class="ln">1</span><span class="n">ls</span>
+</code></pre></div><details><summary>Result</summary>
+<div class="markdown-inner">
+BAND.dat
+BandStuctureCuIwSOC.eps
+DOSCAR
+EIGENVAL
+KPOINTS
+POSCAR
+Run_example_bandplot_spinless.m
+Run_example_bandplot_spinless.tex
+html
+matlab.sty
+plot_results
+vasp_m_soc.eps
 </div>
-<div class="hugo-encryptor-cipher-text" style="display:none">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</div>
-</div></div><div aria-hidden="true" aria-labelledby="rewardModalLabel" class="modal fade" id="rewardModal" tabindex="-1">
+</details>
+<h1 id="for-a-default-printjust-type">for a default print,just type</h1>
+<div class="highlight"><pre class="chroma" tabindex="0"><code class="language-matlab" data-lang="matlab"><span class="ln">1</span><span class="n">bandplot</span>
+<span class="ln">2</span><span class="c">% or</span>
+<span class="ln">3</span><span class="n">bandplot</span><span class="p">()</span>
+</code></pre></div><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-matlab" data-lang="matlab"><span class="ln">1</span><span class="n">bandplot</span><span class="p">;</span>
+</code></pre></div><p><img alt="" class="img-fluid" loading="lazy" src="https://i.loli.net/2021/09/07/aPGRC5u2UJjzoic.png"/>
+</p>
+<h1 id="for-a-user-defined-bandplot">for a user-defined bandplot</h1>
+<p>we shoulf first load the EIGENCAR, <code>EIGENCAR = EIGENVAL_read()</code>; which is a highly useful matric stucture with the format</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>kpoint1</th>
+<th>kpoint2</th>
+<th>…</th>
+<th>kpoints</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Band:1th</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Band:2th</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>…</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Band:nth</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre class="chroma" tabindex="0"><code class="language-matlab" data-lang="matlab"><span class="ln">1</span><span class="n">EIGENCAR</span> <span class="p">=</span> <span class="n">EIGENVAL_read</span><span class="p">();</span>
+</code></pre></div><h1 id="bandplot-parm">bandplot parm</h1>
+<p>The whole parm of bandplot is [fig,ax]=bandplot(EIGENCAR,Ecut,titlestring,color,klist_l,kpoints_l,&amp;mldr; kpoints_name,fontname,fig,ax) Here, we’d like check Ecut = [-6,6], with a title ‘Band Stucture CuI w SOC’ blue color, we just run and abtain a (title).eps file. You can open it with AI for publication</p>
+<div class="highlight"><pre class="chroma" tabindex="0"><code class="language-matlab" data-lang="matlab"><span class="ln">1</span><span class="n">bandplot</span><span class="p">(</span><span class="n">EIGENCAR</span><span class="p">,[</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span><span class="s">'title'</span><span class="p">,</span><span class="s">'Band Stucture CuI w SOC'</span><span class="p">,</span><span class="s">'Color'</span><span class="p">,</span><span class="s">'b'</span><span class="p">);</span>
+</code></pre></div><p><img alt="" class="img-fluid" loading="lazy" src="https://i.loli.net/2021/09/07/ZMLoUOJbRIKgW2Q.png"/>
+</p>
+<h1 id="save-plot-data">save plot data</h1>
+<p>we can get handle and the plot data of a bandplot</p>
+<div class="highlight"><pre class="chroma" tabindex="0"><code class="language-matlab" data-lang="matlab"><span class="ln">1</span><span class="p">[</span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span><span class="p">,</span><span class="n">data_plot</span><span class="p">]</span> <span class="p">=</span> <span class="n">bandplot</span><span class="p">()</span>
+</code></pre></div><p><img alt="" class="img-fluid" loading="lazy" src="https://i.loli.net/2021/09/07/5fPM7BLvE4HgARn.png"/>
+</p>
+<details><summary>Result</summary>
+<div class="markdown-inner">
+<p>fig =
+Figure (3) - 属性:</p>
+<pre><code>  Number: 3
+    Name: ''
+   Color: [1 1 1]
+Position: [680 558 560 420]
+   Units: 'pixels'
+</code></pre>
+<p>显示 所有属性</p>
+<p>ax =
+Axes (vasp-soc) - 属性:</p>
+<pre><code>         XLim: [0 3.0451]
+         YLim: [-3 3]
+       XScale: 'linear'
+       YScale: 'linear'
+GridLineStyle: '-'
+     Position: [0.1300 0.1100 0.7750 0.7993]
+        Units: 'normalized'
+</code></pre>
+<p>显示 所有属性</p>
+<p>data_plot =
+EIGENCAR: [48x240 double]
+Ecut: [-3 3]
+titlestring: ‘vasp-soc’
+color: [0.0357 0.8491 0.9340]
+klist_l: [1x240 double]
+kpoints_l: [5x1 double]
+kpoints_name: [“Γ” “Z” “F” “Γ” “L”]
+fontname: ‘Helvetica’</p>
+</div>
+</details>
+<h1 id="parameters">Parameters</h1>
+<p>default</p>
+<div class="highlight"><pre class="chroma" tabindex="0"><code class="language-matlab" data-lang="matlab"><span class="ln">1</span><span class="n">bandplot</span><span class="p">(</span><span class="n">EIGENCAR</span><span class="p">,</span><span class="n">Ecut</span><span class="p">,</span><span class="n">klist_l</span><span class="p">,</span><span class="n">kpoints_l</span><span class="p">,</span><span class="n">kpoints_name</span><span class="p">,</span><span class="s">'key'</span><span class="p">,</span><span class="s">'value'</span><span class="p">,</span><span class="c">...);</span>
+<span class="ln">2</span><span class="p">[</span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span><span class="p">]</span> <span class="p">=</span> <span class="n">bandplot</span><span class="p">(</span><span class="n">EIGENCAR</span><span class="p">,</span><span class="n">Ecut</span><span class="p">,</span><span class="n">klist_l</span><span class="p">,</span><span class="n">kpoints_l</span><span class="p">,</span><span class="n">kpoints_name</span><span class="p">,</span><span class="s">'key'</span><span class="p">,</span><span class="s">'value'</span><span class="p">,</span><span class="c">...);</span>
+<span class="ln">3</span><span class="p">[</span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span><span class="p">,</span><span class="n">plot_data_collection</span><span class="p">]</span><span class="n">bandplot</span><span class="p">(</span><span class="n">EIGENCAR</span><span class="p">,</span><span class="n">Ecut</span><span class="p">,</span><span class="n">klist_l</span><span class="p">,</span><span class="n">kpoints_l</span><span class="p">,</span><span class="n">kpoints_name</span><span class="p">,</span><span class="s">'key'</span><span class="p">,</span><span class="s">'value'</span><span class="p">,</span><span class="c">...);</span>
+</code></pre></div><pre><code>EIGENCAR = EIGENVAL_read();
+Ecut = [-3,3];
+klist_l = [];
+kpoints_l = [];
+kpoints_name = [];
+options.fig =  handle([]);
+options.ax =  handle([]);
+options.fontname = 'Helvetica';
+options.KPOINTS = 'KPOINTS';
+options.POSCAR = 'POSCAR';
+options.Color =  @jet;
+options.title = '';
+options.klist_l = [];
+options.kpoints_l = [];
+options.kpoints_name = [];
+options.xlabel='';
+options.ylabel='E(eV)';
+options.LineSpec = '-';
+options.LineWidth = 1;
+options.MarkerSize = 3;
+options.MarkerEdgeColor = [];
+options.MarkerFaceColor = [];
+</code></pre></div><div aria-hidden="true" aria-labelledby="rewardModalLabel" class="modal fade" id="rewardModal" tabindex="-1">
 <div class="modal-dialog">
 <div class="modal-content surface">
 <div class="modal-header">
@@ -303,7 +497,7 @@ Emoji <span class="badge rounded-pill">1</span>
 </a></li></ul>
 </section></div>
 </aside>
-<h5 id="wc" style="font-size:1rem;text-align:center">300 Words|This article has been read <span id="busuanzi_value_page_pv"></span> times</h5>
+<h5 id="wc" style="font-size:1rem;text-align:center">400 Words|This article has been read <span id="busuanzi_value_page_pv"></span> times</h5>
 <style type="text/css">.myfriends{text-align:center;background-color:#fff;opacity:.9}.myfriends a{color:#000}.myfriends p{display:none}.friendurl{text-decoration:none!important;color:#000}.myfriend{width:56px!important;height:56px!important;border-radius:50%;border:1px solid #ddd;padding:2px;box-shadow:1px 1px 1px rgba(0,0,0,.15);margin-top:14px!important;margin-left:14px!important;background-color:#fff}.frienddiv{height:92px;margin-top:10px;width:48%;display:inline-block!important}.frienddiv:hover{background:rgba(87,142,224,.15)}.frienddiv:hover .frienddivleft img{transition:.9s!important;-webkit-transition:.9s!important;-moz-transition:.9s!important;-o-transition:.9s!important;-ms-transition:.9s!important;transform:rotate(360deg)!important;-webkit-transform:rotate(360deg)!important;-moz-transform:rotate(360deg)!important;-o-transform:rotate(360deg)!important;-ms-transform:rotate(360deg)!important}.frienddivleft{width:92px;float:left}.frienddivleft{margin-right:2px}.frienddivright{margin-top:18px;margin-right:18px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap}</style>
 </div>
 </main><footer class="footer mt-auto py-3 text-center container"><nav class="social-links nav my-2 justify-content-center"><a class="nav-link social-link" href="https://space.bilibili.com/72389145" rel="noopener noreferrer" target="_blank" title="bilibili">
@@ -334,5 +528,5 @@ Copyright © 2021-2021 Xu-Tao Zeng. All Rights Reserved.
 <a class="btn-scroll-to-top" id="btnScrollToTop">
 <i class="fas fa-fw fa-chevron-circle-up fa-2x"></i>
 </a>
-<script async="" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6130842d8572b712"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script><script src="/decrypt.js"></script></body>
+<script async="" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6130842d8572b712"></script></body>
 </html>

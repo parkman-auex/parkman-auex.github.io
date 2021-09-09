@@ -12,7 +12,7 @@
 <meta content="matlab vasplib HR" name="description"/><meta content="vasplib HR (1) Model construction" itemprop="name"/>
 <meta content="matlab vasplib HR" itemprop="description"/><meta content="2021-09-08T09:20:31+08:00" itemprop="datePublished"/>
 <meta content="2021-09-08T09:20:31+08:00" itemprop="dateModified"/>
-<meta content="256" itemprop="wordCount"/><meta content="https://i.loli.net/2021/09/08/RLkmyNcuadfU6Ib.jpg" itemprop="image"/><meta content="https://i.loli.net/2021/09/08/u5HxF1KOIzybQGw.png" itemprop="image"/><meta content="https://i.loli.net/2021/09/08/wLsZpIneW7a8BbG.png" itemprop="image"/>
+<meta content="354" itemprop="wordCount"/><meta content="https://i.loli.net/2021/09/08/RLkmyNcuadfU6Ib.jpg" itemprop="image"/><meta content="https://i.loli.net/2021/09/08/u5HxF1KOIzybQGw.png" itemprop="image"/><meta content="https://i.loli.net/2021/09/08/wLsZpIneW7a8BbG.png" itemprop="image"/>
 <meta content="matlab,vasplib,plot,HR,TB," itemprop="keywords"/><meta content="vasplib HR (1) Model construction" property="og:title"/>
 <meta content="matlab vasplib HR" property="og:description"/>
 <meta content="article" property="og:type"/>
@@ -165,6 +165,8 @@ PARKMAN</a>
 ' data-bs-html="true" data-bs-placement="bottom" data-bs-toggle="popover" data-bs-trigger="focus" tabindex="0">
 <i class="fas fa-fw fa-copyright"></i>
 </a>
+<a aria-controls="offcanvasTOC" class="fas fa-fw fa-list-alt" data-bs-toggle="offcanvas" href="#offcanvasTOC" id="btnTOC" role="button">
+</a>
 </div>
 </div>
 <h1 class="post-title my-3">Vasplib HR (1) Model Construction
@@ -174,18 +176,187 @@ PARKMAN</a>
 <i class="fas fa-fw fa-coffee"></i>2 min read
 </span><span class="post-taxonomies"><a class="post-taxonomy" href="https://parkman.top/en/series/hr/">HR</a><a class="post-taxonomy" href="https://parkman.top/en/tags/matlab/">matlab</a><a class="post-taxonomy" href="https://parkman.top/en/tags/vasplib/">vasplib</a><a class="post-taxonomy" href="https://parkman.top/en/tags/plot/">plot</a><a class="post-taxonomy" href="https://parkman.top/en/tags/hr/">HR</a><a class="post-taxonomy" href="https://parkman.top/en/tags/tb/">TB</a></span>
 </div>
-<div class="post-share mb-3"><div class="addthis_inline_share_toolbox"></div></div><div class="post-content mb-3"><p><a href="https://gitee.com/tcmp/vasplib/blob/master/bin/HR.m#L1" rel="noopener noreferrer" target="_blank"><strong>vasplib:HR</strong></a>
+<div class="post-share mb-3"><div class="addthis_inline_share_toolbox"></div></div><div aria-labelledby="offcanvasTOCLabel" class="offcanvas offcanvas-end surface" id="offcanvasTOC" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="offcanvasTOCLabel">Table Of Contents</h5>
+<a aria-label="Close" data-bs-dismiss="offcanvas" role="button">
+<span class="fas fa-2x fa-fw fa-times"></span>
+</a>
+</div>
+<div class="offcanvas-body">
+<nav id="TableOfContents">
+<ul>
+<li><a href="#quickstart">Quickstart</a>
+<ul>
+<li><a href="#构建一个hr-读取wannier90_hrdat">构建一个HR 读取wannier90_hr.dat</a></li>
+<li><a href="#当然可以很快地锁定hopping项-常用的homecell的矩阵"><strong>当然可以很快地锁定HOPPING项, 常用的HOMECELL的矩阵</strong></a></li>
+</ul>
+</li>
+<li><a href="#手动构建hr">手动构建HR</a>
+<ul>
+<li><a href="#声明一个空的hr">声明一个空的HR</a></li>
+<li><a href="#设置符号化变量">设置符号化变量</a></li>
+<li><a href="#通过-set_hop-方法来设定-hopping">通过 set_hop 方法来设定 hopping</a></li>
+</ul>
+</li>
+<li><a href="#自动构建hr">自动构建HR</a>
+<ul>
+<li><a href="#slater-koster">Slater Koster</a></li>
+<li><a href="#通过对称性构建">通过对称性构建</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</div><div class="post-content mb-3"><p><a href="https://gitee.com/tcmp/vasplib/blob/master/bin/HR.m#L1" rel="noopener noreferrer" target="_blank"><strong>vasplib:HR</strong></a>
 HR - a powerful TB tools</p>
-<div class="hugo-encryptor-container">
-<div class="hugo-encryptor-prompt">
-<p>文章的部分内容被密码保护：</p>
+<h1 id="hr-class-入门">HR class 入门</h1>
+<p>HR - a powerful TB tools</p>
+<h1 id="什么是-hr">什么是 HR?</h1>
+<p>In <a href="https://en.wikipedia.org/wiki/Solid-state_physics" rel="noopener noreferrer" target="_blank">solid-state physics</a>
+, the <strong>tight-binding model</strong> (or <strong>TB model</strong>) is an approach to the calculation of <a href="https://en.wikipedia.org/wiki/Electronic_band_structure" rel="noopener noreferrer" target="_blank">electronic band structure</a>
+using an approximate set of <a href="https://en.wikipedia.org/wiki/Wave_function" rel="noopener noreferrer" target="_blank">wave functions</a>
+based upon <a href="https://en.wikipedia.org/wiki/Quantum_superposition" rel="noopener noreferrer" target="_blank">superposition</a>
+of wave functions for isolated <a href="https://en.wikipedia.org/wiki/Atom" rel="noopener noreferrer" target="_blank">atoms</a>
+located at each atomic site.</p>
+<p>$$
+\begin{array}{l}
+H=-t\sum_{\langle i,j\rangle ,\sigma } \left(c_{i,\sigma }^{\dagger } c_{j,\sigma } +h.c.\right)\newline
+c_{i\sigma }^{\dagger } ,c_{j\sigma } \textrm{-} \textrm{creation}\textrm{and}\textrm{annihilation}\textrm{operators}\newline
+\sigma \textrm{-}\textrm{spin}\textrm{polarization}\newline
+t\textrm{-}\textrm{hopping}\textrm{integral}\newline
+\langle i,j\rangle -\textrm{nearest}\textrm{neighbor}\textrm{index}\newline
+h.c.\textrm{-}\textrm{the}\textrm{hermitian}\textrm{conjugate}\textrm{of}\textrm{the}\textrm{other}\textrm{term(s)}
+\end{array}
+$$</p>
+<p>考虑有平移对称性的体系，我们可以只需要考虑元胞与其他晶胞(包括元胞)的相互作用，则可以研究整个体系的物理性质。</p>
+<p>以 SSH 模型为例</p>
+<p><img alt="" class="img-fluid" loading="lazy" src="https://i.loli.net/2021/09/08/qct948UdklvyOwn.png"/>
+</p>
+<p>一个元胞里有两个C 元胞内为双键 元胞外为单键，用v 和 w 来代替</p>
+<p><img alt="" class="img-fluid" loading="lazy" src="https://i.loli.net/2021/09/08/IMrsKnkeQbXhzfm.png"/>
+</p>
+<p>上图 有10 个元胞，省空间我们认为只有5个元胞，用哈密顿量用矩阵表示即为</p>
+<p><img alt="" class="img-fluid" loading="lazy" src="https://i.loli.net/2021/09/08/nK4R2M3wha5cNl8.png"/>
+</p>
+<p>如果加上周期平移条件，即第五个元胞和第一个元胞有相互作用,则需要添上两个蓝色的 元胞间相互作用</p>
+<p>这么一个体系可以任意扩写，遵从一定的规律， 即绿框的对角块都是一样的，元胞与元胞之间的Hopping块，依次放在对角块的两边，且满足厄米对称性。</p>
+<p><img alt="" class="img-fluid" loading="lazy" src="https://i.loli.net/2021/09/08/zJ5cRHCjylbq1DX.png"/>
+<img alt="" class="img-fluid" loading="lazy" src="https://i.loli.net/2021/09/08/QNiueWXFgUTdt8r.png"/>
+</p>
+<p>则体系可以用 格点与元胞之间的矩阵所描述，借助于 wannier90: case_hr.dat的输出格式</p>
+<p>hr_datformat:</p>
+<pre><code>0 0 0 [0 v;v 0]  
+1 0 0 [0 0;w 0]   
+-1 0 0 [0 w;0 0]  
+...
+</code></pre>
+<p>了解了什么是<strong>HR</strong>后，我们就可以开始我们的HR入门之旅了。</p>
+<h1 id="构建hr">构建HR</h1>
+<h2 id="quickstart">Quickstart</h2>
+<h3 id="构建一个hr-读取wannier90_hrdat">构建一个HR 读取wannier90_hr.dat</h3>
+<div class="highlight"><pre class="chroma" tabindex="0"><code class="language-matlab" data-lang="matlab"><span class="ln">1</span><span class="n">HR_TB</span> <span class="p">=</span> <span class="n">HR</span><span class="p">.</span><span class="n">from_wannier90</span><span class="p">(</span><span class="s">'wannier90_hr.dat'</span><span class="p">)</span>
+</code></pre></div><details><summary>Result</summary>
+<div class="markdown-inner">
+<p>HR_TB =
+HR - 属性:</p>
+<pre><code>    vectorL: [185x3 double]
+      HnumL: [6x6x185 double]
+      HcoeL: [6x6x185 sym]
+      NRPTS: 185
+    WAN_NUM: 6
+   Line_000: 93
+  Basis_num: []
+         Rm: [3x3 double]
+         Gk: [3x3 double]
+symvar_list: [1x0 sym]
+</code></pre>
 </div>
-<div class="hugo-encryptor-form">
-<input class="hugo-encryptor-input" placeholder="请输入密码"/>
-<input class="hugo-encryptor-button" onclick="_click_handler(this)" type="button" value="点击验证"/>
+</details>
+<p>我们读取了一个 wannier90 生成的一个TB模型</p>
+<p>简单看来，这个HR对象 拥有几个基本的属性，<strong>vectorL, HnumL, HcoeL, NRPTS, WAN_NUM,Rm,Gk</strong></p>
+<p><em>Bais_num</em> 在这里等效于<em>WAN_NUM</em>,* symvar_list* 先不用管，</p>
+<ul>
+<li>vectorL: 格点的位置HR中的R</li>
+<li>HnumL：R所对应的与元胞的hopping矩阵，数值化的</li>
+<li>HcoeL：HR的一大特点很多方法同时支持符号和数值的哈密顿量，同时设定HcoeL也方便我们后续的操作与调试。在这里读取的是wannier，HcoeL为0</li>
+<li>NRPTS：有多少格点，往往 读取wannier的结果NRPTS比较大 自己做的模型往往只考虑最近邻模型</li>
+<li>WAN_NUM: 元胞中的轨道数量</li>
+<li>Rm: 元胞的基失矩阵</li>
+<li>Gk: 相应的 倒格式矩阵，<code>Gk = 2*pi*(eye(3)/Rm).'</code></li>
+</ul>
+<h3 id="当然可以很快地锁定hopping项-常用的homecell的矩阵"><strong>当然可以很快地锁定HOPPING项, 常用的HOMECELL的矩阵</strong></h3>
+<div class="highlight"><pre class="chroma" tabindex="0"><code class="language-matlab" data-lang="matlab"><span class="ln">1</span><span class="n">HR_TB</span><span class="p">.</span><span class="n">HnumL</span><span class="p">(:,:,</span><span class="n">HR_TB</span><span class="p">.</span><span class="n">Line_000</span><span class="p">)</span>
+</code></pre></div><details><summary>Result</summary>
+<div class="markdown-inner">
+<p>ans = 6x6</p>
+<pre><code> 1.1466    0.1710         0         0   -0.1335         0  
+ 0.1710   -1.3207         0         0   -0.2709         0  
+     0         0    1.1466    0.1710         0    0.1335  
+     0         0    0.1710   -1.3207         0    0.2709  
+-0.1335   -0.2709         0         0    4.3787         0  
+     0         0    0.1335    0.2709         0    4.3787  
+</code></pre>
 </div>
-<div class="hugo-encryptor-cipher-text" style="display:none">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</div>
-</div></div><div aria-hidden="true" aria-labelledby="rewardModalLabel" class="modal fade" id="rewardModal" tabindex="-1">
+</details>
+<h2 id="手动构建hr">手动构建HR</h2>
+<h3 id="声明一个空的hr">声明一个空的HR</h3>
+<p>这里我们手动来定义SSH的</p>
+<div class="highlight"><pre class="chroma" tabindex="0"><code class="language-matlab" data-lang="matlab"><span class="ln">1</span><span class="n">WAN_NUM</span> <span class="p">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="ln">2</span><span class="n">HR_TB</span> <span class="p">=</span> <span class="n">HR</span><span class="p">(</span><span class="n">WAN_NUM</span><span class="p">)</span>
+</code></pre></div><details><summary>Result</summary>
+<div class="markdown-inner">
+<p>HR_TB =
+HR - 属性:</p>
+<pre><code>    vectorL: [0 0 0]
+      HnumL: [2x2 double]
+      HcoeL: [2x2 sym]
+      NRPTS: 1
+    WAN_NUM: 2
+   Line_000: 1
+  Basis_num: []
+         Rm: [3x3 double]
+         Gk: [3x3 double]
+symvar_list: [1x0 sym]
+</code></pre>
+</div>
+</details>
+<p>在没有引入晶格信息之前，HR的默认<code>Rm</code> 为 <code>eye(1)</code></p>
+<h3 id="设置符号化变量">设置符号化变量</h3>
+<div class="highlight"><pre class="chroma" tabindex="0"><code class="language-matlab" data-lang="matlab"><span class="ln">1</span><span class="n">syms</span> <span class="n">v</span> <span class="n">w</span> <span class="nb">real</span>
+</code></pre></div><h3 id="通过-set_hop-方法来设定-hopping">通过 set_hop 方法来设定 hopping</h3>
+<p><code>H_hr = H_hr.set_hop(amp,hi,hj,vector_list,mode)</code></p>
+<div class="highlight"><pre class="chroma" tabindex="0"><code class="language-matlab" data-lang="matlab"><span class="ln">1</span> <span class="n">HR_TB</span> <span class="p">=</span> <span class="n">HR_TB</span><span class="p">.</span><span class="n">set_hop</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="s">'sym'</span><span class="p">);</span>
+<span class="ln">2</span> <span class="n">HR_TB</span> <span class="p">=</span> <span class="n">HR_TB</span><span class="p">.</span><span class="n">set_hop</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="s">'sym'</span><span class="p">);</span>
+<span class="ln">3</span> <span class="n">HR_TB</span> <span class="p">=</span> <span class="n">HR_TB</span><span class="p">.</span><span class="n">set_hop</span><span class="p">(</span><span class="n">w</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="s">'sym'</span><span class="p">);</span>
+<span class="ln">4</span> <span class="n">HR_TB</span> <span class="p">=</span> <span class="n">HR_TB</span><span class="p">.</span><span class="n">set_hop</span><span class="p">(</span><span class="n">w</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="s">'sym'</span><span class="p">);</span>
+</code></pre></div><p><strong>导入POSCAR的信息</strong>,（vasplib中大部分的输入输出文件都是仿照VASP的格式）
+格式详解见</p>
+<blockquote>
+<p><em>POSCAR_SSH</em><br/>
+1.0<br/>
+3 0.0000000000 0.0000000000<br/>
+0 3 0.0000000000<br/>
+0.0000000000 0.0000000000 20.0000000000<br/>
+C Si<br/>
+1 1<br/>
+Direct<br/>
+0.25 0.25 0.5<br/>
+0.75 0.75 0.5</p>
+</blockquote>
+<p><strong>Vesta 中可以看到</strong></p>
+<p><img alt="" class="img-fluid" loading="lazy" src="https://i.loli.net/2021/09/08/mBQnlYfyqupLr94.png"/>
+</p>
+<div class="highlight"><pre class="chroma" tabindex="0"><code class="language-matlab" data-lang="matlab"><span class="ln">1</span> <span class="n">HR_TB</span> <span class="p">=</span> <span class="n">HR_TB</span> <span class="o">&lt;</span><span class="p">=</span> <span class="s">'POSCAR_SSH'</span><span class="p">;</span>
+</code></pre></div><p>我们也可以用matlab简单看下（TEST）</p>
+<p><img alt="" class="img-fluid" loading="lazy" src="https://i.loli.net/2021/09/08/mBQnlYfyqupLr94.png"/>
+</p>
+<div class="highlight"><pre class="chroma" tabindex="0"><code class="language-matlab" data-lang="matlab"><span class="ln">1</span><span class="n">HR_TB</span><span class="p">.</span><span class="n">show</span><span class="p">(</span><span class="s">'HOPPING'</span><span class="p">,</span><span class="s">'TwoD'</span><span class="p">,</span><span class="n">true</span><span class="p">);</span>
+</code></pre></div><h2 id="自动构建hr">自动构建HR</h2>
+<h3 id="slater-koster">Slater Koster</h3>
+<p>之前已经介绍过Slater Koster方法，HR支持自动SlaterKoster型的TB构建.</p>
+<h3 id="通过对称性构建">通过对称性构建</h3>
+<p>只要写出对称的矩阵表示，就可以构建包含在对称性允许下所有可能项的HR.</p></div><div aria-hidden="true" aria-labelledby="rewardModalLabel" class="modal fade" id="rewardModal" tabindex="-1">
 <div class="modal-dialog">
 <div class="modal-content surface">
 <div class="modal-header">
@@ -303,7 +474,7 @@ Emoji <span class="badge rounded-pill">1</span>
 </a></li></ul>
 </section></div>
 </aside>
-<h5 id="wc" style="font-size:1rem;text-align:center">300 Words|This article has been read <span id="busuanzi_value_page_pv"></span> times</h5>
+<h5 id="wc" style="font-size:1rem;text-align:center">400 Words|This article has been read <span id="busuanzi_value_page_pv"></span> times</h5>
 <style type="text/css">.myfriends{text-align:center;background-color:#fff;opacity:.9}.myfriends a{color:#000}.myfriends p{display:none}.friendurl{text-decoration:none!important;color:#000}.myfriend{width:56px!important;height:56px!important;border-radius:50%;border:1px solid #ddd;padding:2px;box-shadow:1px 1px 1px rgba(0,0,0,.15);margin-top:14px!important;margin-left:14px!important;background-color:#fff}.frienddiv{height:92px;margin-top:10px;width:48%;display:inline-block!important}.frienddiv:hover{background:rgba(87,142,224,.15)}.frienddiv:hover .frienddivleft img{transition:.9s!important;-webkit-transition:.9s!important;-moz-transition:.9s!important;-o-transition:.9s!important;-ms-transition:.9s!important;transform:rotate(360deg)!important;-webkit-transform:rotate(360deg)!important;-moz-transform:rotate(360deg)!important;-o-transform:rotate(360deg)!important;-ms-transform:rotate(360deg)!important}.frienddivleft{width:92px;float:left}.frienddivleft{margin-right:2px}.frienddivright{margin-top:18px;margin-right:18px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap}</style>
 </div>
 </main><footer class="footer mt-auto py-3 text-center container"><nav class="social-links nav my-2 justify-content-center"><a class="nav-link social-link" href="https://space.bilibili.com/72389145" rel="noopener noreferrer" target="_blank" title="bilibili">
@@ -334,5 +505,5 @@ Copyright © 2021-2021 Xu-Tao Zeng. All Rights Reserved.
 <a class="btn-scroll-to-top" id="btnScrollToTop">
 <i class="fas fa-fw fa-chevron-circle-up fa-2x"></i>
 </a>
-<script async="" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6130842d8572b712"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script><script src="/decrypt.js"></script></body>
+<script async="" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6130842d8572b712"></script></body>
 </html>
