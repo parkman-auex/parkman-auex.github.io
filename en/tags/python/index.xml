@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>python on parkman</title><link>https://parkman.top/en/tags/python/</link><description>Recent content in python on parkman</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Copyright © 2021-{year} Xu-Tao Zeng. All Rights Reserved.</copyright><lastBuildDate>Wed, 15 Sep 2021 18:20:31 +0800</lastBuildDate><atom:link href="https://parkman.top/en/tags/python/index.xml" rel="self" type="application/rss+xml"/><item><title>不确定性量化方法学习</title><link>https://parkman.top/en/posts/lectures/uncertaintyquantification/</link><pubDate>Wed, 15 Sep 2021 18:20:31 +0800</pubDate><guid>https://parkman.top/en/posts/lectures/uncertaintyquantification/</guid><description>&lt;ul>
+&lt;li>线性模型、神经网络、核方法、图模型和近似推断
+等机器学习方法&lt;/li>
+&lt;li>介绍蒙特卡洛、广义多项式混沌、PDF/CDF方法、数据
+同化等不确定性量化方法&lt;/li>
+&lt;li>熟练掌握这些方法的数值实现和计算机建模&lt;/li>
+&lt;/ul></description></item></channel></rss>
