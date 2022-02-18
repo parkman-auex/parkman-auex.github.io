@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>陈数！自旋陈数！镜陈数！谷陈数！ - parkman</title><link href="https://parkman.top/images/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="https://parkman.top/images/favicons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://parkman.top/images/favicons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://parkman.top/images/favicons/manifest.json" rel="manifest"/>
+<link href="https://parkman.top/images/favicons/favicon.ico" rel="icon"/>
+<meta content="" name="keywords"/>
+<meta content="陈数计算方法" name="description"/><meta content="陈数！自旋陈数！镜陈数！谷陈数！" itemprop="name"/>
+<meta content="陈数计算方法" itemprop="description"/><meta content="2022-02-10T17:20:31+08:00" itemprop="datePublished"/>
+<meta content="2022-02-10T17:20:31+08:00" itemprop="dateModified"/>
+<meta content="1034" itemprop="wordCount"/>
+<meta content="vasplib," itemprop="keywords"/><meta content="陈数！自旋陈数！镜陈数！谷陈数！" property="og:title"/>
+<meta content="陈数计算方法" property="og:description"/>
+<meta content="article" property="og:type"/>
+<meta content="https://parkman.top/en/posts/berryphase/chern/" property="og:url"/><meta content="posts" property="article:section"/>
+<meta content="2022-02-10T17:20:31+08:00" property="article:published_time"/>
+<meta content="2022-02-10T17:20:31+08:00" property="article:modified_time"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="陈数！自旋陈数！镜陈数！谷陈数！" name="twitter:title"/>
+<meta content="陈数计算方法" name="twitter:description"/>
+<meta content="red" data-name="palette"/><link as="style" crossorigin="anonymous" href="https://parkman.top/css/bundle.min.a23cb7a4fbae89dc78de2a936152a28a0cfd8a2d4763f0b1a6b59ac478b721f8.css" integrity="sha256-ojy3pPuuidx43iqTYVKiigz9ii1HY/CxprWaxHi3Ifg=" onload="this.rel='stylesheet'" rel="preload"/>
+<noscript><link crossorigin="anonymous" href="https://parkman.top/css/bundle.min.a23cb7a4fbae89dc78de2a936152a28a0cfd8a2d4763f0b1a6b59ac478b721f8.css" integrity="sha256-ojy3pPuuidx43iqTYVKiigz9ii1HY/CxprWaxHi3Ifg=" rel="stylesheet"/></noscript><script crossorigin="anonymous" integrity="sha256-4OlJZ2TE425HefrP2HN27OJADK9DDAWfa1iV8w9i51M=" src="https://parkman.top/js/bundle.min.e0e9496764c4e36e4779facfd87376ece2400caf430c059f6b5895f30f62e753.js"></script><script crossorigin="anonymous" defer="" integrity="sha256-Z1pUyhi9q+5YyORYyFGWkX4Els4aW2+VtrnLcNAf4dg=" src="https://parkman.top/js/katex.675a54ca18bdabee58c8e458c85196917e0496ce1a5b6f95b6b9cb70d01fe1d8.js"></script>
+<script type="application/javascript">var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-206544824-1','auto'),ga('send','pageview'))</script>
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<link crossorigin="anonymous" href="https://parkman.top/css/tabbed-pane.css" rel="stylesheet"/><script crossorigin="anonymous" src="https://parkman.top/js/tabpane-persist.js"></script><script crossorigin="anonymous" src="https://parkman.top/js/typeit.min.js"></script><script crossorigin="anonymous" src="https://parkman.top/js/echarts.min.js"></script><script crossorigin="anonymous" src="https://parkman.top/js/macarons.js"></script><script crossorigin="anonymous" src="https://parkman.top/js/decrypt.js"></script>
+<script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>$(document).ready(function(){var a=setInterval(c,100),b=0;function c(){$("#busuanzi_container_site_pv").css("display")!="none"&&(clearInterval(a),$("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html())+b))}})</script>
+</head><body><header><nav class="navbar navbar-expand-xl fixed-top">
+<div class="container">
+<a class="navbar-brand" href="https://parkman.top/en/">
+<img alt="Logo" class="logo" height="2409" loading="lazy" src="https://parkman.top/images/logo.png" width="2409"/>
+PARKMAN</a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav me-1 mb-2 mb-lg-0"></ul><form action="https://parkman.top/en/search" class="search-bar d-flex ms-1">
+<div class="input-group input-group-sm">
+<button aria-label="submit" class="btn btn-search disabled position-absolute left-0" type="submit"><i class="fas fa-fw fa-search"></i></button>
+<input aria-label="Search" class="form-control rounded-pill" id="searchQuery" name="q" type="search"/>
+</div>
+</form><ul class="navbar-nav me-1 mb-2 mb-lg-0 me-1 ms-auto">
+<li class="nav-item">
+<a class="nav-link" href="https://parkman.top/en/archives/">
+<i class="fas fa-fw fa-file-archive"></i>Archives
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://parkman.top/en/categories/">
+<i class="fas fa-fw fa-folder"></i>Categories
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://parkman.top/en/tags/">
+<i class="fas fa-fw fa-tags"></i>Tags
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://parkman.top/en/series/">
+<i class="fas fa-fw fa-columns"></i>Series
+</a>
+</li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" class="nav-link" data-bs-toggle="dropdown" id="navbarDropdown-dropdown" role="button">
+<i class="fas fa-fw fa-chevron-circle-down"></i>Dropdown
+</a>
+<ul aria-labelledby="navbarDropdown-dropdown" class="dropdown-menu"><li>
+<a class="dropdown-item" href="https://github.com/razonyang/hugo-theme-bootstrap" rel="noopener noreferrer" target="_blank">
+<i class="fab fa-fw fa-github"></i>Github
+</a>
+</li></ul>
+</li><li class="nav-item dropdown">
+<a aria-expanded="false" class="nav-link" data-bs-toggle="dropdown" href="#" id="languageDropdown" role="button">
+<i class="fas fa-fw fa-language"></i> English
+</a>
+<ul aria-labelledby="languageDropdown" class="dropdown-menu"><li><a class="dropdown-item" href="https://parkman.top/zh-cn/">简体中文</a></li></ul>
+</li>
+<li class="nav-item">
+<a aria-controls="offcanvasSettings" class="nav-link" data-bs-toggle="offcanvas" href="#offcanvasSettings" role="button">
+<i class="fas fa-fw fa-sliders-h"></i> Settings
+</a>
+</li>
+<div aria-labelledby="offcanvasSettingsLabel" class="offcanvas offcanvas-end surface h-100" id="offcanvasSettings" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="offcanvasSettingsLabel" w=""><i class="fas fa-fw fa-sliders-h"></i> Settings</h5>
+<a aria-label="Close" data-bs-dismiss="offcanvas" role="button">
+<span class="fas fa-2x fa-fw fa-times"></span>
+</a>
+</div>
+<div class="offcanvas-body"><section class="setting">
+<form class="row">
+<div class="col-auto">
+<label><i class="fas fa-fw fa-adjust"></i> Mode</label>
+</div>
+<div class="col-auto ms-auto">
+<div class="form-check form-switch">
+<input class="form-check-input" id="modeSwitcher" type="checkbox"/>
+</div>
+</div>
+</form>
+</section>
+<section class="setting">
+<form class="font-size-switcher-form row">
+<div class="col-auto">
+<label class="form-label" for="fontSize"><i class="fas fa-fw fa-font"></i> Font Size</label>
+</div>
+<div class="col-auto ms-auto">
+<input class="form-range" id="fontSize" max="2" min="-2" type="range"/>
+</div>
+</form>
+</section>
+<section class="setting palettes">
+<form class="row">
+<div class="col-auto">
+<label><i class="fas fa-fw fa-palette"></i> Palette</label>
+</div>
+<div class="col-auto ms-auto">
+<span class="btn btn-sm" id="btnPalette"><i class="fas fa-eye-dropper"></i></span>
+</div>
+</form>
+<div class="container mt-2 visually-hidden" id="palettePicker">
+<div class="btn-group"><button class="btn btn-sm palette bg-blue d-flex align-items-center justify-content-center" id="palette-blue" title="Blue" type="button">
+</button><button class="btn btn-sm palette bg-blue-gray d-flex align-items-center justify-content-center" id="palette-blue-gray" title="Blue Gray" type="button">
+</button><button class="btn btn-sm palette bg-brown d-flex align-items-center justify-content-center" id="palette-brown" title="Brown" type="button">
+</button><button class="btn btn-sm palette bg-cyan d-flex align-items-center justify-content-center" id="palette-cyan" title="Cyan" type="button">
+</button><button class="btn btn-sm palette bg-green d-flex align-items-center justify-content-center" id="palette-green" title="Green" type="button">
+</button><button class="btn btn-sm palette bg-indigo d-flex align-items-center justify-content-center" id="palette-indigo" title="Indigo" type="button">
+</button><button class="btn btn-sm palette bg-orange d-flex align-items-center justify-content-center" id="palette-orange" title="Orange" type="button">
+</button><button class="btn btn-sm palette bg-pink d-flex align-items-center justify-content-center" id="palette-pink" title="Pink" type="button">
+</button><button class="btn btn-sm palette bg-purple d-flex align-items-center justify-content-center" id="palette-purple" title="Purple" type="button">
+</button><button class="btn btn-sm palette bg-red d-flex align-items-center justify-content-center" id="palette-red" title="Red" type="button">
+</button><button class="btn btn-sm palette bg-teal d-flex align-items-center justify-content-center" id="palette-teal" title="Teal" type="button">
+</button><button class="btn btn-sm palette bg-yellow d-flex align-items-center justify-content-center" id="palette-yellow" title="Yellow" type="button">
+</button>
+</div>
+</div>
+</section></div>
+</div>
+</ul>
+</div>
+</div>
+</nav>
+</header>
+<main class="container" role="main">
+<div class="row content">
+<div class="col-lg-8">
+<div class="container"><nav aria-label="breadcrumb" class="row">
+<ol class="breadcrumb surface"><li class="breadcrumb-item"><a href="https://parkman.top/en/">Home</a></li><li class="breadcrumb-item"><a href="https://parkman.top/en/posts/">Posts</a></li><li class="breadcrumb-item active">陈数！自旋陈数！镜陈数！谷陈数！</li></ol>
+</nav><article class="post row surface"><div class="post-panel-wrapper">
+<div class="post-panel d-flex flex-column">
+<a class="action d-none d-lg-block" id="sidebarToggler" role="button">
+<i class="fas fa-fw fa-expand-alt fa-rotate-45"></i>
+</a>
+<a class="action btn-reward" data-bs-target="#rewardModal" data-bs-toggle="modal" role="button" title="Reward">
+<i class="fas fa-fw fa-medal"></i>
+</a>
+<a class="action" data-bs-container="body" data-bs-content='&lt;a target="_blank" rel="license noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en"&gt;CC BY-NC-ND 4.0 &lt;i class="fab fa-fw fa-creative-commons"&gt;&lt;/i&gt;&lt;i class="fab fa-fw fa-creative-commons-by"&gt;&lt;/i&gt;&lt;i class="fab fa-fw fa-creative-commons-nc"&gt;&lt;/i&gt;&lt;i class="fab fa-fw fa-creative-commons-nd"&gt;&lt;/i&gt;&lt;/a&gt;
+' data-bs-html="true" data-bs-placement="bottom" data-bs-toggle="popover" data-bs-trigger="focus" tabindex="0">
+<i class="fas fa-fw fa-copyright"></i>
+</a>
+<a aria-controls="offcanvasTOC" class="fas fa-fw fa-list-alt" data-bs-toggle="offcanvas" href="#offcanvasTOC" id="btnTOC" role="button">
+</a>
+</div>
+</div>
+<h1 class="post-title my-3">陈数！自旋陈数！镜陈数！谷陈数！
+</h1><div class="post-meta mb-3"><span class="post-date me-2">
+<i class="fas fa-fw fa-calendar-alt"></i>Feb 10, 2022
+</span><span class="post-reading-time me-2">
+<i class="fas fa-fw fa-coffee"></i>5 min read
+</span><span class="post-taxonomies"><a class="post-taxonomy" href="https://parkman.top/en/series/%E5%8D%8A%E7%BB%8F%E5%85%B8%E5%AD%A6%E4%B9%A0/">半经典学习</a><a class="post-taxonomy" href="https://parkman.top/en/tags/vasplib/">vasplib</a></span>
+</div>
+<div class="post-share mb-3"><div class="addthis_inline_share_toolbox"></div></div><div aria-labelledby="offcanvasTOCLabel" class="offcanvas offcanvas-end surface" id="offcanvasTOC" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="offcanvasTOCLabel">Table Of Contents</h5>
+<a aria-label="Close" data-bs-dismiss="offcanvas" role="button">
+<span class="fas fa-2x fa-fw fa-times"></span>
+</a>
+</div>
+<div class="offcanvas-body">
+<nav id="TableOfContents">
+<ul>
+<li><a href="#陈数高效法多带模型">陈数高效法多带模型</a></li>
+<li><a href="#direct">direct</a></li>
+<li><a href="#example">Example</a>
+<ul>
+<li><a href="#haldane模型">Haldane模型</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><a href="#spin-chern-number">Spin Chern Number</a>
+<ul>
+<li><a href="#bhz-2d">BHZ 2D</a></li>
+</ul>
+</li>
+<li><a href="#mirror-chern-number3">Mirror Chern Number</a></li>
+</ul>
+</nav>
+</div>
+</div><div class="post-content mb-3"><p>陈数计算方法高效法！自旋陈数等sub-band 陈数的计算实例！</p>
+<h1 id="陈数计算高效法">陈数计算高效法</h1>
+<p>中文名称来源于关老师的<a href="https://www.guanjihuan.com/archives/4179" rel="noopener noreferrer" target="_blank">博客</a>
+参考文献-<a href="https://journals.jps.jp/doi/10.1143/JPSJ.74.1674" rel="noopener noreferrer" target="_blank"><em>Chern Numbers in Discretized Brillouin Zone: Efficient Method of Computing (Spin) Hall Conductances</em></a>
+<sup id="fnref:1"><a class="footnote-ref" href="#fn:1" role="doc-noteref">1</a></sup></p>
+<p>核心要点在于把二维布里渊区分成很多小份，每一份通过计算贝里联络来计算贝里曲率</p>
+<p>Ref.1<sup id="fnref:1"><a class="footnote-ref" href="#fn:1" role="doc-noteref">1</a></sup> 把计算要点说的很明确,</p>
+<ul>
+<li>定义 U(1) link variable: $U_{\mu}\left(k_{\ell}\right) \equiv\left\langle n\left(k_{\ell}\right) \mid n\left(k_{\ell}+\hat{\mu}\right)\right\rangle / \mathcal{N}<em>{\mu}\left(k</em>{\ell}\right)$, where $\mathcal{N}<em>{u}\left(k</em>{\ell}\right) \equiv\left|\left\langle n\left(k_{\ell}\right) \mid n\left(k_{\ell}+\hat{\mu}\right)\right\rangle\right|$</li>
+<li>定义 lattice field strength $F_{12}$(原通过贝里联络定义$F_{12}(k)=\partial_{1} A_{2}(k)-\partial_{2} A_{1}(k)$, 通过定义我们知道这实质就是贝里曲率，又称Berry Flux，这点不是很确定 随后再说): $\tilde{F}<em>{12}\left(k</em>{\ell}\right) \equiv \ln U_{1}\left(k_{\ell}\right) U_{2}\left(k_{\ell}+\hat{1}\right) U_{1}\left(k_{\ell}+\hat{2}\right)^{-1} U_{2}\left(k_{\ell}\right)^{-1}$</li>
+<li>最后 $\tilde{\boldsymbol{c}}_{n} \equiv \frac{1}{2 \pi \mathrm{i}} \sum_{\ell} \tilde{\boldsymbol{F}}_{12}\left(k_{\ell}\right)$</li>
+</ul>
+<p>核心算法:</p>
+<div class="highlight"><pre class="chroma" tabindex="0"><code class="language-matlab" data-lang="matlab"><span class="ln"> 1</span><span class="k">        function</span><span class="w"> </span>BC <span class="p">=</span><span class="w"> </span><span class="nf">BerryCuvature_Discrete_2D</span><span class="p">(</span>VV,Vk1,Vk2,Vk1k2<span class="p">)</span><span class="w">
+</span><span class="ln"> 2</span><span class="w">            </span><span class="c">% VV    W_d_0;</span>
+<span class="ln"> 3</span>            <span class="c">% Vk1   W_d_1;  略偏离kx的波函数</span>
+<span class="ln"> 4</span>            <span class="c">% Vk2   W_d_2;  略偏离ky的波函数</span>
+<span class="ln"> 5</span>            <span class="c">% Vk1k2 W_d_12; 略偏离kx，ky的波函数</span>
+<span class="ln"> 6</span>            <span class="c">%</span>
+<span class="ln"> 7</span>            <span class="c">% U(1) like variable</span>
+<span class="ln"> 8</span>            <span class="n">Uk1</span> <span class="p">=</span> <span class="n">det</span><span class="p">(</span><span class="n">VV</span><span class="o">'*</span><span class="n">Vk1</span><span class="p">);</span><span class="n">Uk1</span> <span class="p">=</span> <span class="n">Uk1</span><span class="o">/</span><span class="n">norm</span><span class="p">(</span><span class="n">Uk1</span><span class="p">);</span>
+<span class="ln"> 9</span>            <span class="n">Uk2</span> <span class="p">=</span> <span class="n">det</span><span class="p">(</span><span class="n">VV</span><span class="o">'*</span><span class="n">Vk2</span><span class="p">);</span><span class="n">Uk2</span> <span class="p">=</span> <span class="n">Uk2</span><span class="o">/</span><span class="n">norm</span><span class="p">(</span><span class="n">Uk2</span><span class="p">);</span>
+<span class="ln">10</span>            <span class="n">Uk1_k2</span> <span class="p">=</span> <span class="n">det</span><span class="p">(</span><span class="n">Vk2</span><span class="o">'*</span><span class="n">Vk1k2</span><span class="p">);</span><span class="n">Uk1_k2</span> <span class="p">=</span> <span class="n">Uk1_k2</span><span class="o">/</span><span class="n">norm</span><span class="p">(</span><span class="n">Uk1_k2</span><span class="p">);</span>
+<span class="ln">11</span>            <span class="n">Uk2_k1</span> <span class="p">=</span> <span class="n">det</span><span class="p">(</span><span class="n">Vk1</span><span class="o">'*</span><span class="n">Vk1k2</span><span class="p">);</span><span class="n">Uk2_k1</span> <span class="p">=</span> <span class="n">Uk2_k1</span><span class="o">/</span><span class="n">norm</span><span class="p">(</span><span class="n">Uk2_k1</span><span class="p">);</span>
+<span class="ln">12</span>            <span class="c">% berry curvature</span>
+<span class="ln">13</span>            <span class="n">BC</span> <span class="p">=</span> <span class="nb">log</span><span class="p">(</span><span class="n">Uk1</span><span class="o">*</span><span class="n">Uk2_k1</span><span class="o">/</span><span class="p">(</span><span class="n">Uk1_k2</span><span class="o">*</span><span class="n">Uk2</span><span class="p">));</span>
+<span class="ln">14</span>            <span class="n">BC</span> <span class="p">=</span> <span class="nb">imag</span><span class="p">(</span><span class="n">BC</span><span class="p">);</span>
+<span class="ln">15</span>            <span class="n">BC</span> <span class="p">=</span> <span class="n">sum</span><span class="p">(</span><span class="n">BC</span><span class="p">);</span>
+<span class="ln">16</span>        <span class="k">end</span>
+</code></pre></div><h2 id="陈数高效法多带模型">陈数高效法多带模型</h2>
+<p>与前文一样，只需要推广 U(1) link variable:</p>
+<ul>
+<li>推广 U(1) link variable: $U_{\mu}\left(k_{\ell}\right)=\frac{1}{\mathcal{N}<em>{\mu}\left(k</em>{\ell}\right)} \operatorname{det} \psi^{\dagger}\left(k_{\ell}\right) \psi\left(k_{\ell}+\hat{\mu}\right)$ with the normalization constant $\mathcal{N}<em>{\mu}\left(k</em>{\ell}\right) \equiv \mid \operatorname{det} \psi^{\dagger}\left(k_{\ell}\right) \psi\left(k_{\ell}+\hat{\mu}\right)\mid$</li>
+</ul>
+<h2 id="direct">direct</h2>
+<p>所谓高效法似乎添加了一些额外计算，而<a href="https://topocondmat.org/w4_haldane/ComputingChern.html" rel="noopener noreferrer" target="_blank">Topocondmat</a>
+总结的方法也非常清楚，后续可以再试</p>
+<blockquote>
+<p>the final recipe to compute the Chern number is as follows:
+grid up the BZ into small plaquettes labelled by n</p>
+<p>$$\Phi_{n}=\operatorname{Arg}\left[\prod_{p} \operatorname{Det}\left[\left\langle u_{s}\left(\mathbf{k}<em>{\mathbf{n}, \mathbf{p}}\right) \mid \mathbf{u}</em>{\mathbf{s}^{\prime}}\left(\mathbf{k}<em>{\mathbf{n}, \mathbf{p}+\mathbf{1}}\right)\right\rangle\right]\right]$$
+Compute the flux through each plaquette
+where $\mathbf{k}</em>{\mathbf{n}, \mathbf{p}}$} are momenta on the corners of the lattice.
+The Chern number is calculated as $$v=(2 \pi)^{-1} \sum_{n} \Phi_{n}$$</p>
+</blockquote>
+<h2 id="example">Example</h2>
+<h3 id="haldane模型">Haldane模型</h3>
+<p>我们通过 vasplib的Htig类定义Haldane模型</p>
+<div class="highlight"><pre class="chroma" tabindex="0"><code class="language-matlab" data-lang="matlab"><span class="ln"> 1</span><span class="c">% Haldane</span>
+<span class="ln"> 2</span><span class="n">syms</span> <span class="n">h</span> <span class="n">theta</span> <span class="n">phi</span> <span class="nb">real</span><span class="p">;</span>
+<span class="ln"> 3</span><span class="c">%</span>
+<span class="ln"> 4</span><span class="c">% phi   = 0;</span>
+<span class="ln"> 5</span><span class="n">sigma_0</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">0</span><span class="p">;</span><span class="mi">0</span> <span class="mi">1</span><span class="p">];</span>
+<span class="ln"> 6</span><span class="n">sigma_x</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span> <span class="mi">1</span><span class="p">;</span><span class="mi">1</span> <span class="mi">0</span><span class="p">];</span>
+<span class="ln"> 7</span><span class="n">sigma_y</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span> <span class="o">-</span><span class="mi">1</span><span class="nb">i</span><span class="p">;</span><span class="mi">1</span><span class="nb">i</span> <span class="mi">0</span><span class="p">];</span>
+<span class="ln"> 8</span><span class="n">sigma_z</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">0</span><span class="p">;</span><span class="mi">0</span> <span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+<span class="ln"> 9</span><span class="c">%%</span>
+<span class="ln">10</span><span class="n">syms</span> <span class="n">a</span> <span class="n">t</span> <span class="n">t_2</span> <span class="n">M</span> <span class="n">phi</span> <span class="n">delta</span> <span class="n">k_x</span> <span class="n">k_y</span> <span class="nb">real</span><span class="p">;</span>
+<span class="ln">11</span><span class="c">%</span>
+<span class="ln">12</span><span class="c">%</span>
+<span class="ln">13</span><span class="n">Rm</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">0</span><span class="p">;</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span> <span class="nb">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">a</span><span class="p">;</span>
+<span class="ln">14</span><span class="n">Haldane</span><span class="p">=</span> <span class="n">Htrig</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="ln">15</span><span class="n">t1</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">]</span><span class="o">*</span><span class="n">a</span><span class="p">;</span>
+<span class="ln">16</span><span class="n">t2</span> <span class="p">=</span> <span class="p">[</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">]</span><span class="o">*</span><span class="n">a</span><span class="p">;</span>
+<span class="ln">17</span><span class="c">%</span>
+<span class="ln">18</span><span class="n">e1</span> <span class="p">=</span> <span class="n">t1</span><span class="o">-</span><span class="n">t2</span><span class="o">+</span><span class="p">[</span><span class="mi">0</span>  <span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">Rm</span><span class="p">;</span>
+<span class="ln">19</span><span class="n">e2</span> <span class="p">=</span> <span class="n">t1</span><span class="o">-</span><span class="n">t2</span><span class="o">+</span><span class="p">[</span><span class="mi">1</span>  <span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">Rm</span><span class="p">;</span>
+<span class="ln">20</span><span class="n">e3</span> <span class="p">=</span> <span class="n">t1</span><span class="o">-</span><span class="n">t2</span><span class="o">+</span><span class="p">[</span><span class="mi">0</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">Rm</span><span class="p">;</span>
+<span class="ln">21</span><span class="n">d1</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">Rm</span><span class="p">;</span>
+<span class="ln">22</span><span class="n">d2</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span> <span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">Rm</span><span class="p">;</span>
+<span class="ln">23</span><span class="n">d3</span> <span class="p">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">Rm</span><span class="p">;</span>
+<span class="ln">24</span><span class="c">% H12 = -t*(...</span>
+<span class="ln">25</span><span class="c">%     cos(e1*[k_x;k_y]) +cos(e2*[k_x;k_y])+cos(e3*[k_x;k_y])...</span>
+<span class="ln">26</span><span class="c">%     - ...</span>
+<span class="ln">27</span><span class="c">%     1i*sin(e1*[k_x;k_y]) +sin(e2*[k_x;k_y])+cos(e3*[k_x;k_y]));</span>
+<span class="ln">28</span><span class="c">% </span>
+<span class="ln">29</span><span class="c">% H21 = conj(H12);</span>
+<span class="ln">30</span><span class="n">H12trig_r</span> <span class="p">=</span> <span class="n">Trig</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="o">*</span><span class="p">(</span><span class="nb">cos</span><span class="p">(</span><span class="n">e1</span><span class="o">*</span><span class="p">[</span><span class="n">k_x</span><span class="p">;</span><span class="n">k_y</span><span class="p">])</span> <span class="o">+</span><span class="nb">cos</span><span class="p">(</span><span class="n">e2</span><span class="o">*</span><span class="p">[</span><span class="n">k_x</span><span class="p">;</span><span class="n">k_y</span><span class="p">])</span><span class="o">+</span><span class="nb">cos</span><span class="p">(</span><span class="n">e3</span><span class="o">*</span><span class="p">[</span><span class="n">k_x</span><span class="p">;</span><span class="n">k_y</span><span class="p">])),</span><span class="n">sigma_x</span><span class="p">);</span>
+<span class="ln">31</span><span class="n">H12trig_i</span> <span class="p">=</span> <span class="n">Trig</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="o">*</span><span class="p">(</span><span class="nb">sin</span><span class="p">(</span><span class="n">e1</span><span class="o">*</span><span class="p">[</span><span class="n">k_x</span><span class="p">;</span><span class="n">k_y</span><span class="p">])</span> <span class="o">+</span><span class="nb">sin</span><span class="p">(</span><span class="n">e2</span><span class="o">*</span><span class="p">[</span><span class="n">k_x</span><span class="p">;</span><span class="n">k_y</span><span class="p">])</span><span class="o">+</span><span class="nb">sin</span><span class="p">(</span><span class="n">e3</span><span class="o">*</span><span class="p">[</span><span class="n">k_x</span><span class="p">;</span><span class="n">k_y</span><span class="p">])),</span><span class="n">sigma_y</span><span class="p">);</span>
+<span class="ln">32</span><span class="n">H11_0</span> <span class="p">=</span> <span class="n">Trig</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">t_2</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="nb">cos</span><span class="p">(</span><span class="n">d1</span><span class="o">*</span><span class="p">[</span><span class="n">k_x</span><span class="p">;</span><span class="n">k_y</span><span class="p">])</span> <span class="o">+</span><span class="nb">cos</span><span class="p">(</span><span class="n">d2</span><span class="o">*</span><span class="p">[</span><span class="n">k_x</span><span class="p">;</span><span class="n">k_y</span><span class="p">])</span><span class="o">+</span><span class="nb">cos</span><span class="p">(</span><span class="n">d3</span><span class="o">*</span><span class="p">[</span><span class="n">k_x</span><span class="p">;</span><span class="n">k_y</span><span class="p">])),</span><span class="n">sigma_0</span><span class="p">);</span>
+<span class="ln">33</span><span class="n">H11_z</span> <span class="p">=</span> <span class="n">Trig</span><span class="p">((</span><span class="n">M</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">t_2</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="nb">sin</span><span class="p">(</span><span class="n">d1</span><span class="o">*</span><span class="p">[</span><span class="n">k_x</span><span class="p">;</span><span class="n">k_y</span><span class="p">])</span> <span class="o">+</span><span class="nb">sin</span><span class="p">(</span><span class="n">d2</span><span class="o">*</span><span class="p">[</span><span class="n">k_x</span><span class="p">;</span><span class="n">k_y</span><span class="p">])</span><span class="o">+</span><span class="nb">sin</span><span class="p">(</span><span class="n">d3</span><span class="o">*</span><span class="p">[</span><span class="n">k_x</span><span class="p">;</span><span class="n">k_y</span><span class="p">])),</span><span class="n">sigma_z</span><span class="p">);</span>
+<span class="ln">34</span><span class="n">a</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="ln">35</span><span class="c">%</span>
+<span class="ln">36</span><span class="n">Haldane</span><span class="p">=</span> <span class="n">Haldane</span><span class="o">+</span> <span class="n">H12trig_r</span> <span class="o">+</span> <span class="n">H12trig_i</span><span class="o">+</span> <span class="n">H11_0</span><span class="o">+</span> <span class="n">H11_z</span><span class="p">;</span>
+<span class="ln">37</span><span class="n">Haldane</span><span class="p">.</span><span class="n">Rm</span> <span class="p">=</span> <span class="n">double</span><span class="p">(</span><span class="n">subs</span><span class="p">(</span><span class="n">Rm</span><span class="p">));</span>
+<span class="ln">38</span><span class="nb">disp</span><span class="p">(</span><span class="n">Haldane</span><span class="p">);</span>
+</code></pre></div><p>Haldane 模型的体能带
+<img alt="" class="img-fluid" loading="lazy" src="https://s2.loli.net/2022/02/11/RULNu1ixXed8WTg.png"/>
+</p>
+<p>BerryCurvature
+<img alt="" class="img-fluid" loading="lazy" src="https://s2.loli.net/2022/02/11/34CaTzpSjYZeNxy.png"/>
+</p>
+<p>对BC求和: 陈数等于 -6.283185307179586/$2\pi$ = -1</p>
+<h1 id="individual-chern-numbers2">Individual Chern numbers<sup id="fnref:3"><a class="footnote-ref" href="#fn:3" role="doc-noteref">3</a></sup></h1>
+<p>In general, if the Hilbert space H of a given problem can be written as a sum of smooth Hilbert spaces,
+$$
+\mathscr{H}=\bigoplus_{i} \mathscr{H}_{i}
+$$
+then each of the Hilbert spaces has a well-defined Chern number $C_i$. These individual Chern numbers sum together to the Chern number of the full Hilbert space:
+$$C = \sum_i C_i$$</p>
+<p>In the presence of a symmetry S however, the Hilbert space can be split up according to the symmetry eigenvalues. For example, consider a mirror symmetry with eigenvalues $\pm i$. On the mirror-symmetric surface, S and H(k) commute. Therefore, the Bloch functions $|u_{n,k}⟩$ can be separated into +i and −i eigenstates. Both eigenspaces have a well- defined Chern number:
+$C = C_i +C_{−i}$.
+This gives rise to a symmetry-protected topological classification. Materials can have a zero total Chern number, but non-zero individual Chern numbers. Such a topological phase is protected as long as both the band gap remains open and the symmetry is respected. If the symmetry is broken, a mixing of the two eigenspaces can change the topological phase.</p>
+<h2 id="spin-chern-number">Spin Chern Number</h2>
+<p>Time-reversal symmetry $\mathcal{T}$ leads to a particularly interesting and well-known topological classification. It is an anti-unitary symmetry and squares to −1($\mathcal{T}^2 = -1$) in the spinful case. As a result, the Bloch functions come in so-called Kramers pairs:</p>
+<p>$$\begin{aligned}\mathcal{T}\left|u_{m, \mathbf{k}}^{I}\right\rangle &amp;=\left|u_{m, \mathbf{k}}^{I I}\right\rangle \\ \mathcal{T}\left|u_{m, \mathbf{k}}^{I I}\right\rangle &amp;=-\left|u_{m, \mathbf{k}}^{I}\right\rangle \end{aligned}$$</p>
+<p>The two groups then have individual Chern numbers $C_I$ and $C_II$. It should be noticed these chern numbers are not Gauge-invariant. Therefore, a topological invariant $Z_2$ can be defined as
+$C_I$ mod 2.</p>
+<h3 id="bhz-2d">BHZ 2D</h3>
+<p>定义 BHZ k·p 模型</p>
+<div class="highlight"><pre class="chroma" tabindex="0"><code class="language-matlab" data-lang="matlab"><span class="ln"> 1</span><span class="c">%% useful tool</span>
+<span class="ln"> 2</span><span class="n">s_0</span>   <span class="p">=</span> <span class="n">pauli_matric</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="p">;</span>  <span class="n">s_x</span> <span class="p">=</span> <span class="n">pauli_matric</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>  <span class="n">s_y</span> <span class="p">=</span>  <span class="n">pauli_matric</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="p">;</span>  <span class="n">s_z</span> <span class="p">=</span> <span class="n">pauli_matric</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="ln"> 3</span><span class="n">sigma_0</span> <span class="p">=</span> <span class="n">pauli_matric</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="n">sigma_x</span> <span class="p">=</span>  <span class="n">pauli_matric</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="n">sigma_y</span> <span class="p">=</span>  <span class="n">pauli_matric</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span><span class="n">sigma_z</span> <span class="p">=</span> <span class="n">pauli_matric</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="ln"> 4</span><span class="n">tau_0</span>   <span class="p">=</span> <span class="n">pauli_matric</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>  <span class="n">tau_x</span> <span class="p">=</span>  <span class="n">pauli_matric</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>  <span class="n">tau_y</span> <span class="p">=</span>  <span class="n">pauli_matric</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>  <span class="n">tau_z</span> <span class="p">=</span> <span class="n">pauli_matric</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="ln"> 5</span><span class="c">%k·p model</span>
+<span class="ln"> 6</span><span class="n">syms</span> <span class="n">C0</span> <span class="n">C1</span> <span class="n">C2</span> <span class="nb">real</span><span class="p">;</span>
+<span class="ln"> 7</span><span class="n">syms</span> <span class="n">M0</span> <span class="n">M1</span> <span class="n">M2</span> <span class="nb">real</span><span class="p">;</span>
+<span class="ln"> 8</span><span class="n">syms</span> <span class="n">A</span> <span class="n">B1</span> <span class="n">B2</span> <span class="nb">real</span><span class="p">;</span>
+<span class="ln"> 9</span><span class="n">syms</span> <span class="n">k_x</span> <span class="n">k_y</span> <span class="n">k_z</span> <span class="nb">real</span><span class="p">;</span>
+<span class="ln">10</span><span class="c">%</span>
+<span class="ln">11</span><span class="n">M</span>       <span class="p">=</span> <span class="n">M0</span><span class="o">-</span><span class="n">M2</span><span class="o">*</span><span class="p">(</span><span class="n">k_x</span>^<span class="mi">2</span><span class="o">+</span><span class="n">k_y</span>^<span class="mi">2</span><span class="p">);</span>
+<span class="ln">12</span><span class="n">E0k</span>     <span class="p">=</span> <span class="n">C0</span><span class="o">+</span><span class="n">C2</span><span class="o">*</span><span class="p">(</span><span class="n">k_x</span>^<span class="mi">2</span><span class="o">+</span><span class="n">k_y</span>^<span class="mi">2</span><span class="p">);</span>
+<span class="ln">13</span><span class="n">k_plus</span>  <span class="p">=</span> <span class="n">k_x</span> <span class="o">+</span> <span class="mi">1</span><span class="nb">i</span><span class="o">*</span> <span class="n">k_y</span><span class="p">;</span>
+<span class="ln">14</span><span class="n">k_minus</span> <span class="p">=</span> <span class="n">k_x</span> <span class="o">-</span> <span class="mi">1</span><span class="nb">i</span><span class="o">*</span> <span class="n">k_y</span><span class="p">;</span>
+<span class="ln">15</span><span class="c">%</span>
+<span class="ln">16</span><span class="n">BHZ</span> <span class="p">=</span> <span class="n">HK</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="ln">17</span><span class="c">%</span>
+<span class="ln">18</span><span class="n">BHZ</span> <span class="p">=</span> <span class="n">BHZ</span> <span class="c">...</span>
+<span class="ln">19</span>    <span class="o">+</span><span class="n">Term</span><span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">k_x</span> <span class="p">,</span><span class="n">sigma_z</span><span class="o">*</span><span class="n">tau_x</span> <span class="p">)</span><span class="c">...</span>
+<span class="ln">20</span>    <span class="o">+</span><span class="n">Term</span><span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">k_y</span> <span class="p">,</span><span class="n">sigma_0</span><span class="o">*</span><span class="n">tau_y</span> <span class="p">)</span><span class="c">...</span>
+<span class="ln">21</span>    <span class="o">+</span><span class="n">Term</span><span class="p">(</span><span class="n">E0k</span>   <span class="p">,</span><span class="n">sigma_0</span><span class="o">*</span><span class="n">tau_0</span> <span class="p">)</span><span class="c">...</span>
+<span class="ln">22</span>    <span class="o">+</span><span class="n">Term</span><span class="p">(</span><span class="n">M</span>     <span class="p">,</span><span class="n">sigma_0</span><span class="o">*</span><span class="n">tau_z</span> <span class="p">)</span><span class="c">...</span>
+<span class="ln">23</span>    <span class="p">;</span>
+</code></pre></div><p>$$\begin{array}{l}
+H = \left(\begin{array}{cccc}
+\sigma_2 &amp; A{\left(-k_y \mathrm{i}+k_x \right)} &amp; 0 &amp; 0\newline
+A{\left(k_y \mathrm{i}+k_x \right)} &amp; \sigma_1 &amp; 0 &amp; 0\newline
+0 &amp; 0 &amp; \sigma_2 &amp; -A{\left(k_y \mathrm{i}+k_x \right)}\newline
+0 &amp; 0 &amp; -A{\left(-k_y \mathrm{i}+k_x \right)} &amp; \sigma_1
+\end{array}\right)\newline
+\mathrm{}\newline
+\textrm{where}\newline
+\mathrm{}\newline
+\sigma_1 =C_0 -M_0 +{k_x }^2 {\left(M_2 +C_2 \right)}+{k_y }^2 {\left(M_2 +C_2 \right)}\newline
+\mathrm{}\newline
+\sigma_2 =C_0 +M_0 +{k_x }^2 {\left(-M_2 +C_2 \right)}+{k_y }^2 {\left(-M_2 +C_2 \right)}
+\end{array}$$</p>
+<p>时间反演算符定义为 $\mathcal{T} = -i\sigma_y\tau_0\mathbf{\mathcal{K}}$,
+即 spinup 和 spindn 的本征值差了一个负号
+<img alt="" class="img-fluid" loading="lazy" src="https://s2.loli.net/2022/02/11/86DizWfIkNKTPVu.png"/>
+</p>
+<h2 id="mirror-chern-number3">Mirror Chern Number<sup id="fnref:4"><a class="footnote-ref" href="#fn:4" role="doc-noteref">4</a></sup></h2>
+<p>$$
+H(k)=\left(v_{x} k_{x} \sigma_{x}-v_{y} k_{y} \sigma_{y}\right) \tau_{x}+m \tau_{z}
+$$
+where $\sigma_i$ is the Pauli matrix of spins and $\tau_i$ is that of pseudospins representing two Dirac cones existing in the bulk TCI.
+$$\left(\begin{array}{cccc}
+m &amp; 0 &amp; 0 &amp; -k_y ,v_2 ,\mathrm{i}+k_x ,v_1 \newline
+0 &amp; -m &amp; -k_y ,v_2 ,\mathrm{i}+k_x ,v_1 &amp; 0\newline
+0 &amp; k_y ,v_2 ,\mathrm{i}+k_x ,v_1 &amp; m &amp; 0\newline
+k_y ,v_2 ,\mathrm{i}+k_x ,v_1 &amp; 0 &amp; 0 &amp; -m
+\end{array}\right)$$
+可以看到此时 哈密顿量并未写成块直和的形式
+这时我们已知 $\mathcal{M}_z = −i\sigma_z\tau_z$.
+$$\left(\begin{array}{cccc}
+-\mathrm{i} &amp; 0 &amp; 0 &amp; 0\newline
+0 &amp; \mathrm{i} &amp; 0 &amp; 0\newline
+0 &amp; 0 &amp; \mathrm{i} &amp; 0\newline
+0 &amp; 0 &amp; 0 &amp; -\mathrm{i}
+\end{array}\right)$$
+这暗示着我们 2,3 orbitals的本征值为i 1,4 orbitals的本征值为-i</p>
+<section class="footnotes" role="doc-endnotes">
+<hr/>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>Fukui, T., Hatsugai, Y. &amp; Suzuki, H. Chern Numbers in Discretized Brillouin Zone: Efficient Method of Computing (Spin) Hall Conductances. J. Phys. Soc. Jpn. 74, 1674–1677 (2005). <a class="footnote-backref" href="#fnref:1" role="doc-backlink">↩︎</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>Liu, J. et al. Spin-filtered edge states with an electrically tunable gap in a two-dimensional topological crystalline insulator. Nature Mater 13, 178–183 (2014). <a class="footnote-backref" href="#fnref:2" role="doc-backlink">↩︎</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p>Soluyanov, A. A. &amp; Vanderbilt, D. Wannier representation of Z 2 topological insulators. Phys. Rev. B 83, 035108 (2011). <a class="footnote-backref" href="#fnref:3" role="doc-backlink">↩︎</a></p>
+</li>
+<li id="fn:4" role="doc-endnote">
+<p>Hsieh, T. H. et al. Topological crystalline insulators in the SnTe material class. Nature Communications 3, 982 (2012).
+The effective Hamiltonian for a TCI thin film is given by a two-dimensional model <sup id="fnref:2"><a class="footnote-ref" href="#fn:2" role="doc-noteref">2</a></sup>, <a class="footnote-backref" href="#fnref:4" role="doc-backlink">↩︎</a></p>
+</li>
+</ol>
+</section></div><div aria-hidden="true" aria-labelledby="rewardModalLabel" class="modal fade" id="rewardModal" tabindex="-1">
+<div class="modal-dialog">
+<div class="modal-content surface">
+<div class="modal-header">
+<h5 class="modal-title" id="rewardModalLabel"><i class="fas fa-fw fa-medal"></i>Reward</h5>
+<a aria-label="Close" data-bs-dismiss="modal" href="#"><i class="fas fa-fw fa-times"></i></a>
+</div>
+<div class="modal-body">
+<ul class="nav nav-tabs mb-3" role="tablist"><li class="nav-item" role="presentation">
+<a aria-controls="reward-alipay" aria-selected="true" class="nav-link active" data-bs-toggle="tab" href="#reward-alipay" id="reward-alipay-tab" role="tab">
+<i class="fab fa-fw fa-alipay"></i>Alipay
+</a>
+</li><li class="nav-item" role="presentation">
+<a aria-controls="reward-wechat" aria-selected="true" class="nav-link" data-bs-toggle="tab" href="#reward-wechat" id="reward-wechat-tab" role="tab">
+<i class="fab fa-fw fa-weixin"></i>WeChat
+</a>
+</li></ul>
+<div class="tab-content" id="rewardTabContent"><div aria-labelledby="reward-alipay-tab" class="tab-pane fade post-reward-content show active" id="reward-alipay" role="tabpanel">
+<img class="img-fluid post-reward-img" loading="lazy" src="https://parkman.top/images/reward/alipay.png"/>
+</div><div aria-labelledby="reward-wechat-tab" class="tab-pane fade post-reward-content show" id="reward-wechat" role="tabpanel">
+<img class="img-fluid post-reward-img" loading="lazy" src="https://parkman.top/images/reward/wechat.png"/>
+</div></div>
+</div>
+</div>
+</div>
+</div><hr/><div class="post-navs d-flex mb-3 justify-content-between">
+<div class="post-nav w-50"><div class="prev-post btn btn-sm">
+<a href="https://parkman.top/en/posts/%E7%A7%91%E7%A0%94%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/%E7%A7%91%E7%A0%94%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/">科研那些事儿-速览
+</a>
+</div></div>
+<div class="post-nav flex-row-reverse"></div>
+</div><section class="related-posts">
+<h3>Related Posts</h3>
+<ul class="related-posts"><li><a href="https://parkman.top/en/posts/matlab/vasplib/vasplib_poscar/">Vasplib InputFile (1) POSCAR
+</a></li><li><a href="https://parkman.top/en/posts/matlab/vasplib/vasplib_hr_2/">Vasplib HR (2) Type of HR Class
+</a></li><li><a href="https://parkman.top/en/posts/matlab/vasplib/vasplib_hr/">Vasplib HR (1) Model Construction
+</a></li><li><a href="https://parkman.top/en/posts/matlab/vasplib/vasplib_bandplot/">Vasplib Basic Bandplot
+</a></li><li><a href="https://parkman.top/en/posts/%E7%A7%91%E7%A0%94%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/%E7%A7%91%E7%A0%94%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/">科研那些事儿-速览
+</a></li></ul>
+</section></article><div class="post-comments surface row"><script async="" crossorigin="anonymous" issue-term="pathname" label="comment" repo="parkman-auex/hugoblogtalks" src="https://utteranc.es/client.js" theme="github-light"></script></div></div>
+</div><aside class="col-lg-4 sidebar d-flex">
+<div class="container"><section class="profile surface row text-center">
+<div class="col-12 d-flex align-items-center justify-content-center"><img alt="Xu-Tao Zeng" class="profile-avatar rounded-circle" height="132" loading="lazy" src="https://parkman.top/images/profile.png" width="132"/>
+</div>
+<div class="col-12 profile-meta"><div class="profile-name">Xu-Tao Zeng</div><div class="profile-bio">Student, Ph.D, Tech coolie, coder</div><div class="profile-company"><i class="fas fa-fw fa-building"></i>Beihang University</div><div class="profile-location"><i class="fas fa-fw fa-map-marker-alt"></i>Beijing, China</div><div class="profile-about"><i class="fas fa-fw fa-info-circle"></i><a href="https://parkman.top/en/about/">About</a></div></div>
+</section>
+<section class="recent-posts row surface">
+<h4>Recent Posts</h4>
+<ul><li><a href="https://parkman.top/en/posts/berryphase/chern/">陈数！自旋陈数！镜陈数！谷陈数！
+</a></li><li><a href="https://parkman.top/en/posts/%E7%A7%91%E7%A0%94%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/%E7%A7%91%E7%A0%94%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/">科研那些事儿-速览
+</a></li><li><a href="https://parkman.top/en/posts/berryphase/z2pack/">Z2pack 计算chern数
+</a></li><li><a href="https://parkman.top/en/posts/matlab/basic-tool/grouptheory/">Group Theory
+</a></li><li><a href="https://parkman.top/en/posts/dft/%E5%88%A4%E6%96%AD%E7%A3%81%E6%80%A7%E7%BB%93%E6%9E%84/">判断磁性结构的对称性
+</a></li></ul>
+</section><section class="taxonomy-categories row surface">
+<h4>
+<a href="https://parkman.top/en/categories">Categories</a>
+</h4>
+<div><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/categories/hugo/" title="Hugo">
+Hugo <span class="badge rounded-pill">13</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/categories/templete/" title="Templete">
+Templete <span class="badge rounded-pill">8</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/categories/computational-chemistry/" title="Computational Chemistry">
+Computational Chemistry <span class="badge rounded-pill">1</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/categories/markdown/" title="Markdown">
+Markdown <span class="badge rounded-pill">1</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/categories/vasplib/" title="vasplib">
+vasplib <span class="badge rounded-pill">1</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/" title="文献阅读">
+文献阅读 <span class="badge rounded-pill">1</span>
+</a></div>
+</section><section class="taxonomy-series row surface">
+<h4>
+<a href="https://parkman.top/en/series">Series</a>
+</h4>
+<div><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/series/hugo/" title="Hugo">
+Hugo <span class="badge rounded-pill">13</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/series/hr/" title="HR">
+HR <span class="badge rounded-pill">3</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/series/reading/" title="Reading">
+Reading <span class="badge rounded-pill">2</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/series/vasplib/" title="vasplib">
+vasplib <span class="badge rounded-pill">2</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/series/manual/" title="Manual">
+Manual <span class="badge rounded-pill">1</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/series/%E5%8D%8A%E7%BB%8F%E5%85%B8%E5%AD%A6%E4%B9%A0/" title="半经典学习">
+半经典学习 <span class="badge rounded-pill">1</span>
+</a></div>
+</section><section class="taxonomy-tags row surface">
+<h4>
+<a href="https://parkman.top/en/tags">Tags</a>
+</h4>
+<div><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/matlab/" title="matlab">
+matlab <span class="badge rounded-pill">9</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/vasplib/" title="vasplib">
+vasplib <span class="badge rounded-pill">5</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/markdown/" title="Markdown">
+Markdown <span class="badge rounded-pill">4</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/plot/" title="plot">
+plot <span class="badge rounded-pill">4</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/python/" title="python">
+python <span class="badge rounded-pill">4</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/dft/" title="DFT">
+DFT <span class="badge rounded-pill">3</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/physics/" title="physics">
+physics <span class="badge rounded-pill">3</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/tb/" title="TB">
+TB <span class="badge rounded-pill">3</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/vasp/" title="VASP">
+VASP <span class="badge rounded-pill">3</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/hr/" title="HR">
+HR <span class="badge rounded-pill">2</span>
+</a></div>
+</section><section class="featured-posts row surface">
+<h4>Featured Posts</h4>
+<ul><li><a href="https://parkman.top/en/posts/berryphase/chern/">陈数！自旋陈数！镜陈数！谷陈数！
+</a></li><li><a href="https://parkman.top/en/posts/%E7%A7%91%E7%A0%94%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/%E7%A7%91%E7%A0%94%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/">科研那些事儿-速览
+</a></li><li><a href="https://parkman.top/en/posts/berryphase/z2pack/">Z2pack 计算chern数
+</a></li><li><a href="https://parkman.top/en/posts/matlab/basic-tool/grouptheory/">Group Theory
+</a></li><li><a href="https://parkman.top/en/posts/dft/vasp_metagga/">VASP MetaGGA
+</a></li></ul>
+</section></div>
+</aside>
+<h5 id="wc" style="font-size:1rem;text-align:center">1100 Words|This article has been read <span id="busuanzi_value_page_pv"></span> times</h5>
+<style type="text/css">.myfriends{text-align:center;background-color:#fff;opacity:.9}.myfriends a{color:#000}.myfriends p{display:none}.friendurl{text-decoration:none!important;color:#000}.myfriend{width:56px!important;height:56px!important;border-radius:50%;border:1px solid #ddd;padding:2px;box-shadow:1px 1px 1px rgba(0,0,0,.15);margin-top:14px!important;margin-left:14px!important;background-color:#fff}.frienddiv{height:92px;margin-top:10px;width:48%;display:inline-block!important}.frienddiv:hover{background:rgba(87,142,224,.15)}.frienddiv:hover .frienddivleft img{transition:.9s!important;-webkit-transition:.9s!important;-moz-transition:.9s!important;-o-transition:.9s!important;-ms-transition:.9s!important;transform:rotate(360deg)!important;-webkit-transform:rotate(360deg)!important;-moz-transform:rotate(360deg)!important;-o-transform:rotate(360deg)!important;-ms-transform:rotate(360deg)!important}.frienddivleft{width:92px;float:left}.frienddivleft{margin-right:2px}.frienddivright{margin-top:18px;margin-right:18px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap}</style>
+</div>
+</main><footer class="footer mt-auto py-3 text-center container"><nav class="social-links nav my-2 justify-content-center"><a class="nav-link social-link" href="https://space.bilibili.com/72389145" rel="noopener noreferrer" target="_blank" title="bilibili">
+<i class="fa-fw fa-2x fas fa-tv"></i>
+</a><a class="nav-link social-link" href="mailto:parkman@buaa.edu.cn" title="Email">
+<i class="fas fa-fw fa-2x fa-envelope"></i>
+</a><a class="nav-link social-link" href="https://github.com/https://github.com/parkman-auex" rel="noopener noreferrer" target="_blank" title="GitHub">
+<i class="fa-fw fa-2x fab fa-github"></i>
+</a><a class="nav-link social-link" href="https://gitlab.com/https://gitlab.com/parkman-auex" rel="noopener noreferrer" target="_blank" title="GitLab">
+<i class="fa-fw fa-2x fab fa-gitlab"></i>
+</a><a class="nav-link social-link" href="https://gitee.com/zeng-xutao" rel="noopener noreferrer" target="_blank" title="Medium">
+<i class="fab fa-fw fa-2x fa-medium-m"></i>
+</a><a class="nav-link social-link" href="http://wpa.qq.com/msgrd?v=3&amp;uin=383793132&amp;site=qq&amp;menu=yes" rel="noopener noreferrer" target="_blank" title="QQ">
+<i class="fa-fw fa-2x fab fa-qq"></i>
+</a><a class="nav-link social-link" href="https://www.zhihu.com/people/parkman-87" rel="noopener noreferrer" target="_blank" title="Zhihu">
+<i class="fa-fw fa-2x fab fa-zhihu"></i>
+</a></nav>
+<span id="busuanzi_container_site_pv">
+Visits to this site：<span id="busuanzi_value_site_pv"></span>
+</span>
+ 
+<span id="busuanzi_container_site_uv">
+You are the <span id="busuanzi_value_site_uv"></span> th visitor
+</span><div class="copyright mb-2">
+Copyright © 2021-2022 Xu-Tao Zeng. All Rights Reserved.
+</div>
+</footer>
+<a class="btn-scroll-to-top" id="btnScrollToTop">
+<i class="fas fa-fw fa-chevron-circle-up fa-2x"></i>
+</a>
+<script async="" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6130842d8572b712"></script></body>
+</html>
