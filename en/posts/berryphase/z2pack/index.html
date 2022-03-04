@@ -12,7 +12,7 @@
 <meta content="Z2pack: 计算实例" name="description"/><meta content="Z2pack 计算chern数" itemprop="name"/>
 <meta content="Z2pack: 计算实例" itemprop="description"/><meta content="2022-01-12T17:20:31+08:00" itemprop="datePublished"/>
 <meta content="2022-01-12T17:20:31+08:00" itemprop="dateModified"/>
-<meta content="930" itemprop="wordCount"/>
+<meta content="835" itemprop="wordCount"/>
 <meta content="z2pack,python," itemprop="keywords"/><meta content="Z2pack 计算chern数" property="og:title"/>
 <meta content="Z2pack: 计算实例" property="og:description"/>
 <meta content="article" property="og:type"/>
@@ -22,14 +22,14 @@
 <meta content="summary" name="twitter:card"/>
 <meta content="Z2pack 计算chern数" name="twitter:title"/>
 <meta content="Z2pack: 计算实例" name="twitter:description"/>
-<meta content="red" data-name="palette"/><link as="style" crossorigin="anonymous" href="https://parkman.top/css/bundle.min.a23cb7a4fbae89dc78de2a936152a28a0cfd8a2d4763f0b1a6b59ac478b721f8.css" integrity="sha256-ojy3pPuuidx43iqTYVKiigz9ii1HY/CxprWaxHi3Ifg=" onload="this.rel='stylesheet'" rel="preload"/>
-<noscript><link crossorigin="anonymous" href="https://parkman.top/css/bundle.min.a23cb7a4fbae89dc78de2a936152a28a0cfd8a2d4763f0b1a6b59ac478b721f8.css" integrity="sha256-ojy3pPuuidx43iqTYVKiigz9ii1HY/CxprWaxHi3Ifg=" rel="stylesheet"/></noscript><script crossorigin="anonymous" integrity="sha256-4OlJZ2TE425HefrP2HN27OJADK9DDAWfa1iV8w9i51M=" src="https://parkman.top/js/bundle.min.e0e9496764c4e36e4779facfd87376ece2400caf430c059f6b5895f30f62e753.js"></script><script crossorigin="anonymous" defer="" integrity="sha256-Z1pUyhi9q+5YyORYyFGWkX4Els4aW2+VtrnLcNAf4dg=" src="https://parkman.top/js/katex.675a54ca18bdabee58c8e458c85196917e0496ce1a5b6f95b6b9cb70d01fe1d8.js"></script>
-<script type="application/javascript">var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-206544824-1','auto'),ga('send','pageview'))</script>
+<meta content="red" data-name="palette"/><link as="style" crossorigin="anonymous" href="https://parkman.top/css/bundle.min.a23cb7a4fbae89dc78de2a936152a28a0cfd8a2d4763f0b1a6b59ac478b721f8.css" integrity="sha256-ojy3pPuuidx43iqTYVKiigz9ii1HY/CxprWaxHi3Ifg=" onload='this.rel="stylesheet"' rel="preload"/>
+<noscript><link crossorigin="anonymous" href="https://parkman.top/css/bundle.min.a23cb7a4fbae89dc78de2a936152a28a0cfd8a2d4763f0b1a6b59ac478b721f8.css" integrity="sha256-ojy3pPuuidx43iqTYVKiigz9ii1HY/CxprWaxHi3Ifg=" rel="stylesheet"/></noscript><script crossorigin="anonymous" integrity="sha256-2h1iE34+BR6xaRe7HvGfG+BEAUMhyxhZFTyQp444c3k=" src="https://parkman.top/js/bundle.min.da1d62137e3e051eb16917bb1ef19f1be044014321cb1859153c90a78e387379.js"></script><script crossorigin="anonymous" defer="" integrity="sha256-Z1pUyhi9q+5YyORYyFGWkX4Els4aW2+VtrnLcNAf4dg=" src="https://parkman.top/js/katex.675a54ca18bdabee58c8e458c85196917e0496ce1a5b6f95b6b9cb70d01fe1d8.js"></script>
+<script type="application/javascript">var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-206544824-1","auto"),ga("send","pageview"))</script>
 <script async="" src="https://www.google-analytics.com/analytics.js"></script>
 <link crossorigin="anonymous" href="https://parkman.top/css/tabbed-pane.css" rel="stylesheet"/><script crossorigin="anonymous" src="https://parkman.top/js/tabpane-persist.js"></script><script crossorigin="anonymous" src="https://parkman.top/js/typeit.min.js"></script><script crossorigin="anonymous" src="https://parkman.top/js/echarts.min.js"></script><script crossorigin="anonymous" src="https://parkman.top/js/macarons.js"></script><script crossorigin="anonymous" src="https://parkman.top/js/decrypt.js"></script>
 <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-<script>$(document).ready(function(){var a=setInterval(c,100),b=0;function c(){$("#busuanzi_container_site_pv").css("display")!="none"&&(clearInterval(a),$("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html())+b))}})</script>
+<script>$(document).ready(function(){var e=setInterval(n,100),t=0;function n(){$("#busuanzi_container_site_pv").css("display")!="none"&&(clearInterval(e),$("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html())+t))}})</script>
 </head><body><header><nav class="navbar navbar-expand-xl fixed-top">
 <div class="container">
 <a class="navbar-brand" href="https://parkman.top/en/">
@@ -43,29 +43,24 @@ PARKMAN</a>
 <div class="input-group input-group-sm">
 <button aria-label="submit" class="btn btn-search disabled position-absolute left-0" type="submit"><i class="fas fa-fw fa-search"></i></button>
 <input aria-label="Search" class="form-control rounded-pill" id="searchQuery" name="q" type="search"/>
-</div>
-</form><ul class="navbar-nav me-1 mb-2 mb-lg-0 me-1 ms-auto">
+</div></form><ul class="navbar-nav me-1 mb-2 mb-lg-0 me-1 ms-auto">
 <li class="nav-item">
 <a class="nav-link" href="https://parkman.top/en/archives/">
 <i class="fas fa-fw fa-file-archive"></i>Archives
 </a>
-</li>
-<li class="nav-item">
+</li><li class="nav-item">
 <a class="nav-link" href="https://parkman.top/en/categories/">
 <i class="fas fa-fw fa-folder"></i>Categories
 </a>
-</li>
-<li class="nav-item">
+</li><li class="nav-item">
 <a class="nav-link" href="https://parkman.top/en/tags/">
 <i class="fas fa-fw fa-tags"></i>Tags
 </a>
-</li>
-<li class="nav-item">
+</li><li class="nav-item">
 <a class="nav-link" href="https://parkman.top/en/series/">
 <i class="fas fa-fw fa-columns"></i>Series
 </a>
-</li>
-<li class="nav-item dropdown">
+</li><li class="nav-item dropdown">
 <a aria-expanded="false" class="nav-link" data-bs-toggle="dropdown" id="navbarDropdown-dropdown" role="button">
 <i class="fas fa-fw fa-chevron-circle-down"></i>Dropdown
 </a>
@@ -73,57 +68,39 @@ PARKMAN</a>
 <a class="dropdown-item" href="https://github.com/razonyang/hugo-theme-bootstrap" rel="noopener noreferrer" target="_blank">
 <i class="fab fa-fw fa-github"></i>Github
 </a>
-</li></ul>
-</li><li class="nav-item dropdown">
+</li></ul></li><li class="nav-item dropdown">
 <a aria-expanded="false" class="nav-link" data-bs-toggle="dropdown" href="#" id="languageDropdown" role="button">
 <i class="fas fa-fw fa-language"></i> English
 </a>
-<ul aria-labelledby="languageDropdown" class="dropdown-menu"><li><a class="dropdown-item" href="https://parkman.top/zh-cn/">简体中文</a></li></ul>
-</li>
-<li class="nav-item">
+<ul aria-labelledby="languageDropdown" class="dropdown-menu"><li><a class="dropdown-item" href="https://parkman.top/zh-cn/">简体中文</a></li></ul></li><li class="nav-item">
 <a aria-controls="offcanvasSettings" class="nav-link" data-bs-toggle="offcanvas" href="#offcanvasSettings" role="button">
 <i class="fas fa-fw fa-sliders-h"></i> Settings
 </a>
-</li>
-<div aria-labelledby="offcanvasSettingsLabel" class="offcanvas offcanvas-end surface h-100" id="offcanvasSettings" tabindex="-1">
+</li><div aria-labelledby="offcanvasSettingsLabel" class="offcanvas offcanvas-end surface h-100" id="offcanvasSettings" tabindex="-1">
 <div class="offcanvas-header">
-<h5 class="offcanvas-title" id="offcanvasSettingsLabel" w=""><i class="fas fa-fw fa-sliders-h"></i> Settings</h5>
-<a aria-label="Close" data-bs-dismiss="offcanvas" role="button">
+<h5 class="offcanvas-title" id="offcanvasSettingsLabel" w=""><i class="fas fa-fw fa-sliders-h"></i> Settings</h5><a aria-label="Close" data-bs-dismiss="offcanvas" role="button">
 <span class="fas fa-2x fa-fw fa-times"></span>
 </a>
-</div>
-<div class="offcanvas-body"><section class="setting">
+</div><div class="offcanvas-body"><section class="setting">
 <form class="row">
 <div class="col-auto">
 <label><i class="fas fa-fw fa-adjust"></i> Mode</label>
-</div>
-<div class="col-auto ms-auto">
+</div><div class="col-auto ms-auto">
 <div class="form-check form-switch">
 <input class="form-check-input" id="modeSwitcher" type="checkbox"/>
-</div>
-</div>
-</form>
-</section>
-<section class="setting">
+</div></div></form></section><section class="setting">
 <form class="font-size-switcher-form row">
 <div class="col-auto">
 <label class="form-label" for="fontSize"><i class="fas fa-fw fa-font"></i> Font Size</label>
-</div>
-<div class="col-auto ms-auto">
+</div><div class="col-auto ms-auto">
 <input class="form-range" id="fontSize" max="2" min="-2" type="range"/>
-</div>
-</form>
-</section>
-<section class="setting palettes">
+</div></form></section><section class="setting palettes">
 <form class="row">
 <div class="col-auto">
 <label><i class="fas fa-fw fa-palette"></i> Palette</label>
-</div>
-<div class="col-auto ms-auto">
+</div><div class="col-auto ms-auto">
 <span class="btn btn-sm" id="btnPalette"><i class="fas fa-eye-dropper"></i></span>
-</div>
-</form>
-<div class="container mt-2 visually-hidden" id="palettePicker">
+</div></form><div class="container mt-2 visually-hidden" id="palettePicker">
 <div class="btn-group"><button class="btn btn-sm palette bg-blue d-flex align-items-center justify-content-center" id="palette-blue" title="Blue" type="button">
 </button><button class="btn btn-sm palette bg-blue-gray d-flex align-items-center justify-content-center" id="palette-blue-gray" title="Blue Gray" type="button">
 </button><button class="btn btn-sm palette bg-brown d-flex align-items-center justify-content-center" id="palette-brown" title="Brown" type="button">
@@ -137,21 +114,11 @@ PARKMAN</a>
 </button><button class="btn btn-sm palette bg-teal d-flex align-items-center justify-content-center" id="palette-teal" title="Teal" type="button">
 </button><button class="btn btn-sm palette bg-yellow d-flex align-items-center justify-content-center" id="palette-yellow" title="Yellow" type="button">
 </button>
-</div>
-</div>
-</section></div>
-</div>
-</ul>
-</div>
-</div>
-</nav>
-</header>
-<main class="container" role="main">
+</div></div></section></div></div></ul></div></div></nav></header><main class="container" role="main">
 <div class="row content">
 <div class="col-lg-8">
 <div class="container"><nav aria-label="breadcrumb" class="row">
-<ol class="breadcrumb surface"><li class="breadcrumb-item"><a href="https://parkman.top/en/">Home</a></li><li class="breadcrumb-item"><a href="https://parkman.top/en/posts/">Posts</a></li><li class="breadcrumb-item active">Z2pack 计算chern数</li></ol>
-</nav><article class="post row surface"><div class="post-panel-wrapper">
+<ol class="breadcrumb surface"><li class="breadcrumb-item"><a href="https://parkman.top/en/">Home</a></li><li class="breadcrumb-item"><a href="https://parkman.top/en/posts/">Posts</a></li><li class="breadcrumb-item active">Z2pack 计算chern数</li></ol></nav><article class="post row surface"><div class="post-panel-wrapper">
 <div class="post-panel d-flex flex-column">
 <a class="action d-none d-lg-block" id="sidebarToggler" role="button">
 <i class="fas fa-fw fa-expand-alt fa-rotate-45"></i>
@@ -165,403 +132,264 @@ PARKMAN</a>
 </a>
 <a aria-controls="offcanvasTOC" class="fas fa-fw fa-list-alt" data-bs-toggle="offcanvas" href="#offcanvasTOC" id="btnTOC" role="button">
 </a>
-</div>
-</div>
-<h1 class="post-title my-3">Z2pack 计算chern数
+</div></div><h1 class="post-title my-3">Z2pack 计算chern数
 </h1><div class="post-meta mb-3"><span class="post-date me-2">
 <i class="fas fa-fw fa-calendar-alt"></i>Jan 12, 2022
 </span><span class="post-reading-time me-2">
-<i class="fas fa-fw fa-coffee"></i>5 min read
+<i class="fas fa-fw fa-coffee"></i>4 min read
 </span><span class="post-taxonomies"><a class="post-taxonomy" href="https://parkman.top/en/tags/z2pack/">z2pack</a><a class="post-taxonomy" href="https://parkman.top/en/tags/python/">python</a></span>
-</div>
-<div class="post-share mb-3"><div class="addthis_inline_share_toolbox"></div></div><div aria-labelledby="offcanvasTOCLabel" class="offcanvas offcanvas-end surface" id="offcanvasTOC" tabindex="-1">
+</div><div class="post-share mb-3"><div class="addthis_inline_share_toolbox"></div></div><div aria-labelledby="offcanvasTOCLabel" class="offcanvas offcanvas-end surface" id="offcanvasTOC" tabindex="-1">
 <div class="offcanvas-header">
-<h5 class="offcanvas-title" id="offcanvasTOCLabel">Table Of Contents</h5>
-<a aria-label="Close" data-bs-dismiss="offcanvas" role="button">
+<h5 class="offcanvas-title" id="offcanvasTOCLabel">Table Of Contents</h5><a aria-label="Close" data-bs-dismiss="offcanvas" role="button">
 <span class="fas fa-2x fa-fw fa-times"></span>
 </a>
-</div>
-<div class="offcanvas-body">
+</div><div class="offcanvas-body">
 <nav id="TableOfContents">
 <ul>
-<li><a href="#z2packhttpsz2packgreschdchenlatest"></a><a href="https://z2pack.greschd.ch/en/latest/">Z2pack</a></li>
-<li><a href="#关于安装与使用的一些说明">关于安装与使用的一些说明</a></li>
-<li><a href="#从实践的角度出发">从实践的角度出发</a></li>
-<li><a href="#代码拆解">代码拆解</a>
+<li><a href="#z2packhttpsz2packgreschdchenlatest"></a><a href="https://z2pack.greschd.ch/en/latest/">Z2pack</a></li><li><a href="#关于安装与使用的一些说明">关于安装与使用的一些说明</a></li><li><a href="#从实践的角度出发">从实践的角度出发</a></li><li><a href="#代码拆解">代码拆解</a>
 <ul>
-<li><a href="#import-module">import module</a></li>
-<li><a href="#handy-function">handy function</a></li>
-<li><a href="#导入-wannier90_hrdat">导入 wannier90_hr.dat</a></li>
-<li><a href="#从wannier90_orbitaldat-导入-pos">从wannier90_orbital.dat 导入 pos</a></li>
-<li><a href="#z2pack-set">z2pack set</a></li>
-<li><a href="#z2pack-calculation">z2pack calculation</a></li>
-</ul>
-</li>
-</ul>
-</nav>
-</div>
-</div><div class="post-content mb-3"><p><a href="https://github.com/Z2PackDev/Z2Pack" rel="noopener noreferrer" target="_blank">z2pack</a>
+<li><a href="#import-module">import module</a></li><li><a href="#handy-function">handy function</a></li><li><a href="#导入-wannier90_hrdat">导入 wannier90_hr.dat</a></li><li><a href="#从wannier90_orbitaldat-导入-pos">从wannier90_orbital.dat 导入 pos</a></li><li><a href="#z2pack-set">z2pack set</a></li><li><a href="#z2pack-calculation">z2pack calculation</a></li></ul></li></ul></nav></div></div><div class="post-content mb-3"><p><a href="https://github.com/Z2PackDev/Z2Pack" rel="noopener noreferrer" target="_blank">z2pack</a>
 是一个强大的计算Berryphase相关拓扑数的python工具包，由<a href="https://github.com/greschd" rel="noopener noreferrer" target="_blank">欧洲老哥</a>
-（我们组内对他的趣称，从他的代码里学到不少，现已入职微软)</p>
-<h2 id="z2packhttpsz2packgreschdchenlatest"><a href="https://z2pack.greschd.ch/en/latest/" rel="noopener noreferrer" target="_blank">Z2pack</a>
-</h2>
-<blockquote>
-<p>Z2Pack is a tool for calculating topological invariants. The method is based on tracking the evolution of hybrid Wannier functions, which is equivalent to the computation of the Wilson loop. Originally developed for calculating invariants, it is now also capable of calculating Chern numbers. Moreover, through the use of individual Chern numbers it can be used to identify any kind of topological phase.</p>
-<p>A key feature of Z2Pack is its flexibility: It can be used with various kinds of calculations and models. Currently, interfaces to first-principles codes, tight-binding models and models are implemented. However, it can in principle be extended to any kind of system.</p>
-</blockquote>
-<h2 id="关于安装与使用的一些说明">关于安装与使用的一些说明</h2>
-<ul>
-<li>z2pack 与第一性原理做接口时需要使用 wannier90, 对VASP来说 wannier90.2.1.0 效果较好。</li>
-<li>z2pack 计算 TB 模型时，借助另外一个库：<a href="https://tbmodels.greschd.ch/en/latest/" rel="noopener noreferrer" target="_blank">tbmodels</a>
-（也是由欧洲老哥开发，tbmodels可以方便的自己定义TB模型或者从wannier转入，tbmodels可以快速方便地对wannier作对称化，详见站内链接）</li>
-<li>z2pack 计算 kp 模型，直接在代码里把kp模型写出来即可。</li>
-</ul>
-<h2 id="从实践的角度出发">从实践的角度出发</h2>
-<p>一般而言，只要我们熟悉了 z2pack 计算 TB模型（wannier90_hr.dat）的流程，我们就可以计算无论是模型或者第一性原理计算的结果了。</p>
-<h2 id="代码拆解">代码拆解</h2>
-<h3 id="import-module">import module</h3>
-<div class="highlight"><pre class="chroma" tabindex="0"><code class="language-python" data-lang="python"><span class="ln"> 1</span><span class="kn">import</span> <span class="nn">os</span>
-<span class="ln"> 2</span><span class="kn">import</span> <span class="nn">sys</span>
-<span class="ln"> 3</span><span class="kn">import</span> <span class="nn">pathlib</span>
-<span class="ln"> 4</span><span class="kn">import</span> <span class="nn">symmetry_representation</span> <span class="k">as</span> <span class="nn">sr</span>
-<span class="ln"> 5</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="ln"> 6</span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="ln"> 7</span><span class="kn">import</span> <span class="nn">pymatgen</span> <span class="k">as</span> <span class="nn">mg</span>
-<span class="ln"> 8</span><span class="kn">import</span> <span class="nn">pymatgen.symmetry.analyzer</span>
-<span class="ln"> 9</span><span class="kn">import</span> <span class="nn">pymatgen.symmetry.bandstructure</span>
-<span class="ln">10</span><span class="c1"># import logging</span>
-<span class="ln">11</span><span class="kn">import</span> <span class="nn">itertools</span>
-<span class="ln">12</span><span class="kn">import</span> <span class="nn">z2pack</span>
-<span class="ln">13</span><span class="kn">import</span> <span class="nn">tbmodels</span>
-</code></pre></div><h3 id="handy-function">handy function</h3>
-<div class="highlight"><pre class="chroma" tabindex="0"><code class="language-python" data-lang="python"><span class="ln"> 1</span><span class="k">def</span> <span class="nf">PrintDict</span><span class="p">(</span><span class="nb">dict</span><span class="p">):</span>
-<span class="ln"> 2</span>    <span class="c1"># for i in dict.keys():</span>
-<span class="ln"> 3</span>    <span class="c1">#     print(i)  </span>
-<span class="ln"> 4</span>    <span class="c1">#     print(dict[i])  </span>
-<span class="ln"> 5</span>    <span class="c1"># for i in dict.values():</span>
-<span class="ln"> 6</span>    <span class="c1">#     print(i)</span>
-<span class="ln"> 7</span>    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-<span class="ln"> 8</span>        <span class="nb">print</span><span class="p">(</span><span class="n">key</span> <span class="o">+</span> <span class="s2">": "</span> <span class="p">)</span>
-<span class="ln"> 9</span>        <span class="k">for</span> <span class="n">ivalue</span> <span class="ow">in</span> <span class="n">value</span><span class="p">:</span>
-<span class="ln">10</span>            <span class="nb">print</span><span class="p">(</span><span class="s2">"      "</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">ivalue</span><span class="p">))</span>
-</code></pre></div><h3 id="导入-wannier90_hrdat">导入 wannier90_hr.dat</h3>
-<div class="highlight"><pre class="chroma" tabindex="0"><code class="language-python" data-lang="python"><span class="ln"> 1</span><span class="c1"># load first</span>
-<span class="ln"> 2</span>
-<span class="ln"> 3</span><span class="n">model</span> <span class="o">=</span> <span class="n">tbmodels</span><span class="o">.</span><span class="n">Model</span><span class="o">.</span><span class="n">from_wannier_files</span><span class="p">(</span>
-<span class="ln"> 4</span>    <span class="n">hr_file</span><span class="o">=</span><span class="s1">'wannier90_hr.dat'</span><span class="p">,</span>
-<span class="ln"> 5</span>   <span class="c1"># win_file='wannier90.win',</span>
-<span class="ln"> 6</span>   <span class="c1"># wsvec_file='wannier90_wsvec.dat',</span>
-<span class="ln"> 7</span>    <span class="c1">#xyz_file='wannier90_centres.xyz'</span>
-<span class="ln"> 8</span><span class="p">)</span>
-<span class="ln"> 9</span><span class="n">OccupyBand</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="ln">10</span><span class="n">SelectBands</span> <span class="o">=</span> <span class="n">OccupyBand</span>
-<span class="ln">11</span><span class="n">model</span><span class="o">.</span><span class="n">occ</span> <span class="o">=</span> <span class="n">OccupyBand</span>
-</code></pre></div><p>读取wannier90_hr.dat 时可以根据情况选择性地加入:wannier90.win,wannier90_wsvec.dat, wannier90_centres.xyz等信息</p>
-<h3 id="从wannier90_orbitaldat-导入-pos">从wannier90_orbital.dat 导入 pos</h3>
-<p>如果上一步导入了 xyz_file，则无需导入pos信息
+（我们组内对他的趣称，从他的代码里学到不少，现已入职微软)</p><h2 id="z2packhttpsz2packgreschdchenlatest"><a href="https://z2pack.greschd.ch/en/latest/" rel="noopener noreferrer" target="_blank">Z2pack</a>
+</h2><blockquote>
+<p>Z2Pack is a tool for calculating topological invariants. The method is based on tracking the evolution of hybrid Wannier functions, which is equivalent to the computation of the Wilson loop. Originally developed for calculating invariants, it is now also capable of calculating Chern numbers. Moreover, through the use of individual Chern numbers it can be used to identify any kind of topological phase.</p><p>A key feature of Z2Pack is its flexibility: It can be used with various kinds of calculations and models. Currently, interfaces to first-principles codes, tight-binding models and models are implemented. However, it can in principle be extended to any kind of system.</p></blockquote><h2 id="关于安装与使用的一些说明">关于安装与使用的一些说明</h2><ul>
+<li>z2pack 与第一性原理做接口时需要使用 wannier90, 对VASP来说 wannier90.2.1.0 效果较好。</li><li>z2pack 计算 TB 模型时，借助另外一个库：<a href="https://tbmodels.greschd.ch/en/latest/" rel="noopener noreferrer" target="_blank">tbmodels</a>
+（也是由欧洲老哥开发，tbmodels可以方便的自己定义TB模型或者从wannier转入，tbmodels可以快速方便地对wannier作对称化，详见站内链接）</li><li>z2pack 计算 kp 模型，直接在代码里把kp模型写出来即可。</li></ul><h2 id="从实践的角度出发">从实践的角度出发</h2><p>一般而言，只要我们熟悉了 z2pack 计算 TB模型（wannier90_hr.dat）的流程，我们就可以计算无论是模型或者第一性原理计算的结果了。</p><h2 id="代码拆解">代码拆解</h2><h3 id="import-module">import module</h3><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="kn">import</span> <span class="nn">sys</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="nn">pathlib</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="kn">import</span> <span class="nn">symmetry_representation</span> <span class="k">as</span> <span class="nn">sr</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="kn">import</span> <span class="nn">pymatgen</span> <span class="k">as</span> <span class="nn">mg</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="kn">import</span> <span class="nn">pymatgen.symmetry.analyzer</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="kn">import</span> <span class="nn">pymatgen.symmetry.bandstructure</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="c1"># import logging</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="kn">import</span> <span class="nn">itertools</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="kn">import</span> <span class="nn">z2pack</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="kn">import</span> <span class="nn">tbmodels</span>
+</span></span></code></pre></div><h3 id="handy-function">handy function</h3><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">def</span> <span class="nf">PrintDict</span><span class="p">(</span><span class="nb">dict</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">    <span class="c1"># for i in dict.keys():</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">    <span class="c1">#     print(i)  </span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="c1">#     print(dict[i])  </span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">    <span class="c1"># for i in dict.values():</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="c1">#     print(i)</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">key</span> <span class="o">+</span> <span class="s2">": "</span> <span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">        <span class="k">for</span> <span class="n">ivalue</span> <span class="ow">in</span> <span class="n">value</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">"      "</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">ivalue</span><span class="p">))</span>
+</span></span></code></pre></div><h3 id="导入-wannier90_hrdat">导入 wannier90_hr.dat</h3><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="c1"># load first</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="n">model</span> <span class="o">=</span> <span class="n">tbmodels</span><span class="o">.</span><span class="n">Model</span><span class="o">.</span><span class="n">from_wannier_files</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="n">hr_file</span><span class="o">=</span><span class="s1">'wannier90_hr.dat'</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">   <span class="c1"># win_file='wannier90.win',</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">   <span class="c1"># wsvec_file='wannier90_wsvec.dat',</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">    <span class="c1">#xyz_file='wannier90_centres.xyz'</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="n">OccupyBand</span> <span class="o">=</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="n">SelectBands</span> <span class="o">=</span> <span class="n">OccupyBand</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="n">model</span><span class="o">.</span><span class="n">occ</span> <span class="o">=</span> <span class="n">OccupyBand</span>
+</span></span></code></pre></div><p>读取wannier90_hr.dat 时可以根据情况选择性地加入:wannier90.win,wannier90_wsvec.dat, wannier90_centres.xyz等信息</p><h3 id="从wannier90_orbitaldat-导入-pos">从wannier90_orbital.dat 导入 pos</h3><p>如果上一步导入了 xyz_file，则无需导入pos信息
 如果是自己定义的模型或者用symmetry-adapter wannier 则这里借助 wannier_orbital.dat 导入晶格pos信息
-如果不引入pos，则默认所有轨道在原点</p>
-<h4 id="wannier90_orbitaldat">wannier90_orbital.dat</h4>
-<div class="highlight"><pre class="chroma" tabindex="0"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>0 #这里 0表示spinless 1表示spinful (spinful-会按照wannier90 的轨道顺序，即一个轨道自旋上紧跟着自旋下)
-<span class="ln">2</span>6 #这里表示总轨道数
-<span class="ln">3</span>s,0.300000012  ,       0.000000000  ,       0.000000000
-<span class="ln">4</span>s,0.000000000  ,       0.300000012  ,       0.000000000
-<span class="ln">5</span>s,0.699999988  ,       0.699999988  ,       0.000000000
-<span class="ln">6</span>s,0.699999988  ,       0.000000000  ,       0.000000000
-<span class="ln">7</span>s,0.000000000  ,       0.699999988  ,       0.000000000
-<span class="ln">8</span>s,0.300000012  ,       0.300000012  ,       0.000000000
-</code></pre></div><ul>
-<li>后面紧跟着 每个轨道位置第一列表示轨道的函数形式，z2pack 用不上，可以全部写s轨道</li>
-<li>逗号是必须的</li>
-<li>轨道的含义：
+如果不引入pos，则默认所有轨道在原点</p><h4 id="wannier90_orbitaldat">wannier90_orbital.dat</h4><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">0 #这里 0表示spinless 1表示spinful (spinful-会按照wannier90 的轨道顺序，即一个轨道自旋上紧跟着自旋下)
+</span></span><span class="line"><span class="ln">2</span><span class="cl">6 #这里表示总轨道数
+</span></span><span class="line"><span class="ln">3</span><span class="cl">s,0.300000012  ,       0.000000000  ,       0.000000000
+</span></span><span class="line"><span class="ln">4</span><span class="cl">s,0.000000000  ,       0.300000012  ,       0.000000000
+</span></span><span class="line"><span class="ln">5</span><span class="cl">s,0.699999988  ,       0.699999988  ,       0.000000000
+</span></span><span class="line"><span class="ln">6</span><span class="cl">s,0.699999988  ,       0.000000000  ,       0.000000000
+</span></span><span class="line"><span class="ln">7</span><span class="cl">s,0.000000000  ,       0.699999988  ,       0.000000000
+</span></span><span class="line"><span class="ln">8</span><span class="cl">s,0.300000012  ,       0.300000012  ,       0.000000000
+</span></span></code></pre></div><ul>
+<li>后面紧跟着 每个轨道位置第一列表示轨道的函数形式，z2pack 用不上，可以全部写s轨道</li><li>逗号是必须的</li><li>轨道的含义：
 <ul>
-<li>For the first col, we give a reference here</li>
-<li>s:</li>
-<li>
+<li>For the first col, we give a reference here</li><li>s:</li><li>
 <pre><code>   1
-</code></pre>
-</li>
-<li>p:</li>
-<li>
+</code></pre></li><li>p:</li><li>
 <pre><code>   z
-</code></pre>
-</li>
-<li>
+</code></pre></li><li>
 <pre><code>   x
-</code></pre>
-</li>
-<li>
+</code></pre></li><li>
 <pre><code>   y
-</code></pre>
-</li>
-<li>d:</li>
-<li>
+</code></pre></li><li>d:</li><li>
 <pre><code>   z**2
-</code></pre>
-</li>
-<li>
+</code></pre></li><li>
 <pre><code>   x * z
-</code></pre>
-</li>
-<li>
+</code></pre></li><li>
 <pre><code>   y * z
-</code></pre>
-</li>
-<li>
+</code></pre></li><li>
 <pre><code>   x**2 - y**2
-</code></pre>
-</li>
-<li>
+</code></pre></li><li>
 <pre><code>   x * y
-</code></pre>
-</li>
-<li>f:</li>
-<li>
+</code></pre></li><li>f:</li><li>
 <pre><code>   z**3
-</code></pre>
-</li>
-<li>
+</code></pre></li><li>
 <pre><code>   x * z**2
-</code></pre>
-</li>
-<li>
+</code></pre></li><li>
 <pre><code>   y * z**2
-</code></pre>
-</li>
-<li>
+</code></pre></li><li>
 <pre><code>   z * (x**2 - y**2)
-</code></pre>
-</li>
-<li>
+</code></pre></li><li>
 <pre><code>   x * y * z
-</code></pre>
-</li>
-<li>
+</code></pre></li><li>
 <pre><code>   x * (x**2 - 3 * y**2)
-</code></pre>
-</li>
-<li>
+</code></pre></li><li>
 <pre><code>   y * (3 * x**2 - y**2)
-</code></pre>
-</li>
-<li>sp:</li>
-<li>
+</code></pre></li><li>sp:</li><li>
 <pre><code>   1 + x
-</code></pre>
-</li>
-<li>
+</code></pre></li><li>
 <pre><code>   1 - x
-</code></pre>
-</li>
-<li>sp2:</li>
-<li>
+</code></pre></li><li>sp2:</li><li>
 <pre><code>   1 / sqrt(3) - x / sqrt(6) + y / sqrt(2)
-</code></pre>
-</li>
-<li>
+</code></pre></li><li>
 <pre><code>   1 / sqrt(3) - x / sqrt(6) - y / sqrt(2)
-</code></pre>
-</li>
-<li>
+</code></pre></li><li>
 <pre><code>   1 / sqrt(3) + 2 * x / sqrt(6)
-</code></pre>
-</li>
-<li>sp3:</li>
-<li>
+</code></pre></li><li>sp3:</li><li>
 <pre><code>   1 + x + y + z
-</code></pre>
-</li>
-<li>
+</code></pre></li><li>
 <pre><code>   1 + x - y  - z
-</code></pre>
-</li>
-<li>
+</code></pre></li><li>
 <pre><code>   1 - x + y - z
-</code></pre>
-</li>
-<li>
+</code></pre></li><li>
 <pre><code>   1 - x - y + z
-</code></pre>
-</li>
-<li>sp3d:</li>
-<li>
+</code></pre></li><li>sp3d:</li><li>
 <pre><code>   1 / sqrt(3) - x / sqrt(6) + y / sqrt(2)
-</code></pre>
-</li>
-<li>
+</code></pre></li><li>
 <pre><code>   1 / sqrt(3) - x / sqrt(6) - y / sqrt(2)
-</code></pre>
-</li>
-<li>
+</code></pre></li><li>
 <pre><code>   1 / sqrt(3) + 2 * x / sqrt(6)
-</code></pre>
-</li>
-<li>
+</code></pre></li><li>
 <pre><code>   z / sqrt(2) + z**2 / sqrt(2)
-</code></pre>
-</li>
-<li>
+</code></pre></li><li>
 <pre><code>   -z / sqrt(2) + z**2 / sqrt(2)
-</code></pre>
-</li>
-<li>sp3d2:</li>
-<li>
+</code></pre></li><li>sp3d2:</li><li>
 <pre><code>   1 / sqrt(6) - x / sqrt(2) - z**2 / sqrt(12) + (x**2 - y**2) / 2
-</code></pre>
-</li>
-<li>
+</code></pre></li><li>
 <pre><code>   1 / sqrt(6) + x / sqrt(2) - z**2 / sqrt(12) + (x**2 - y**2) / 2
-</code></pre>
-</li>
-<li>
+</code></pre></li><li>
 <pre><code>   1 / sqrt(6) - y / sqrt(2) - z**2 / sqrt(12) - (x**2 - y**2) / 2
-</code></pre>
-</li>
-<li>
+</code></pre></li><li>
 <pre><code>   1 / sqrt(6) + y / sqrt(2) - z**2 / sqrt(12) - (x**2 - y**2) / 2
-</code></pre>
-</li>
-<li>
+</code></pre></li><li>
 <pre><code>   1 / sqrt(6) - z / sqrt(2) + z**2 / sqrt(3)
-</code></pre>
-</li>
-<li>
+</code></pre></li><li>
 <pre><code>   1 / sqrt(6) + z / sqrt(2) + z**2 / sqrt(3)
-</code></pre>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="读取">读取</h4>
-<div class="highlight"><pre class="chroma" tabindex="0"><code class="language-python" data-lang="python"><span class="ln"> 1</span><span class="c1"># read from wannier90_orbital.dat</span>
-<span class="ln"> 2</span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"wannier90_orbital.dat"</span><span class="p">,</span><span class="s2">"r"</span><span class="p">)</span>
-<span class="ln"> 3</span><span class="n">orbitals</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="ln"> 4</span><span class="nb">print</span><span class="p">(</span><span class="s1">'-----------------------------------------------------------'</span><span class="p">)</span>
-<span class="ln"> 5</span><span class="n">SpinlessOrNot</span>  <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"#"</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
-<span class="ln"> 6</span><span class="k">if</span> <span class="n">SpinlessOrNot</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-<span class="ln"> 7</span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'-----------------------    SOC    -----------------------'</span><span class="p">)</span>
-<span class="ln"> 8</span><span class="k">else</span><span class="p">:</span>
-<span class="ln"> 9</span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'----------------------    w/o SOC    ----------------------'</span><span class="p">)</span>
-<span class="ln">10</span><span class="n">Wan_num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
-<span class="ln">11</span><span class="nb">print</span><span class="p">(</span><span class="n">Wan_num</span><span class="p">)</span>
-<span class="ln">12</span><span class="k">if</span> <span class="n">Wan_num</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">pos</span><span class="p">):</span>
-<span class="ln">13</span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'The second row is the number of wannier orbital'</span><span class="p">)</span>
-<span class="ln">14</span><span class="n">Wan_num_str</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
-<span class="ln">15</span><span class="n">Orb_enforce</span> <span class="o">=</span> <span class="p">[];</span>
-<span class="ln">16</span><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">Wan_num_str</span><span class="p">:</span>
-<span class="ln">17</span>    <span class="n">temp_str</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
-<span class="ln">18</span>    <span class="nb">print</span><span class="p">(</span><span class="n">temp_str</span> <span class="p">)</span>
-<span class="ln">19</span>    <span class="k">if</span> <span class="n">temp_str</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'#'</span><span class="p">:</span>
-<span class="ln">20</span>        <span class="k">continue</span>
-<span class="ln">21</span>    <span class="n">temp_str_list</span> <span class="o">=</span> <span class="n">temp_str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">','</span><span class="p">)</span>
-<span class="ln">22</span>    <span class="n">Orbital_coords</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">temp_str_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span><span class="nb">float</span><span class="p">(</span><span class="n">temp_str_list</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span><span class="nb">float</span><span class="p">(</span><span class="n">temp_str_list</span><span class="p">[</span><span class="mi">3</span><span class="p">])]</span>
-<span class="ln">23</span>    <span class="n">Orbital_temp_str</span> <span class="o">=</span> <span class="n">temp_str_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="ln">24</span>    <span class="c1">#print(Orbital_temp_str)</span>
-<span class="ln">25</span>    <span class="c1">#Orbital_temp_str = temp_str_list[0].strip()</span>
-<span class="ln">26</span>    <span class="k">try</span><span class="p">:</span>
-<span class="ln">27</span>        <span class="n">Orbital_str</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">WANNIER_ORBITALS</span><span class="p">[</span><span class="n">Orbital_temp_str</span><span class="p">]</span>
-<span class="ln">28</span>    <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">):</span>
-<span class="ln">29</span>        <span class="n">Orbital_str</span> <span class="o">=</span> <span class="p">[</span><span class="n">Orbital_temp_str</span><span class="p">]</span>
-<span class="ln">30</span>    <span class="k">except</span><span class="p">:</span>
-<span class="ln">31</span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'Unknown error'</span><span class="p">)</span>
-<span class="ln">32</span>    <span class="c1"># if sr.WANNIER_ORBITALS[Orbital_temp_str] is None:</span>
-<span class="ln">33</span>    <span class="c1">#     Orbital_str = Orbital_temp_str</span>
-<span class="ln">34</span>    <span class="c1"># else:</span>
-<span class="ln">35</span>        
-<span class="ln">36</span>    <span class="k">for</span> <span class="n">iorbstr</span> <span class="ow">in</span> <span class="n">Orbital_str</span><span class="p">:</span>
-<span class="ln">37</span>        <span class="k">if</span> <span class="n">SpinlessOrNot</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-<span class="ln">38</span>            <span class="k">for</span> <span class="n">spin</span> <span class="ow">in</span> <span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">SPIN_UP</span><span class="p">,</span> <span class="n">sr</span><span class="o">.</span><span class="n">SPIN_DOWN</span><span class="p">):</span>
-<span class="ln">39</span>                <span class="n">Orb_enforce</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Orbital_coords</span><span class="p">);</span>
-<span class="ln">40</span>        <span class="k">else</span><span class="p">:</span>
-<span class="ln">41</span>            <span class="n">Orb_enforce</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Orbital_coords</span><span class="p">);</span>
-<span class="ln">42</span><span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">orbitals</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">pos</span><span class="p">):</span>
-<span class="ln">43</span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'The orbitals you construct is different with wannier90_hr given'</span><span class="p">)</span>
-<span class="ln">44</span><span class="c1">#print(np.array(Orb_enforce))</span>
-<span class="ln">45</span><span class="n">model</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">Orb_enforce</span><span class="p">);</span>
-<span class="ln">46</span><span class="nb">print</span><span class="p">(</span><span class="s1">'--------------------- wan information----------------------'</span><span class="p">)</span>
-<span class="ln">47</span><span class="nb">print</span><span class="p">(</span><span class="s1">'The lattice uc is : '</span><span class="p">)</span>
-<span class="ln">48</span><span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">uc</span><span class="p">)</span>
-<span class="ln">49</span><span class="nb">print</span><span class="p">(</span><span class="s1">'The fractional pos of each wannier_center (Default is zero)'</span><span class="p">)</span>
-<span class="ln">50</span><span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">pos</span><span class="p">)</span>
-</code></pre></div><h3 id="z2pack-set">z2pack set</h3>
-<h4 id="setting">setting</h4>
-<div class="highlight"><pre class="chroma" tabindex="0"><code class="language-python" data-lang="python"><span class="ln">1</span><span class="n">settings</span> <span class="o">=</span> <span class="p">{</span>
-<span class="ln">2</span>    <span class="s1">'num_lines'</span><span class="p">:</span> <span class="mi">41</span><span class="p">,</span>
-<span class="ln">3</span>    <span class="s1">'pos_tol'</span><span class="p">:</span> <span class="mf">1e-2</span><span class="p">,</span>
-<span class="ln">4</span>    <span class="s1">'gap_tol'</span><span class="p">:</span> <span class="mf">2e-2</span><span class="p">,</span>
-<span class="ln">5</span>    <span class="s1">'move_tol'</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span>
-<span class="ln">6</span>    <span class="s1">'iterator'</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
-<span class="ln">7</span>    <span class="s1">'min_neighbour_dist'</span><span class="p">:</span> <span class="mf">1e-2</span><span class="p">,</span>
-<span class="ln">8</span><span class="p">}</span>
-</code></pre></div><h4 id="construct-z2pack-obj">Construct z2pack obj</h4>
-<div class="highlight"><pre class="chroma" tabindex="0"><code class="language-python" data-lang="python"><span class="ln">1</span><span class="n">tb_system</span> <span class="o">=</span> <span class="n">z2pack</span><span class="o">.</span><span class="n">tb</span><span class="o">.</span><span class="n">System</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="n">dim</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">bands</span> <span class="o">=</span> <span class="n">SelectBands</span><span class="p">,</span><span class="n">pos</span><span class="o">=</span><span class="n">model</span><span class="o">.</span><span class="n">pos</span><span class="p">)</span>
-<span class="ln">2</span><span class="c1">#tb_system = z2pack.tb.System(model,bands = SelectBands)</span>
-<span class="ln">3</span><span class="c1">#tb_system = z2pack.tb.System(model)</span>
-</code></pre></div><h3 id="z2pack-calculation">z2pack calculation</h3>
-<h4 id="wcc">wcc</h4>
-<p>运算</p>
-<div class="highlight"><pre class="chroma" tabindex="0"><code class="language-python" data-lang="python"><span class="ln">1</span><span class="n">result_wcc</span> <span class="o">=</span> <span class="n">z2pack</span><span class="o">.</span><span class="n">surface</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
-<span class="ln">2</span>        <span class="n">system</span><span class="o">=</span><span class="n">tb_system</span><span class="p">,</span> <span class="n">surface</span><span class="o">=</span><span class="k">lambda</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">:</span> <span class="p">[</span><span class="n">t</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="o">**</span><span class="n">settings</span> 
-<span class="ln">3</span>    <span class="p">)</span>
-</code></pre></div><p>plot</p>
-<div class="highlight"><pre class="chroma" tabindex="0"><code class="language-python" data-lang="python"><span class="ln"> 1</span><span class="n">z2pack</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">wcc</span><span class="p">(</span>
-<span class="ln"> 2</span>    <span class="n">result_wcc</span><span class="p">,</span>
-<span class="ln"> 3</span>    <span class="n">axis</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
-<span class="ln"> 4</span>    <span class="n">settings</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
-<span class="ln"> 5</span>        <span class="n">marker</span><span class="o">=</span><span class="s1">'o'</span><span class="p">,</span>
-<span class="ln"> 6</span>        <span class="n">color</span><span class="o">=</span><span class="s1">'b'</span><span class="p">,</span>
-<span class="ln"> 7</span>        <span class="n">markerfacecolor</span><span class="o">=</span><span class="s1">'b'</span>
-<span class="ln"> 8</span>    <span class="p">)</span>
-<span class="ln"> 9</span><span class="p">)</span>
-<span class="ln">10</span><span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">'wcc.pdf'</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">'tight'</span><span class="p">)</span>
-</code></pre></div><p>后面如有需要可以把wcc的数据弄出来</p>
-<h4 id="chern">chern</h4>
-<div class="highlight"><pre class="chroma" tabindex="0"><code class="language-python" data-lang="python"><span class="ln"> 1</span> <span class="n">result_chern</span> <span class="o">=</span> <span class="n">z2pack</span><span class="o">.</span><span class="n">surface</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
-<span class="ln"> 2</span>         <span class="n">system</span><span class="o">=</span><span class="n">tb_system</span><span class="p">,</span> <span class="n">surface</span><span class="o">=</span><span class="k">lambda</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">:</span> <span class="p">[</span><span class="n">t</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="o">**</span><span class="n">settings</span>
-<span class="ln"> 3</span>     <span class="p">)</span>
-<span class="ln"> 4</span>
-<span class="ln"> 5</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="ln"> 6</span> <span class="n">z2pack</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">chern</span><span class="p">(</span>
-<span class="ln"> 7</span>     <span class="n">result_chern</span><span class="p">,</span>
-<span class="ln"> 8</span>     <span class="n">axis</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
-<span class="ln"> 9</span>     <span class="n">settings</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
-<span class="ln">10</span>         <span class="n">marker</span><span class="o">=</span><span class="s1">'o'</span><span class="p">,</span>
-<span class="ln">11</span>         <span class="n">color</span><span class="o">=</span><span class="s1">'b'</span><span class="p">,</span>
-<span class="ln">12</span>         <span class="n">markerfacecolor</span><span class="o">=</span><span class="s1">'b'</span>
-<span class="ln">13</span>     <span class="p">)</span>
-<span class="ln">14</span> <span class="p">)</span>
-<span class="ln">15</span> <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">'chern.pdf'</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">'tight'</span><span class="p">)</span>
-<span class="ln">16</span>
-<span class="ln">17</span> <span class="nb">print</span><span class="p">(</span>
-<span class="ln">18</span>     <span class="s2">" Chern invariant: </span><span class="si">{0}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-<span class="ln">19</span>         <span class="n">z2pack</span><span class="o">.</span><span class="n">invariant</span><span class="o">.</span><span class="n">chern</span><span class="p">(</span><span class="n">result_chern</span><span class="p">)</span>
-<span class="ln">20</span>     <span class="p">)</span>
-<span class="ln">21</span> <span class="p">)</span>
-</code></pre></div><h4 id="z2">z2</h4>
-<div class="highlight"><pre class="chroma" tabindex="0"><code class="language-python" data-lang="python"><span class="ln"> 1</span> <span class="n">result_z2</span> <span class="o">=</span> <span class="n">z2pack</span><span class="o">.</span><span class="n">surface</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
-<span class="ln"> 2</span>         <span class="n">system</span><span class="o">=</span><span class="n">tb_system</span><span class="p">,</span> <span class="n">surface</span><span class="o">=</span><span class="k">lambda</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">:</span> <span class="p">[</span><span class="n">t</span><span class="p">,</span> <span class="n">s</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="o">**</span><span class="n">settings</span>
-<span class="ln"> 3</span>     <span class="p">)</span>
-<span class="ln"> 4</span>
-<span class="ln"> 5</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="ln"> 6</span> <span class="n">z2pack</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">wcc</span><span class="p">(</span>
-<span class="ln"> 7</span>     <span class="n">result_z2</span><span class="p">,</span>
-<span class="ln"> 8</span>     <span class="n">axis</span><span class="o">=</span><span class="n">ax</span>
-<span class="ln"> 9</span> <span class="p">)</span>
-<span class="ln">10</span> <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">'wcc_z2.pdf'</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">'tight'</span><span class="p">)</span>
-<span class="ln">11</span>
-<span class="ln">12</span> <span class="nb">print</span><span class="p">(</span>
-<span class="ln">13</span>     <span class="s2">" Chern invariant: </span><span class="si">{0}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-<span class="ln">14</span>         <span class="n">z2pack</span><span class="o">.</span><span class="n">invariant</span><span class="o">.</span><span class="n">z2</span><span class="p">(</span><span class="n">result_z2</span><span class="p">)</span>
-<span class="ln">15</span>     <span class="p">)</span>
-<span class="ln">16</span> <span class="p">)</span>
-</code></pre></div></div><div aria-hidden="true" aria-labelledby="rewardModalLabel" class="modal fade" id="rewardModal" tabindex="-1">
+</code></pre></li></ul></li></ul><h4 id="读取">读取</h4><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="c1"># read from wannier90_orbital.dat</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"wannier90_orbital.dat"</span><span class="p">,</span><span class="s2">"r"</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="n">orbitals</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">'-----------------------------------------------------------'</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="n">SpinlessOrNot</span>  <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"#"</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="k">if</span> <span class="n">SpinlessOrNot</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s1">'-----------------------    SOC    -----------------------'</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s1">'----------------------    w/o SOC    ----------------------'</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="n">Wan_num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">Wan_num</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="k">if</span> <span class="n">Wan_num</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">pos</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s1">'The second row is the number of wannier orbital'</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="n">Wan_num_str</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="n">Orb_enforce</span> <span class="o">=</span> <span class="p">[];</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">Wan_num_str</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">    <span class="n">temp_str</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">temp_str</span> <span class="p">)</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">    <span class="k">if</span> <span class="n">temp_str</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'#'</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">        <span class="k">continue</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">    <span class="n">temp_str_list</span> <span class="o">=</span> <span class="n">temp_str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">','</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">    <span class="n">Orbital_coords</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">temp_str_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span><span class="nb">float</span><span class="p">(</span><span class="n">temp_str_list</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span><span class="nb">float</span><span class="p">(</span><span class="n">temp_str_list</span><span class="p">[</span><span class="mi">3</span><span class="p">])]</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">    <span class="n">Orbital_temp_str</span> <span class="o">=</span> <span class="n">temp_str_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">    <span class="c1">#print(Orbital_temp_str)</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">    <span class="c1">#Orbital_temp_str = temp_str_list[0].strip()</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">    <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">        <span class="n">Orbital_str</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">WANNIER_ORBITALS</span><span class="p">[</span><span class="n">Orbital_temp_str</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl">    <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl">        <span class="n">Orbital_str</span> <span class="o">=</span> <span class="p">[</span><span class="n">Orbital_temp_str</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl">    <span class="k">except</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">31</span><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s1">'Unknown error'</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">32</span><span class="cl">    <span class="c1"># if sr.WANNIER_ORBITALS[Orbital_temp_str] is None:</span>
+</span></span><span class="line"><span class="ln">33</span><span class="cl">    <span class="c1">#     Orbital_str = Orbital_temp_str</span>
+</span></span><span class="line"><span class="ln">34</span><span class="cl">    <span class="c1"># else:</span>
+</span></span><span class="line"><span class="ln">35</span><span class="cl">        
+</span></span><span class="line"><span class="ln">36</span><span class="cl">    <span class="k">for</span> <span class="n">iorbstr</span> <span class="ow">in</span> <span class="n">Orbital_str</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">37</span><span class="cl">        <span class="k">if</span> <span class="n">SpinlessOrNot</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">38</span><span class="cl">            <span class="k">for</span> <span class="n">spin</span> <span class="ow">in</span> <span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">SPIN_UP</span><span class="p">,</span> <span class="n">sr</span><span class="o">.</span><span class="n">SPIN_DOWN</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">39</span><span class="cl">                <span class="n">Orb_enforce</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Orbital_coords</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">40</span><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">41</span><span class="cl">            <span class="n">Orb_enforce</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Orbital_coords</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">42</span><span class="cl"><span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">orbitals</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">pos</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">43</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s1">'The orbitals you construct is different with wannier90_hr given'</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">44</span><span class="cl"><span class="c1">#print(np.array(Orb_enforce))</span>
+</span></span><span class="line"><span class="ln">45</span><span class="cl"><span class="n">model</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">Orb_enforce</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">46</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">'--------------------- wan information----------------------'</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">47</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">'The lattice uc is : '</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">48</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">uc</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">49</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">'The fractional pos of each wannier_center (Default is zero)'</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">50</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">pos</span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="z2pack-set">z2pack set</h3><h4 id="setting">setting</h4><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">settings</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="s1">'num_lines'</span><span class="p">:</span> <span class="mi">41</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">    <span class="s1">'pos_tol'</span><span class="p">:</span> <span class="mf">1e-2</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="s1">'gap_tol'</span><span class="p">:</span> <span class="mf">2e-2</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">    <span class="s1">'move_tol'</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="s1">'iterator'</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">7</span><span class="cl">    <span class="s1">'min_neighbour_dist'</span><span class="p">:</span> <span class="mf">1e-2</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">8</span><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h4 id="construct-z2pack-obj">Construct z2pack obj</h4><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">tb_system</span> <span class="o">=</span> <span class="n">z2pack</span><span class="o">.</span><span class="n">tb</span><span class="o">.</span><span class="n">System</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="n">dim</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">bands</span> <span class="o">=</span> <span class="n">SelectBands</span><span class="p">,</span><span class="n">pos</span><span class="o">=</span><span class="n">model</span><span class="o">.</span><span class="n">pos</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c1">#tb_system = z2pack.tb.System(model,bands = SelectBands)</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="c1">#tb_system = z2pack.tb.System(model)</span>
+</span></span></code></pre></div><h3 id="z2pack-calculation">z2pack calculation</h3><h4 id="wcc">wcc</h4><p>运算</p><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">result_wcc</span> <span class="o">=</span> <span class="n">z2pack</span><span class="o">.</span><span class="n">surface</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">        <span class="n">system</span><span class="o">=</span><span class="n">tb_system</span><span class="p">,</span> <span class="n">surface</span><span class="o">=</span><span class="k">lambda</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">:</span> <span class="p">[</span><span class="n">t</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="o">**</span><span class="n">settings</span> 
+</span></span><span class="line"><span class="ln">3</span><span class="cl">    <span class="p">)</span>
+</span></span></code></pre></div><p>plot</p><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="n">z2pack</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">wcc</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">    <span class="n">result_wcc</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">    <span class="n">axis</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="n">settings</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">        <span class="n">marker</span><span class="o">=</span><span class="s1">'o'</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">        <span class="n">color</span><span class="o">=</span><span class="s1">'b'</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">        <span class="n">markerfacecolor</span><span class="o">=</span><span class="s1">'b'</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">'wcc.pdf'</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">'tight'</span><span class="p">)</span>
+</span></span></code></pre></div><p>后面如有需要可以把wcc的数据弄出来</p><h4 id="chern">chern</h4><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"> <span class="n">result_chern</span> <span class="o">=</span> <span class="n">z2pack</span><span class="o">.</span><span class="n">surface</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">         <span class="n">system</span><span class="o">=</span><span class="n">tb_system</span><span class="p">,</span> <span class="n">surface</span><span class="o">=</span><span class="k">lambda</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">:</span> <span class="p">[</span><span class="n">t</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="o">**</span><span class="n">settings</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">     <span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"> <span class="n">z2pack</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">chern</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">     <span class="n">result_chern</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">     <span class="n">axis</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">     <span class="n">settings</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">         <span class="n">marker</span><span class="o">=</span><span class="s1">'o'</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">         <span class="n">color</span><span class="o">=</span><span class="s1">'b'</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">         <span class="n">markerfacecolor</span><span class="o">=</span><span class="s1">'b'</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">     <span class="p">)</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl"> <span class="p">)</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl"> <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">'chern.pdf'</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">'tight'</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">
+</span></span><span class="line"><span class="ln">17</span><span class="cl"> <span class="nb">print</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">     <span class="s2">" Chern invariant: </span><span class="si">{0}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">         <span class="n">z2pack</span><span class="o">.</span><span class="n">invariant</span><span class="o">.</span><span class="n">chern</span><span class="p">(</span><span class="n">result_chern</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">     <span class="p">)</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl"> <span class="p">)</span>
+</span></span></code></pre></div><h4 id="z2">z2</h4><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"> <span class="n">result_z2</span> <span class="o">=</span> <span class="n">z2pack</span><span class="o">.</span><span class="n">surface</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">         <span class="n">system</span><span class="o">=</span><span class="n">tb_system</span><span class="p">,</span> <span class="n">surface</span><span class="o">=</span><span class="k">lambda</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">:</span> <span class="p">[</span><span class="n">t</span><span class="p">,</span> <span class="n">s</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="o">**</span><span class="n">settings</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">     <span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"> <span class="n">z2pack</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">wcc</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">     <span class="n">result_z2</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">     <span class="n">axis</span><span class="o">=</span><span class="n">ax</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"> <span class="p">)</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"> <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">'wcc_z2.pdf'</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">'tight'</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">
+</span></span><span class="line"><span class="ln">12</span><span class="cl"> <span class="nb">print</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">     <span class="s2">" Chern invariant: </span><span class="si">{0}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">         <span class="n">z2pack</span><span class="o">.</span><span class="n">invariant</span><span class="o">.</span><span class="n">z2</span><span class="p">(</span><span class="n">result_z2</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">     <span class="p">)</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl"> <span class="p">)</span>
+</span></span></code></pre></div></div><div aria-hidden="true" aria-labelledby="rewardModalLabel" class="modal fade" id="rewardModal" tabindex="-1">
 <div class="modal-dialog">
 <div class="modal-content surface">
 <div class="modal-header">
-<h5 class="modal-title" id="rewardModalLabel"><i class="fas fa-fw fa-medal"></i>Reward</h5>
-<a aria-label="Close" data-bs-dismiss="modal" href="#"><i class="fas fa-fw fa-times"></i></a>
-</div>
-<div class="modal-body">
+<h5 class="modal-title" id="rewardModalLabel"><i class="fas fa-fw fa-medal"></i>Reward</h5><a aria-label="Close" data-bs-dismiss="modal" href="#"><i class="fas fa-fw fa-times"></i></a>
+</div><div class="modal-body">
 <ul class="nav nav-tabs mb-3" role="tablist"><li class="nav-item" role="presentation">
 <a aria-controls="reward-alipay" aria-selected="true" class="nav-link active" data-bs-toggle="tab" href="#reward-alipay" id="reward-alipay-tab" role="tab">
 <i class="fab fa-fw fa-alipay"></i>Alipay
@@ -570,89 +398,67 @@ PARKMAN</a>
 <a aria-controls="reward-wechat" aria-selected="true" class="nav-link" data-bs-toggle="tab" href="#reward-wechat" id="reward-wechat-tab" role="tab">
 <i class="fab fa-fw fa-weixin"></i>WeChat
 </a>
-</li></ul>
-<div class="tab-content" id="rewardTabContent"><div aria-labelledby="reward-alipay-tab" class="tab-pane fade post-reward-content show active" id="reward-alipay" role="tabpanel">
+</li></ul><div class="tab-content" id="rewardTabContent"><div aria-labelledby="reward-alipay-tab" class="tab-pane fade post-reward-content show active" id="reward-alipay" role="tabpanel">
 <img class="img-fluid post-reward-img" loading="lazy" src="https://parkman.top/images/reward/alipay.png"/>
 </div><div aria-labelledby="reward-wechat-tab" class="tab-pane fade post-reward-content show" id="reward-wechat" role="tabpanel">
 <img class="img-fluid post-reward-img" loading="lazy" src="https://parkman.top/images/reward/wechat.png"/>
-</div></div>
-</div>
-</div>
-</div>
-</div><hr/><div class="post-navs d-flex mb-3 justify-content-between">
+</div></div></div></div></div></div><hr/><div class="post-navs d-flex mb-3 justify-content-between">
 <div class="post-nav w-50"><div class="prev-post btn btn-sm">
 <a href="https://parkman.top/en/posts/matlab/basic-tool/grouptheory/">Group Theory
 </a>
-</div></div>
-<div class="post-nav flex-row-reverse"><div class="next-post btn btn-sm">
+</div></div><div class="post-nav flex-row-reverse"><div class="next-post btn btn-sm">
 <a href="https://parkman.top/en/posts/%E7%A7%91%E7%A0%94%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/%E7%A7%91%E7%A0%94%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/">科研那些事儿-速览
 </a>
-</div></div>
-</div><section class="related-posts">
-<h3>Related Posts</h3>
-<ul class="related-posts"><li><a href="https://parkman.top/en/posts/lectures/uncertaintyquantification-4/">不确定性量化方法学习-神经网络
+</div></div></div><section class="related-posts">
+<h3>Related Posts</h3><ul class="related-posts"><li><a href="https://parkman.top/en/posts/lectures/uncertaintyquantification-4/">不确定性量化方法学习-神经网络
 </a></li><li><a href="https://parkman.top/en/posts/lectures/uncertaintyquantification-2/">不确定性量化方法学习-概率分布
 </a></li><li><a href="https://parkman.top/en/posts/lectures/uncertaintyquantification/">不确定性量化方法学习
 </a></li><li><a href="https://parkman.top/en/posts/matlab/basic-tool/grouptheory/">Group Theory
 </a></li><li><a href="https://parkman.top/en/posts/dft/%E5%88%A4%E6%96%AD%E7%A3%81%E6%80%A7%E7%BB%93%E6%9E%84/">判断磁性结构的对称性
-</a></li></ul>
-</section></article><div class="post-comments surface row"><script async="" crossorigin="anonymous" issue-term="pathname" label="comment" repo="parkman-auex/hugoblogtalks" src="https://utteranc.es/client.js" theme="github-light"></script></div></div>
-</div><aside class="col-lg-4 sidebar d-flex">
+</a></li></ul></section></article><div class="post-comments surface row"><script async="" crossorigin="anonymous" issue-term="pathname" label="comment" repo="parkman-auex/hugoblogtalks" src="https://utteranc.es/client.js" theme="github-light"></script></div></div></div><aside class="col-lg-4 sidebar d-flex">
 <div class="container"><section class="profile surface row text-center">
 <div class="col-12 d-flex align-items-center justify-content-center"><img alt="Xu-Tao Zeng" class="profile-avatar rounded-circle" height="132" loading="lazy" src="https://parkman.top/images/profile.png" width="132"/>
-</div>
-<div class="col-12 profile-meta"><div class="profile-name">Xu-Tao Zeng</div><div class="profile-bio">Student, Ph.D, Tech coolie, coder</div><div class="profile-company"><i class="fas fa-fw fa-building"></i>Beihang University</div><div class="profile-location"><i class="fas fa-fw fa-map-marker-alt"></i>Beijing, China</div><div class="profile-about"><i class="fas fa-fw fa-info-circle"></i><a href="https://parkman.top/en/about/">About</a></div></div>
-</section>
-<section class="recent-posts row surface">
-<h4>Recent Posts</h4>
-<ul><li><a href="https://parkman.top/en/posts/berryphase/chern/">陈数！自旋陈数！镜陈数！谷陈数！
+</div><div class="col-12 profile-meta"><div class="profile-name">Xu-Tao Zeng</div><div class="profile-bio">Student, Ph.D, Tech coolie, coder</div><div class="profile-company"><i class="fas fa-fw fa-building"></i>Beihang University</div><div class="profile-location"><i class="fas fa-fw fa-map-marker-alt"></i>Beijing, China</div><div class="profile-about"><i class="fas fa-fw fa-info-circle"></i><a href="https://parkman.top/en/about/">About</a></div></div></section><section class="recent-posts row surface">
+<h4>Recent Posts</h4><ul><li><a href="https://parkman.top/en/posts/berryphase/chern/">陈数！自旋陈数！镜陈数！谷陈数！
+</a></li><li><a href="https://parkman.top/en/posts/matlab/vasplib/vasplib_cheatsheet/">Vasplib Cheatsheet
 </a></li><li><a href="https://parkman.top/en/posts/%E7%A7%91%E7%A0%94%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/%E7%A7%91%E7%A0%94%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/">科研那些事儿-速览
 </a></li><li><a href="https://parkman.top/en/posts/berryphase/z2pack/">Z2pack 计算chern数
 </a></li><li><a href="https://parkman.top/en/posts/matlab/basic-tool/grouptheory/">Group Theory
-</a></li><li><a href="https://parkman.top/en/posts/dft/%E5%88%A4%E6%96%AD%E7%A3%81%E6%80%A7%E7%BB%93%E6%9E%84/">判断磁性结构的对称性
-</a></li></ul>
-</section><section class="taxonomy-categories row surface">
+</a></li></ul></section><section class="taxonomy-categories row surface">
 <h4>
 <a href="https://parkman.top/en/categories">Categories</a>
-</h4>
-<div><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/categories/hugo/" title="Hugo">
+</h4><div><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/categories/hugo/" title="Hugo">
 Hugo <span class="badge rounded-pill">13</span>
 </a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/categories/templete/" title="Templete">
 Templete <span class="badge rounded-pill">8</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/categories/vasplib/" title="vasplib">
+vasplib <span class="badge rounded-pill">5</span>
 </a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/categories/computational-chemistry/" title="Computational Chemistry">
 Computational Chemistry <span class="badge rounded-pill">1</span>
 </a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/categories/markdown/" title="Markdown">
 Markdown <span class="badge rounded-pill">1</span>
-</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/categories/vasplib/" title="vasplib">
-vasplib <span class="badge rounded-pill">1</span>
 </a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/" title="文献阅读">
 文献阅读 <span class="badge rounded-pill">1</span>
-</a></div>
-</section><section class="taxonomy-series row surface">
+</a></div></section><section class="taxonomy-series row surface">
 <h4>
 <a href="https://parkman.top/en/series">Series</a>
-</h4>
-<div><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/series/hugo/" title="Hugo">
+</h4><div><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/series/hugo/" title="Hugo">
 Hugo <span class="badge rounded-pill">13</span>
 </a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/series/hr/" title="HR">
 HR <span class="badge rounded-pill">3</span>
 </a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/series/reading/" title="Reading">
 Reading <span class="badge rounded-pill">2</span>
-</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/series/vasplib/" title="vasplib">
-vasplib <span class="badge rounded-pill">2</span>
 </a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/series/manual/" title="Manual">
 Manual <span class="badge rounded-pill">1</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/series/vasplib/" title="vasplib">
+vasplib <span class="badge rounded-pill">1</span>
 </a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/series/%E5%8D%8A%E7%BB%8F%E5%85%B8%E5%AD%A6%E4%B9%A0/" title="半经典学习">
 半经典学习 <span class="badge rounded-pill">1</span>
-</a></div>
-</section><section class="taxonomy-tags row surface">
+</a></div></section><section class="taxonomy-tags row surface">
 <h4>
 <a href="https://parkman.top/en/tags">Tags</a>
-</h4>
-<div><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/matlab/" title="matlab">
-matlab <span class="badge rounded-pill">9</span>
-</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/vasplib/" title="vasplib">
-vasplib <span class="badge rounded-pill">5</span>
+</h4><div><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/matlab/" title="matlab">
+matlab <span class="badge rounded-pill">10</span>
 </a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/markdown/" title="Markdown">
 Markdown <span class="badge rounded-pill">4</span>
 </a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/plot/" title="plot">
@@ -669,21 +475,15 @@ TB <span class="badge rounded-pill">3</span>
 VASP <span class="badge rounded-pill">3</span>
 </a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/hr/" title="HR">
 HR <span class="badge rounded-pill">2</span>
-</a></div>
-</section><section class="featured-posts row surface">
-<h4>Featured Posts</h4>
-<ul><li><a href="https://parkman.top/en/posts/berryphase/chern/">陈数！自旋陈数！镜陈数！谷陈数！
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/vasplib/" title="vasplib">
+vasplib <span class="badge rounded-pill">2</span>
+</a></div></section><section class="featured-posts row surface">
+<h4>Featured Posts</h4><ul><li><a href="https://parkman.top/en/posts/berryphase/chern/">陈数！自旋陈数！镜陈数！谷陈数！
+</a></li><li><a href="https://parkman.top/en/posts/matlab/vasplib/vasplib_cheatsheet/">Vasplib Cheatsheet
 </a></li><li><a href="https://parkman.top/en/posts/%E7%A7%91%E7%A0%94%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/%E7%A7%91%E7%A0%94%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/">科研那些事儿-速览
 </a></li><li><a href="https://parkman.top/en/posts/berryphase/z2pack/">Z2pack 计算chern数
 </a></li><li><a href="https://parkman.top/en/posts/matlab/basic-tool/grouptheory/">Group Theory
-</a></li><li><a href="https://parkman.top/en/posts/dft/vasp_metagga/">VASP MetaGGA
-</a></li></ul>
-</section></div>
-</aside>
-<h5 id="wc" style="font-size:1rem;text-align:center">1000 Words|This article has been read <span id="busuanzi_value_page_pv"></span> times</h5>
-<style type="text/css">.myfriends{text-align:center;background-color:#fff;opacity:.9}.myfriends a{color:#000}.myfriends p{display:none}.friendurl{text-decoration:none!important;color:#000}.myfriend{width:56px!important;height:56px!important;border-radius:50%;border:1px solid #ddd;padding:2px;box-shadow:1px 1px 1px rgba(0,0,0,.15);margin-top:14px!important;margin-left:14px!important;background-color:#fff}.frienddiv{height:92px;margin-top:10px;width:48%;display:inline-block!important}.frienddiv:hover{background:rgba(87,142,224,.15)}.frienddiv:hover .frienddivleft img{transition:.9s!important;-webkit-transition:.9s!important;-moz-transition:.9s!important;-o-transition:.9s!important;-ms-transition:.9s!important;transform:rotate(360deg)!important;-webkit-transform:rotate(360deg)!important;-moz-transform:rotate(360deg)!important;-o-transform:rotate(360deg)!important;-ms-transform:rotate(360deg)!important}.frienddivleft{width:92px;float:left}.frienddivleft{margin-right:2px}.frienddivright{margin-top:18px;margin-right:18px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap}</style>
-</div>
-</main><footer class="footer mt-auto py-3 text-center container"><nav class="social-links nav my-2 justify-content-center"><a class="nav-link social-link" href="https://space.bilibili.com/72389145" rel="noopener noreferrer" target="_blank" title="bilibili">
+</a></li></ul></section></div></aside><h5 id="wc" style="font-size:1rem;text-align:center">900 Words|This article has been read <span id="busuanzi_value_page_pv"></span> times</h5><style type="text/css">.myfriends{text-align:center;background-color:#fff;opacity:.9}.myfriends a{color:#000}.myfriends p{display:none}.friendurl{text-decoration:none!important;color:#000}.myfriend{width:56px!important;height:56px!important;border-radius:50%;border:1px solid #ddd;padding:2px;box-shadow:1px 1px 1px rgba(0,0,0,.15);margin-top:14px!important;margin-left:14px!important;background-color:#fff}.frienddiv{height:92px;margin-top:10px;width:48%;display:inline-block!important}.frienddiv:hover{background:rgba(87,142,224,.15)}.frienddiv:hover .frienddivleft img{transition:.9s!important;-webkit-transition:.9s!important;-moz-transition:.9s!important;-o-transition:.9s!important;-ms-transition:.9s!important;transform:rotate(360deg)!important;-webkit-transform:rotate(360deg)!important;-moz-transform:rotate(360deg)!important;-o-transform:rotate(360deg)!important;-ms-transform:rotate(360deg)!important}.frienddivleft{width:92px;float:left}.frienddivleft{margin-right:2px}.frienddivright{margin-top:18px;margin-right:18px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap}</style></div></main><footer class="footer mt-auto py-3 text-center container"><nav class="social-links nav my-2 justify-content-center"><a class="nav-link social-link" href="https://space.bilibili.com/72389145" rel="noopener noreferrer" target="_blank" title="bilibili">
 <i class="fa-fw fa-2x fas fa-tv"></i>
 </a><a class="nav-link social-link" href="mailto:parkman@buaa.edu.cn" title="Email">
 <i class="fas fa-fw fa-2x fa-envelope"></i>
@@ -697,8 +497,7 @@ HR <span class="badge rounded-pill">2</span>
 <i class="fa-fw fa-2x fab fa-qq"></i>
 </a><a class="nav-link social-link" href="https://www.zhihu.com/people/parkman-87" rel="noopener noreferrer" target="_blank" title="Zhihu">
 <i class="fa-fw fa-2x fab fa-zhihu"></i>
-</a></nav>
-<span id="busuanzi_container_site_pv">
+</a></nav><span id="busuanzi_container_site_pv">
 Visits to this site：<span id="busuanzi_value_site_pv"></span>
 </span>
  
@@ -706,10 +505,7 @@ Visits to this site：<span id="busuanzi_value_site_pv"></span>
 You are the <span id="busuanzi_value_site_uv"></span> th visitor
 </span><div class="copyright mb-2">
 Copyright © 2021-2022 Xu-Tao Zeng. All Rights Reserved.
-</div>
-</footer>
-<a class="btn-scroll-to-top" id="btnScrollToTop">
+</div></footer><a class="btn-scroll-to-top" id="btnScrollToTop">
 <i class="fas fa-fw fa-chevron-circle-up fa-2x"></i>
 </a>
-<script async="" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6130842d8572b712"></script></body>
-</html>
+<script async="" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6130842d8572b712"></script></body></html>
