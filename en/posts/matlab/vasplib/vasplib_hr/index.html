@@ -1,109 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1" name="viewport"/>
-<title>vasplib HR (1) Model construction - parkman</title><link href="https://parkman.top/images/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
-<link href="https://parkman.top/images/favicons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
-<link href="https://parkman.top/images/favicons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
-<link href="https://parkman.top/images/favicons/manifest.json" rel="manifest"/>
-<link href="https://parkman.top/images/favicons/favicon.ico" rel="icon"/>
-<meta content="" name="keywords"/>
-<meta content="matlab vasplib HR" name="description"/><meta content="vasplib HR (1) Model construction" itemprop="name"/>
-<meta content="matlab vasplib HR" itemprop="description"/><meta content="2021-09-08T09:20:31+08:00" itemprop="datePublished"/>
-<meta content="2021-09-08T09:20:31+08:00" itemprop="dateModified"/>
-<meta content="350" itemprop="wordCount"/><meta content="https://i.loli.net/2021/09/08/RLkmyNcuadfU6Ib.jpg" itemprop="image"/><meta content="https://i.loli.net/2021/09/08/u5HxF1KOIzybQGw.png" itemprop="image"/><meta content="https://i.loli.net/2021/09/08/wLsZpIneW7a8BbG.png" itemprop="image"/>
-<meta content="matlab,plot,HR,TB," itemprop="keywords"/><meta content="vasplib HR (1) Model construction" property="og:title"/>
-<meta content="matlab vasplib HR" property="og:description"/>
-<meta content="article" property="og:type"/>
-<meta content="https://parkman.top/en/posts/matlab/vasplib/vasplib_hr/" property="og:url"/><meta content="https://i.loli.net/2021/09/08/RLkmyNcuadfU6Ib.jpg" property="og:image"/><meta content="https://i.loli.net/2021/09/08/u5HxF1KOIzybQGw.png" property="og:image"/><meta content="https://i.loli.net/2021/09/08/wLsZpIneW7a8BbG.png" property="og:image"/><meta content="posts" property="article:section"/>
-<meta content="2021-09-08T09:20:31+08:00" property="article:published_time"/>
-<meta content="2021-09-08T09:20:31+08:00" property="article:modified_time"/>
-<meta content="https://parkman.top/en/posts/matlab/vasplib/vasplib_poscar/" property="og:see_also"/><meta content="https://parkman.top/en/posts/matlab/vasplib/vasplib_hr_2/" property="og:see_also"/>
-<meta content="summary_large_image" name="twitter:card"/>
-<meta content="https://i.loli.net/2021/09/08/RLkmyNcuadfU6Ib.jpg" name="twitter:image"/>
-<meta content="vasplib HR (1) Model construction" name="twitter:title"/>
-<meta content="matlab vasplib HR" name="twitter:description"/>
-<meta content="red" data-name="palette"/><link as="style" crossorigin="anonymous" href="https://parkman.top/css/bundle.min.a23cb7a4fbae89dc78de2a936152a28a0cfd8a2d4763f0b1a6b59ac478b721f8.css" integrity="sha256-ojy3pPuuidx43iqTYVKiigz9ii1HY/CxprWaxHi3Ifg=" onload='this.rel="stylesheet"' rel="preload"/>
-<noscript><link crossorigin="anonymous" href="https://parkman.top/css/bundle.min.a23cb7a4fbae89dc78de2a936152a28a0cfd8a2d4763f0b1a6b59ac478b721f8.css" integrity="sha256-ojy3pPuuidx43iqTYVKiigz9ii1HY/CxprWaxHi3Ifg=" rel="stylesheet"/></noscript><script crossorigin="anonymous" integrity="sha256-2h1iE34+BR6xaRe7HvGfG+BEAUMhyxhZFTyQp444c3k=" src="https://parkman.top/js/bundle.min.da1d62137e3e051eb16917bb1ef19f1be044014321cb1859153c90a78e387379.js"></script><script crossorigin="anonymous" defer="" integrity="sha256-Z1pUyhi9q+5YyORYyFGWkX4Els4aW2+VtrnLcNAf4dg=" src="https://parkman.top/js/katex.675a54ca18bdabee58c8e458c85196917e0496ce1a5b6f95b6b9cb70d01fe1d8.js"></script>
-<script type="application/javascript">var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-206544824-1","auto"),ga("send","pageview"))</script>
-<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>vasplib HR (1) Model construction - parkman</title><link href="https://parkman.top/images/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/><link href="https://parkman.top/images/favicons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/><link href="https://parkman.top/images/favicons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/><link href="https://parkman.top/images/favicons/manifest.json" rel="manifest"/><link href="https://parkman.top/images/favicons/favicon.ico" rel="icon"/><meta content="" name="keywords"/><meta content="matlab vasplib HR" name="description"/><meta content="vasplib HR (1) Model construction" itemprop="name"/><meta content="matlab vasplib HR" itemprop="description"/><meta content="2021-09-08T09:20:31+08:00" itemprop="datePublished"/><meta content="2021-09-08T09:20:31+08:00" itemprop="dateModified"/><meta content="350" itemprop="wordCount"/><meta content="https://i.loli.net/2021/09/08/RLkmyNcuadfU6Ib.jpg" itemprop="image"/><meta content="https://i.loli.net/2021/09/08/u5HxF1KOIzybQGw.png" itemprop="image"/><meta content="https://i.loli.net/2021/09/08/wLsZpIneW7a8BbG.png" itemprop="image"/><meta content="matlab,plot,HR,TB," itemprop="keywords"/><meta content="vasplib HR (1) Model construction" property="og:title"/><meta content="matlab vasplib HR" property="og:description"/><meta content="article" property="og:type"/><meta content="https://parkman.top/en/posts/matlab/vasplib/vasplib_hr/" property="og:url"/><meta content="https://i.loli.net/2021/09/08/RLkmyNcuadfU6Ib.jpg" property="og:image"/><meta content="https://i.loli.net/2021/09/08/u5HxF1KOIzybQGw.png" property="og:image"/><meta content="https://i.loli.net/2021/09/08/wLsZpIneW7a8BbG.png" property="og:image"/><meta content="posts" property="article:section"/><meta content="2021-09-08T09:20:31+08:00" property="article:published_time"/><meta content="2021-09-08T09:20:31+08:00" property="article:modified_time"/><meta content="https://parkman.top/en/posts/matlab/vasplib/vasplib_poscar/" property="og:see_also"/><meta content="https://parkman.top/en/posts/matlab/vasplib/vasplib_hr_2/" property="og:see_also"/><meta content="summary_large_image" name="twitter:card"/><meta content="https://i.loli.net/2021/09/08/RLkmyNcuadfU6Ib.jpg" name="twitter:image"/><meta content="vasplib HR (1) Model construction" name="twitter:title"/><meta content="matlab vasplib HR" name="twitter:description"/><meta content="red" data-name="palette"/><link as="style" crossorigin="anonymous" href="https://parkman.top/css/bundle.min.a23cb7a4fbae89dc78de2a936152a28a0cfd8a2d4763f0b1a6b59ac478b721f8.css" integrity="sha256-ojy3pPuuidx43iqTYVKiigz9ii1HY/CxprWaxHi3Ifg=" onload='this.rel="stylesheet"' rel="preload"/><noscript><link crossorigin="anonymous" href="https://parkman.top/css/bundle.min.a23cb7a4fbae89dc78de2a936152a28a0cfd8a2d4763f0b1a6b59ac478b721f8.css" integrity="sha256-ojy3pPuuidx43iqTYVKiigz9ii1HY/CxprWaxHi3Ifg=" rel="stylesheet"/></noscript><script crossorigin="anonymous" integrity="sha256-2h1iE34+BR6xaRe7HvGfG+BEAUMhyxhZFTyQp444c3k=" src="https://parkman.top/js/bundle.min.da1d62137e3e051eb16917bb1ef19f1be044014321cb1859153c90a78e387379.js"></script><script crossorigin="anonymous" defer="" integrity="sha256-Z1pUyhi9q+5YyORYyFGWkX4Els4aW2+VtrnLcNAf4dg=" src="https://parkman.top/js/katex.675a54ca18bdabee58c8e458c85196917e0496ce1a5b6f95b6b9cb70d01fe1d8.js"></script>
+<script type="application/javascript">var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-206544824-1","auto"),ga("send","pageview"))</script><script async="" src="https://www.google-analytics.com/analytics.js"></script>
 <link crossorigin="anonymous" href="https://parkman.top/css/tabbed-pane.css" rel="stylesheet"/><script crossorigin="anonymous" src="https://parkman.top/js/tabpane-persist.js"></script><script crossorigin="anonymous" src="https://parkman.top/js/typeit.min.js"></script><script crossorigin="anonymous" src="https://parkman.top/js/echarts.min.js"></script><script crossorigin="anonymous" src="https://parkman.top/js/macarons.js"></script><script crossorigin="anonymous" src="https://parkman.top/js/decrypt.js"></script>
 <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-<script>$(document).ready(function(){var e=setInterval(n,100),t=0;function n(){$("#busuanzi_container_site_pv").css("display")!="none"&&(clearInterval(e),$("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html())+t))}})</script>
-</head><body><header><nav class="navbar navbar-expand-xl fixed-top">
-<div class="container">
-<a class="navbar-brand" href="https://parkman.top/en/">
-<img alt="Logo" class="logo" height="2409" loading="lazy" src="https://parkman.top/images/logo.png" width="2409"/>
+<script>$(document).ready(function(){var e=setInterval(n,100),t=0;function n(){$("#busuanzi_container_site_pv").css("display")!="none"&&(clearInterval(e),$("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html())+t))}})</script></head><body><header><nav class="navbar navbar-expand-xl fixed-top"><div class="container"><a class="navbar-brand" href="https://parkman.top/en/"><img alt="Logo" class="logo" height="2409" loading="lazy" src="https://parkman.top/images/logo.png" width="2409"/>
 PARKMAN</a>
 <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
-<span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse navbar-collapse" id="navbarSupportedContent">
-<ul class="navbar-nav me-1 mb-2 mb-lg-0"></ul><form action="https://parkman.top/en/search" class="search-bar d-flex ms-1">
-<div class="input-group input-group-sm">
-<button aria-label="submit" class="btn btn-search disabled position-absolute left-0" type="submit"><i class="fas fa-fw fa-search"></i></button>
-<input aria-label="Search" class="form-control rounded-pill" id="searchQuery" name="q" type="search"/>
-</div></form><ul class="navbar-nav me-1 mb-2 mb-lg-0 me-1 ms-auto">
-<li class="nav-item">
-<a class="nav-link" href="https://parkman.top/en/archives/">
-<i class="fas fa-fw fa-file-archive"></i>Archives
-</a>
-</li><li class="nav-item">
-<a class="nav-link" href="https://parkman.top/en/categories/">
-<i class="fas fa-fw fa-folder"></i>Categories
-</a>
-</li><li class="nav-item">
-<a class="nav-link" href="https://parkman.top/en/tags/">
-<i class="fas fa-fw fa-tags"></i>Tags
-</a>
-</li><li class="nav-item">
-<a class="nav-link" href="https://parkman.top/en/series/">
-<i class="fas fa-fw fa-columns"></i>Series
-</a>
-</li><li class="nav-item dropdown">
-<a aria-expanded="false" class="nav-link" data-bs-toggle="dropdown" id="navbarDropdown-dropdown" role="button">
-<i class="fas fa-fw fa-chevron-circle-down"></i>Dropdown
-</a>
-<ul aria-labelledby="navbarDropdown-dropdown" class="dropdown-menu"><li>
-<a class="dropdown-item" href="https://github.com/razonyang/hugo-theme-bootstrap" rel="noopener noreferrer" target="_blank">
-<i class="fab fa-fw fa-github"></i>Github
-</a>
-</li></ul></li><li class="nav-item dropdown">
-<a aria-expanded="false" class="nav-link" data-bs-toggle="dropdown" href="#" id="languageDropdown" role="button">
-<i class="fas fa-fw fa-language"></i> English
-</a>
-<ul aria-labelledby="languageDropdown" class="dropdown-menu"><li><a class="dropdown-item" href="https://parkman.top/zh-cn/">简体中文</a></li></ul></li><li class="nav-item">
-<a aria-controls="offcanvasSettings" class="nav-link" data-bs-toggle="offcanvas" href="#offcanvasSettings" role="button">
-<i class="fas fa-fw fa-sliders-h"></i> Settings
-</a>
-</li><div aria-labelledby="offcanvasSettingsLabel" class="offcanvas offcanvas-end surface h-100" id="offcanvasSettings" tabindex="-1">
-<div class="offcanvas-header">
-<h5 class="offcanvas-title" id="offcanvasSettingsLabel" w=""><i class="fas fa-fw fa-sliders-h"></i> Settings</h5><a aria-label="Close" data-bs-dismiss="offcanvas" role="button">
-<span class="fas fa-2x fa-fw fa-times"></span>
-</a>
-</div><div class="offcanvas-body"><section class="setting">
-<form class="row">
-<div class="col-auto">
-<label><i class="fas fa-fw fa-adjust"></i> Mode</label>
-</div><div class="col-auto ms-auto">
-<div class="form-check form-switch">
-<input class="form-check-input" id="modeSwitcher" type="checkbox"/>
-</div></div></form></section><section class="setting">
-<form class="font-size-switcher-form row">
-<div class="col-auto">
-<label class="form-label" for="fontSize"><i class="fas fa-fw fa-font"></i> Font Size</label>
-</div><div class="col-auto ms-auto">
-<input class="form-range" id="fontSize" max="2" min="-2" type="range"/>
-</div></form></section><section class="setting palettes">
-<form class="row">
-<div class="col-auto">
-<label><i class="fas fa-fw fa-palette"></i> Palette</label>
-</div><div class="col-auto ms-auto">
-<span class="btn btn-sm" id="btnPalette"><i class="fas fa-eye-dropper"></i></span>
-</div></form><div class="container mt-2 visually-hidden" id="palettePicker">
-<div class="btn-group"><button class="btn btn-sm palette bg-blue d-flex align-items-center justify-content-center" id="palette-blue" title="Blue" type="button">
+<span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav me-1 mb-2 mb-lg-0"></ul><form action="https://parkman.top/en/search" class="search-bar d-flex ms-1"><div class="input-group input-group-sm"><button aria-label="submit" class="btn btn-search disabled position-absolute left-0" type="submit"><i class="fas fa-fw fa-search"></i></button>
+<input aria-label="Search" class="form-control rounded-pill" id="searchQuery" name="q" type="search"/></div></form><ul class="navbar-nav me-1 mb-2 mb-lg-0 me-1 ms-auto"><li class="nav-item"><a class="nav-link" href="https://parkman.top/en/archives/"><i class="fas fa-fw fa-file-archive"></i>Archives</a></li><li class="nav-item"><a class="nav-link" href="https://parkman.top/en/categories/"><i class="fas fa-fw fa-folder"></i>Categories</a></li><li class="nav-item"><a class="nav-link" href="https://parkman.top/en/tags/"><i class="fas fa-fw fa-tags"></i>Tags</a></li><li class="nav-item"><a class="nav-link" href="https://parkman.top/en/series/"><i class="fas fa-fw fa-columns"></i>Series</a></li><li class="nav-item dropdown"><a aria-expanded="false" class="nav-link" data-bs-toggle="dropdown" id="navbarDropdown-dropdown" role="button"><i class="fas fa-fw fa-chevron-circle-down"></i>Dropdown</a><ul aria-labelledby="navbarDropdown-dropdown" class="dropdown-menu"><li><a class="dropdown-item" href="https://github.com/razonyang/hugo-theme-bootstrap" rel="noopener noreferrer" target="_blank"><i class="fab fa-fw fa-github"></i>Github</a></li></ul></li><li class="nav-item dropdown"><a aria-expanded="false" class="nav-link" data-bs-toggle="dropdown" href="#" id="languageDropdown" role="button"><i class="fas fa-fw fa-language"></i> English</a><ul aria-labelledby="languageDropdown" class="dropdown-menu"><li><a class="dropdown-item" href="https://parkman.top/zh-cn/">简体中文</a></li></ul></li><li class="nav-item"><a aria-controls="offcanvasSettings" class="nav-link" data-bs-toggle="offcanvas" href="#offcanvasSettings" role="button"><i class="fas fa-fw fa-sliders-h"></i> Settings</a></li><div aria-labelledby="offcanvasSettingsLabel" class="offcanvas offcanvas-end surface h-100" id="offcanvasSettings" tabindex="-1"><div class="offcanvas-header"><h5 class="offcanvas-title" id="offcanvasSettingsLabel" w=""><i class="fas fa-fw fa-sliders-h"></i> Settings</h5><a aria-label="Close" data-bs-dismiss="offcanvas" role="button"><span class="fas fa-2x fa-fw fa-times"></span></a></div><div class="offcanvas-body"><section class="setting"><form class="row"><div class="col-auto"><label><i class="fas fa-fw fa-adjust"></i> Mode</label></div><div class="col-auto ms-auto"><div class="form-check form-switch"><input class="form-check-input" id="modeSwitcher" type="checkbox"/></div></div></form></section><section class="setting"><form class="font-size-switcher-form row"><div class="col-auto"><label class="form-label" for="fontSize"><i class="fas fa-fw fa-font"></i> Font Size</label></div><div class="col-auto ms-auto"><input class="form-range" id="fontSize" max="2" min="-2" type="range"/></div></form></section><section class="setting palettes"><form class="row"><div class="col-auto"><label><i class="fas fa-fw fa-palette"></i> Palette</label></div><div class="col-auto ms-auto"><span class="btn btn-sm" id="btnPalette"><i class="fas fa-eye-dropper"></i></span></div></form><div class="container mt-2 visually-hidden" id="palettePicker"><div class="btn-group"><button class="btn btn-sm palette bg-blue d-flex align-items-center justify-content-center" id="palette-blue" title="Blue" type="button">
 </button><button class="btn btn-sm palette bg-blue-gray d-flex align-items-center justify-content-center" id="palette-blue-gray" title="Blue Gray" type="button">
 </button><button class="btn btn-sm palette bg-brown d-flex align-items-center justify-content-center" id="palette-brown" title="Brown" type="button">
 </button><button class="btn btn-sm palette bg-cyan d-flex align-items-center justify-content-center" id="palette-cyan" title="Cyan" type="button">
@@ -114,47 +19,13 @@ PARKMAN</a>
 </button><button class="btn btn-sm palette bg-purple d-flex align-items-center justify-content-center" id="palette-purple" title="Purple" type="button">
 </button><button class="btn btn-sm palette bg-red d-flex align-items-center justify-content-center" id="palette-red" title="Red" type="button">
 </button><button class="btn btn-sm palette bg-teal d-flex align-items-center justify-content-center" id="palette-teal" title="Teal" type="button">
-</button><button class="btn btn-sm palette bg-yellow d-flex align-items-center justify-content-center" id="palette-yellow" title="Yellow" type="button">
-</button>
-</div></div></section></div></div></ul></div></div></nav></header><main class="container" role="main">
-<div class="row content">
-<div class="col-lg-8">
-<div class="container"><nav aria-label="breadcrumb" class="row">
-<ol class="breadcrumb surface"><li class="breadcrumb-item"><a href="https://parkman.top/en/">Home</a></li><li class="breadcrumb-item"><a href="https://parkman.top/en/posts/">Posts</a></li><li class="breadcrumb-item active">Vasplib HR (1) Model Construction</li></ol></nav><article class="post row surface"><div class="post-panel-wrapper">
-<div class="post-panel d-flex flex-column">
-<a class="action d-none d-lg-block" id="sidebarToggler" role="button">
-<i class="fas fa-fw fa-expand-alt fa-rotate-45"></i>
-</a>
-<a class="action btn-reward" data-bs-target="#rewardModal" data-bs-toggle="modal" role="button" title="Reward">
-<i class="fas fa-fw fa-medal"></i>
-</a>
+</button><button class="btn btn-sm palette bg-yellow d-flex align-items-center justify-content-center" id="palette-yellow" title="Yellow" type="button"></button></div></div></section></div></div></ul></div></div></nav></header><main class="container" role="main"><div class="row content"><div class="col-lg-8"><div class="container"><nav aria-label="breadcrumb" class="row"><ol class="breadcrumb surface"><li class="breadcrumb-item"><a href="https://parkman.top/en/">Home</a></li><li class="breadcrumb-item"><a href="https://parkman.top/en/posts/">Posts</a></li><li class="breadcrumb-item active">Vasplib HR (1) Model Construction</li></ol></nav><article class="post row surface"><div class="post-panel-wrapper"><div class="post-panel d-flex flex-column"><a class="action d-none d-lg-block" id="sidebarToggler" role="button"><i class="fas fa-fw fa-expand-alt fa-rotate-45"></i></a>
+<a class="action btn-reward" data-bs-target="#rewardModal" data-bs-toggle="modal" role="button" title="Reward"><i class="fas fa-fw fa-medal"></i></a>
 <a class="action" data-bs-container="body" data-bs-content='&lt;a target="_blank" rel="license noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en"&gt;CC BY-NC-ND 4.0 &lt;i class="fab fa-fw fa-creative-commons"&gt;&lt;/i&gt;&lt;i class="fab fa-fw fa-creative-commons-by"&gt;&lt;/i&gt;&lt;i class="fab fa-fw fa-creative-commons-nc"&gt;&lt;/i&gt;&lt;i class="fab fa-fw fa-creative-commons-nd"&gt;&lt;/i&gt;&lt;/a&gt;
-' data-bs-html="true" data-bs-placement="bottom" data-bs-toggle="popover" data-bs-trigger="focus" tabindex="0">
-<i class="fas fa-fw fa-copyright"></i>
-</a>
-<a aria-controls="offcanvasTOC" class="fas fa-fw fa-list-alt" data-bs-toggle="offcanvas" href="#offcanvasTOC" id="btnTOC" role="button">
-</a>
-</div></div><h1 class="post-title my-3">Vasplib HR (1) Model Construction
-</h1><div class="post-meta mb-3"><span class="post-date me-2">
-<i class="fas fa-fw fa-calendar-alt"></i>Sep 8, 2021
-</span><span class="post-reading-time me-2">
-<i class="fas fa-fw fa-coffee"></i>2 min read
-</span><span class="post-taxonomies"><a class="post-taxonomy" href="https://parkman.top/en/categories/vasplib/">vasplib</a><a class="post-taxonomy" href="https://parkman.top/en/series/hr/">HR</a><a class="post-taxonomy" href="https://parkman.top/en/tags/matlab/">matlab</a><a class="post-taxonomy" href="https://parkman.top/en/tags/plot/">plot</a><a class="post-taxonomy" href="https://parkman.top/en/tags/hr/">HR</a><a class="post-taxonomy" href="https://parkman.top/en/tags/tb/">TB</a></span>
-</div><div class="post-share mb-3"><div class="addthis_inline_share_toolbox"></div></div><div aria-labelledby="offcanvasTOCLabel" class="offcanvas offcanvas-end surface" id="offcanvasTOC" tabindex="-1">
-<div class="offcanvas-header">
-<h5 class="offcanvas-title" id="offcanvasTOCLabel">Table Of Contents</h5><a aria-label="Close" data-bs-dismiss="offcanvas" role="button">
-<span class="fas fa-2x fa-fw fa-times"></span>
-</a>
-</div><div class="offcanvas-body">
-<nav id="TableOfContents">
-<ul>
-<li><a href="#quickstart">Quickstart</a>
-<ul>
-<li><a href="#构建一个hr-读取wannier90_hrdat">构建一个HR 读取wannier90_hr.dat</a></li><li><a href="#当然可以很快地锁定hopping项-常用的homecell的矩阵"><strong>当然可以很快地锁定HOPPING项, 常用的HOMECELL的矩阵</strong></a></li></ul></li><li><a href="#手动构建hr">手动构建HR</a>
-<ul>
-<li><a href="#声明一个空的hr">声明一个空的HR</a></li><li><a href="#设置符号化变量">设置符号化变量</a></li><li><a href="#通过-set_hop-方法来设定-hopping">通过 set_hop 方法来设定 hopping</a></li></ul></li><li><a href="#自动构建hr">自动构建HR</a>
-<ul>
-<li><a href="#slater-koster">Slater Koster</a></li><li><a href="#通过对称性构建">通过对称性构建</a></li></ul></li></ul></nav></div></div><div class="post-content mb-3"><p><a href="https://gitee.com/tcmp/vasplib/blob/master/bin/HR.m#L1" rel="noopener noreferrer" target="_blank"><strong>vasplib:HR</strong></a>
+' data-bs-html="true" data-bs-placement="bottom" data-bs-toggle="popover" data-bs-trigger="focus" tabindex="0"><i class="fas fa-fw fa-copyright"></i></a>
+<a aria-controls="offcanvasTOC" class="fas fa-fw fa-list-alt" data-bs-toggle="offcanvas" href="#offcanvasTOC" id="btnTOC" role="button"></a></div></div><h1 class="post-title my-3">Vasplib HR (1) Model Construction</h1><div class="post-meta mb-3"><span class="post-date me-2"><i class="fas fa-fw fa-calendar-alt"></i>Sep 8, 2021
+</span><span class="post-reading-time me-2"><i class="fas fa-fw fa-coffee"></i>2 min read
+</span><span class="post-taxonomies"><a class="post-taxonomy" href="https://parkman.top/en/categories/vasplib/">vasplib</a><a class="post-taxonomy" href="https://parkman.top/en/series/hr/">HR</a><a class="post-taxonomy" href="https://parkman.top/en/tags/matlab/">matlab</a><a class="post-taxonomy" href="https://parkman.top/en/tags/plot/">plot</a><a class="post-taxonomy" href="https://parkman.top/en/tags/hr/">HR</a><a class="post-taxonomy" href="https://parkman.top/en/tags/tb/">TB</a></span></div><div class="post-share mb-3"><div class="addthis_inline_share_toolbox"></div></div><div aria-labelledby="offcanvasTOCLabel" class="offcanvas offcanvas-end surface" id="offcanvasTOC" tabindex="-1"><div class="offcanvas-header"><h5 class="offcanvas-title" id="offcanvasTOCLabel">Table Of Contents</h5><a aria-label="Close" data-bs-dismiss="offcanvas" role="button"><span class="fas fa-2x fa-fw fa-times"></span></a></div><div class="offcanvas-body"><nav id="TableOfContents"><ul><li><a href="#quickstart">Quickstart</a><ul><li><a href="#构建一个hr-读取wannier90_hrdat">构建一个HR 读取wannier90_hr.dat</a></li><li><a href="#当然可以很快地锁定hopping项-常用的homecell的矩阵"><strong>当然可以很快地锁定HOPPING项, 常用的HOMECELL的矩阵</strong></a></li></ul></li><li><a href="#手动构建hr">手动构建HR</a><ul><li><a href="#声明一个空的hr">声明一个空的HR</a></li><li><a href="#设置符号化变量">设置符号化变量</a></li><li><a href="#通过-set_hop-方法来设定-hopping">通过 set_hop 方法来设定 hopping</a></li></ul></li><li><a href="#自动构建hr">自动构建HR</a><ul><li><a href="#slater-koster">Slater Koster</a></li><li><a href="#通过对称性构建">通过对称性构建</a></li></ul></li></ul></nav></div></div><div class="post-content mb-3"><p><a href="https://gitee.com/tcmp/vasplib/blob/master/bin/HR.m#L1" rel="noopener noreferrer" target="_blank"><strong>vasplib:HR</strong></a>
 HR - a powerful TB tools</p><h1 id="hr-class-入门">HR class 入门</h1><p>HR - a powerful TB tools</p><p>** 什么是 HR? **</p><p>In <a href="https://en.wikipedia.org/wiki/Solid-state_physics" rel="noopener noreferrer" target="_blank">solid-state physics</a>
 , the <strong>tight-binding model</strong> (or <strong>TB model</strong>) is an approach to the calculation of <a href="https://en.wikipedia.org/wiki/Electronic_band_structure" rel="noopener noreferrer" target="_blank">electronic band structure</a>
 using an approximate set of <a href="https://en.wikipedia.org/wiki/Wave_function" rel="noopener noreferrer" target="_blank">wave functions</a>
@@ -169,19 +40,13 @@ t\textrm{-}\textrm{hopping}\textrm{integral}\newline
 \langle i,j\rangle -\textrm{nearest}\textrm{neighbor}\textrm{index}\newline
 h.c.\textrm{-}\textrm{the}\textrm{hermitian}\textrm{conjugate}\textrm{of}\textrm{the}\textrm{other}\textrm{term(s)}
 \end{array}
-$$</p><p>考虑有平移对称性的体系，我们可以只需要考虑元胞与其他晶胞(包括元胞)的相互作用，则可以研究整个体系的物理性质。</p><p>以 SSH 模型为例</p><p><img alt="" class="img-fluid" loading="lazy" src="https://i.loli.net/2021/09/08/qct948UdklvyOwn.png"/>
-</p><p>一个元胞里有两个C 元胞内为双键 元胞外为单键，用v 和 w 来代替</p><p><img alt="" class="img-fluid" loading="lazy" src="https://i.loli.net/2021/09/08/IMrsKnkeQbXhzfm.png"/>
-</p><p>上图 有10 个元胞，省空间我们认为只有5个元胞，用哈密顿量用矩阵表示即为</p><p><img alt="" class="img-fluid" loading="lazy" src="https://i.loli.net/2021/09/08/nK4R2M3wha5cNl8.png"/>
-</p><p>如果加上周期平移条件，即第五个元胞和第一个元胞有相互作用,则需要添上两个蓝色的 元胞间相互作用</p><p>这么一个体系可以任意扩写，遵从一定的规律， 即绿框的对角块都是一样的，元胞与元胞之间的Hopping块，依次放在对角块的两边，且满足厄米对称性。</p><p><img alt="" class="img-fluid" loading="lazy" src="https://i.loli.net/2021/09/08/zJ5cRHCjylbq1DX.png"/>
-<img alt="" class="img-fluid" loading="lazy" src="https://i.loli.net/2021/09/08/QNiueWXFgUTdt8r.png"/>
-</p><p>则体系可以用 格点与元胞之间的矩阵所描述，借助于 wannier90: case_hr.dat的输出格式</p><p>hr_datformat:</p><pre><code>0 0 0 [0 v;v 0]  
+$$</p><p>考虑有平移对称性的体系，我们可以只需要考虑元胞与其他晶胞(包括元胞)的相互作用，则可以研究整个体系的物理性质。</p><p>以 SSH 模型为例</p><p><img alt="" class="img-fluid" loading="lazy" src="https://i.loli.net/2021/09/08/qct948UdklvyOwn.png"/></p><p>一个元胞里有两个C 元胞内为双键 元胞外为单键，用v 和 w 来代替</p><p><img alt="" class="img-fluid" loading="lazy" src="https://i.loli.net/2021/09/08/IMrsKnkeQbXhzfm.png"/></p><p>上图 有10 个元胞，省空间我们认为只有5个元胞，用哈密顿量用矩阵表示即为</p><p><img alt="" class="img-fluid" loading="lazy" src="https://i.loli.net/2021/09/08/nK4R2M3wha5cNl8.png"/></p><p>如果加上周期平移条件，即第五个元胞和第一个元胞有相互作用,则需要添上两个蓝色的 元胞间相互作用</p><p>这么一个体系可以任意扩写，遵从一定的规律， 即绿框的对角块都是一样的，元胞与元胞之间的Hopping块，依次放在对角块的两边，且满足厄米对称性。</p><p><img alt="" class="img-fluid" loading="lazy" src="https://i.loli.net/2021/09/08/zJ5cRHCjylbq1DX.png"/>
+<img alt="" class="img-fluid" loading="lazy" src="https://i.loli.net/2021/09/08/QNiueWXFgUTdt8r.png"/></p><p>则体系可以用 格点与元胞之间的矩阵所描述，借助于 wannier90: case_hr.dat的输出格式</p><p>hr_datformat:</p><pre><code>0 0 0 [0 v;v 0]  
 1 0 0 [0 0;w 0]   
 -1 0 0 [0 w;0 0]  
 ...
 </code></pre><p>了解了什么是<strong>HR</strong>后，我们就可以开始我们的HR入门之旅了。</p><h2 id="quickstart">Quickstart</h2><h3 id="构建一个hr-读取wannier90_hrdat">构建一个HR 读取wannier90_hr.dat</h3><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-matlab" data-lang="matlab"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">HR_TB</span> <span class="p">=</span> <span class="n">HR</span><span class="p">.</span><span class="n">from_wannier90</span><span class="p">(</span><span class="s">'wannier90_hr.dat'</span><span class="p">)</span>
-</span></span></code></pre></div><details><summary>Result</summary>
-<div class="markdown-inner">
-<p>HR_TB =
+</span></span></code></pre></div><details><summary>Result</summary><div class="markdown-inner"><p>HR_TB =
 HR - 属性:</p><pre><code>    vectorL: [185x3 double]
       HnumL: [6x6x185 double]
       HcoeL: [6x6x185 sym]
@@ -192,23 +57,16 @@ HR - 属性:</p><pre><code>    vectorL: [185x3 double]
          Rm: [3x3 double]
          Gk: [3x3 double]
 symvar_list: [1x0 sym]
-</code></pre></div></details>
-<p>我们读取了一个 wannier90 生成的一个TB模型</p><p>简单看来，这个HR对象 拥有几个基本的属性，<strong>vectorL, HnumL, HcoeL, NRPTS, WAN_NUM,Rm,Gk</strong></p><p><em>Bais_num</em> 在这里等效于<em>WAN_NUM</em>,* symvar_list* 先不用管，</p><ul>
-<li>vectorL: 格点的位置HR中的R</li><li>HnumL：R所对应的与元胞的hopping矩阵，数值化的</li><li>HcoeL：HR的一大特点很多方法同时支持符号和数值的哈密顿量，同时设定HcoeL也方便我们后续的操作与调试。在这里读取的是wannier，HcoeL为0</li><li>NRPTS：有多少格点，往往 读取wannier的结果NRPTS比较大 自己做的模型往往只考虑最近邻模型</li><li>WAN_NUM: 元胞中的轨道数量</li><li>Rm: 元胞的基失矩阵</li><li>Gk: 相应的 倒格式矩阵，<code>Gk = 2*pi*(eye(3)/Rm).'</code></li></ul><h3 id="当然可以很快地锁定hopping项-常用的homecell的矩阵"><strong>当然可以很快地锁定HOPPING项, 常用的HOMECELL的矩阵</strong></h3><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-matlab" data-lang="matlab"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">HR_TB</span><span class="p">.</span><span class="n">HnumL</span><span class="p">(:,:,</span><span class="n">HR_TB</span><span class="p">.</span><span class="n">Line_000</span><span class="p">)</span>
-</span></span></code></pre></div><details><summary>Result</summary>
-<div class="markdown-inner">
-<p>ans = 6x6</p><pre><code> 1.1466    0.1710         0         0   -0.1335         0  
+</code></pre></div></details><p>我们读取了一个 wannier90 生成的一个TB模型</p><p>简单看来，这个HR对象 拥有几个基本的属性，<strong>vectorL, HnumL, HcoeL, NRPTS, WAN_NUM,Rm,Gk</strong></p><p><em>Bais_num</em> 在这里等效于<em>WAN_NUM</em>,* symvar_list* 先不用管，</p><ul><li>vectorL: 格点的位置HR中的R</li><li>HnumL：R所对应的与元胞的hopping矩阵，数值化的</li><li>HcoeL：HR的一大特点很多方法同时支持符号和数值的哈密顿量，同时设定HcoeL也方便我们后续的操作与调试。在这里读取的是wannier，HcoeL为0</li><li>NRPTS：有多少格点，往往 读取wannier的结果NRPTS比较大 自己做的模型往往只考虑最近邻模型</li><li>WAN_NUM: 元胞中的轨道数量</li><li>Rm: 元胞的基失矩阵</li><li>Gk: 相应的 倒格式矩阵，<code>Gk = 2*pi*(eye(3)/Rm).'</code></li></ul><h3 id="当然可以很快地锁定hopping项-常用的homecell的矩阵"><strong>当然可以很快地锁定HOPPING项, 常用的HOMECELL的矩阵</strong></h3><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-matlab" data-lang="matlab"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">HR_TB</span><span class="p">.</span><span class="n">HnumL</span><span class="p">(:,:,</span><span class="n">HR_TB</span><span class="p">.</span><span class="n">Line_000</span><span class="p">)</span>
+</span></span></code></pre></div><details><summary>Result</summary><div class="markdown-inner"><p>ans = 6x6</p><pre><code> 1.1466    0.1710         0         0   -0.1335         0  
  0.1710   -1.3207         0         0   -0.2709         0  
      0         0    1.1466    0.1710         0    0.1335  
      0         0    0.1710   -1.3207         0    0.2709  
 -0.1335   -0.2709         0         0    4.3787         0  
      0         0    0.1335    0.2709         0    4.3787  
-</code></pre></div></details>
-<h2 id="手动构建hr">手动构建HR</h2><h3 id="声明一个空的hr">声明一个空的HR</h3><p>这里我们手动来定义SSH的</p><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-matlab" data-lang="matlab"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">WAN_NUM</span> <span class="p">=</span> <span class="mi">2</span><span class="p">;</span>
+</code></pre></div></details><h2 id="手动构建hr">手动构建HR</h2><h3 id="声明一个空的hr">声明一个空的HR</h3><p>这里我们手动来定义SSH的</p><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-matlab" data-lang="matlab"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">WAN_NUM</span> <span class="p">=</span> <span class="mi">2</span><span class="p">;</span>
 </span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="n">HR_TB</span> <span class="p">=</span> <span class="n">HR</span><span class="p">(</span><span class="n">WAN_NUM</span><span class="p">)</span>
-</span></span></code></pre></div><details><summary>Result</summary>
-<div class="markdown-inner">
-<p>HR_TB =
+</span></span></code></pre></div><details><summary>Result</summary><div class="markdown-inner"><p>HR_TB =
 HR - 属性:</p><pre><code>    vectorL: [0 0 0]
       HnumL: [2x2 double]
       HcoeL: [2x2 sym]
@@ -219,149 +77,41 @@ HR - 属性:</p><pre><code>    vectorL: [0 0 0]
          Rm: [3x3 double]
          Gk: [3x3 double]
 symvar_list: [1x0 sym]
-</code></pre></div></details>
-<p>在没有引入晶格信息之前，HR的默认<code>Rm</code> 为 <code>eye(1)</code></p><h3 id="设置符号化变量">设置符号化变量</h3><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-matlab" data-lang="matlab"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">syms</span> <span class="n">v</span> <span class="n">w</span> <span class="nb">real</span>
+</code></pre></div></details><p>在没有引入晶格信息之前，HR的默认<code>Rm</code> 为 <code>eye(1)</code></p><h3 id="设置符号化变量">设置符号化变量</h3><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-matlab" data-lang="matlab"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">syms</span> <span class="n">v</span> <span class="n">w</span> <span class="nb">real</span>
 </span></span></code></pre></div><h3 id="通过-set_hop-方法来设定-hopping">通过 set_hop 方法来设定 hopping</h3><p><code>H_hr = H_hr.set_hop(amp,hi,hj,vector_list,mode)</code></p><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-matlab" data-lang="matlab"><span class="line"><span class="ln">1</span><span class="cl"> <span class="n">HR_TB</span> <span class="p">=</span> <span class="n">HR_TB</span><span class="p">.</span><span class="n">set_hop</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="s">'sym'</span><span class="p">);</span>
 </span></span><span class="line"><span class="ln">2</span><span class="cl"> <span class="n">HR_TB</span> <span class="p">=</span> <span class="n">HR_TB</span><span class="p">.</span><span class="n">set_hop</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="s">'sym'</span><span class="p">);</span>
 </span></span><span class="line"><span class="ln">3</span><span class="cl"> <span class="n">HR_TB</span> <span class="p">=</span> <span class="n">HR_TB</span><span class="p">.</span><span class="n">set_hop</span><span class="p">(</span><span class="n">w</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="s">'sym'</span><span class="p">);</span>
 </span></span><span class="line"><span class="ln">4</span><span class="cl"> <span class="n">HR_TB</span> <span class="p">=</span> <span class="n">HR_TB</span><span class="p">.</span><span class="n">set_hop</span><span class="p">(</span><span class="n">w</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="s">'sym'</span><span class="p">);</span>
 </span></span></code></pre></div><p><strong>导入POSCAR的信息</strong>,（vasplib中大部分的输入输出文件都是仿照VASP的格式）
-格式详解见</p><blockquote>
-<p><em>POSCAR_SSH</em><br/>
-1.0<br/>
-3 0.0000000000 0.0000000000<br/>
-0 3 0.0000000000<br/>
-0.0000000000 0.0000000000 20.0000000000<br/>
-C Si<br/>
-1 1<br/>
-Direct<br/>
-0.25 0.25 0.5<br/>
-0.75 0.75 0.5</p></blockquote><p><strong>Vesta 中可以看到</strong></p><p><img alt="" class="img-fluid" loading="lazy" src="https://i.loli.net/2021/09/08/mBQnlYfyqupLr94.png"/>
-</p><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-matlab" data-lang="matlab"><span class="line"><span class="ln">1</span><span class="cl"> <span class="n">HR_TB</span> <span class="p">=</span> <span class="n">HR_TB</span> <span class="o">&lt;</span><span class="p">=</span> <span class="s">'POSCAR_SSH'</span><span class="p">;</span>
-</span></span></code></pre></div><p>我们也可以用matlab简单看下（TEST）</p><p><img alt="" class="img-fluid" loading="lazy" src="https://i.loli.net/2021/09/08/mBQnlYfyqupLr94.png"/>
-</p><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-matlab" data-lang="matlab"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">HR_TB</span><span class="p">.</span><span class="n">show</span><span class="p">(</span><span class="s">'HOPPING'</span><span class="p">,</span><span class="s">'TwoD'</span><span class="p">,</span><span class="n">true</span><span class="p">);</span>
-</span></span></code></pre></div><h2 id="自动构建hr">自动构建HR</h2><h3 id="slater-koster">Slater Koster</h3><p>之前已经介绍过Slater Koster方法，HR支持自动SlaterKoster型的TB构建.</p><h3 id="通过对称性构建">通过对称性构建</h3><p>只要写出对称的矩阵表示，就可以构建包含在对称性允许下所有可能项的HR.</p></div><div aria-hidden="true" aria-labelledby="rewardModalLabel" class="modal fade" id="rewardModal" tabindex="-1">
-<div class="modal-dialog">
-<div class="modal-content surface">
-<div class="modal-header">
-<h5 class="modal-title" id="rewardModalLabel"><i class="fas fa-fw fa-medal"></i>Reward</h5><a aria-label="Close" data-bs-dismiss="modal" href="#"><i class="fas fa-fw fa-times"></i></a>
-</div><div class="modal-body">
-<ul class="nav nav-tabs mb-3" role="tablist"><li class="nav-item" role="presentation">
-<a aria-controls="reward-alipay" aria-selected="true" class="nav-link active" data-bs-toggle="tab" href="#reward-alipay" id="reward-alipay-tab" role="tab">
-<i class="fab fa-fw fa-alipay"></i>Alipay
-</a>
-</li><li class="nav-item" role="presentation">
-<a aria-controls="reward-wechat" aria-selected="true" class="nav-link" data-bs-toggle="tab" href="#reward-wechat" id="reward-wechat-tab" role="tab">
-<i class="fab fa-fw fa-weixin"></i>WeChat
-</a>
-</li></ul><div class="tab-content" id="rewardTabContent"><div aria-labelledby="reward-alipay-tab" class="tab-pane fade post-reward-content show active" id="reward-alipay" role="tabpanel">
-<img class="img-fluid post-reward-img" loading="lazy" src="https://parkman.top/images/reward/alipay.png"/>
-</div><div aria-labelledby="reward-wechat-tab" class="tab-pane fade post-reward-content show" id="reward-wechat" role="tabpanel">
-<img class="img-fluid post-reward-img" loading="lazy" src="https://parkman.top/images/reward/wechat.png"/>
-</div></div></div></div></div></div><hr/><div class="post-navs d-flex mb-3 justify-content-between">
-<div class="post-nav w-50"><div class="prev-post btn btn-sm">
-<a href="https://parkman.top/en/posts/tb/tb_slaterkoster/">TB_SlaterKoster
-</a>
-</div></div><div class="post-nav flex-row-reverse"><div class="next-post btn btn-sm">
-<a href="https://parkman.top/en/posts/matlab/vasplib/vasplib_hr_2/">Vasplib HR (2) Type of HR Class
-</a>
-</div></div></div><section class="related-posts">
-<h3>Related Posts</h3><ul class="related-posts"><li><a href="https://parkman.top/en/posts/matlab/vasplib/vasplib_bandplot/">Vasplib Basic Bandplot
-</a></li><li><a href="https://parkman.top/en/posts/matlab/advanced_use/matlab_ppt/">Matlab vs PPT
-</a></li><li><a href="https://parkman.top/en/posts/tb/tb_slaterkoster/">TB_SlaterKoster
-</a></li><li><a href="https://parkman.top/en/posts/hugo/hugo_13_github_action/">Hugo 13 Github Action
-</a></li><li><a href="https://parkman.top/en/posts/hugo/hugo_12_online_ide/">Hugo 12 Online Ide
-</a></li></ul></section></article><div class="post-comments surface row"><script async="" crossorigin="anonymous" issue-term="pathname" label="comment" repo="parkman-auex/hugoblogtalks" src="https://utteranc.es/client.js" theme="github-light"></script></div></div></div><aside class="col-lg-4 sidebar d-flex">
-<div class="container"><section class="profile surface row text-center">
-<div class="col-12 d-flex align-items-center justify-content-center"><img alt="Xu-Tao Zeng" class="profile-avatar rounded-circle" height="132" loading="lazy" src="https://parkman.top/images/profile.png" width="132"/>
-</div><div class="col-12 profile-meta"><div class="profile-name">Xu-Tao Zeng</div><div class="profile-bio">Student, Ph.D, Tech coolie, coder</div><div class="profile-company"><i class="fas fa-fw fa-building"></i>Beihang University</div><div class="profile-location"><i class="fas fa-fw fa-map-marker-alt"></i>Beijing, China</div><div class="profile-about"><i class="fas fa-fw fa-info-circle"></i><a href="https://parkman.top/en/about/">About</a></div></div></section><section class="recent-posts row surface">
-<h4>Recent Posts</h4><ul><li><a href="https://parkman.top/en/posts/berryphase/chern/">陈数！自旋陈数！镜陈数！谷陈数！
-</a></li><li><a href="https://parkman.top/en/posts/matlab/vasplib/vasplib_cheatsheet/">Vasplib Cheatsheet
-</a></li><li><a href="https://parkman.top/en/posts/%E7%A7%91%E7%A0%94%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/%E7%A7%91%E7%A0%94%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/">科研那些事儿-速览
-</a></li><li><a href="https://parkman.top/en/posts/berryphase/z2pack/">Z2pack 计算chern数
-</a></li><li><a href="https://parkman.top/en/posts/matlab/basic-tool/grouptheory/">Group Theory
-</a></li></ul></section><section class="taxonomy-categories row surface">
-<h4>
-<a href="https://parkman.top/en/categories">Categories</a>
-</h4><div><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/categories/hugo/" title="Hugo">
-Hugo <span class="badge rounded-pill">13</span>
-</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/categories/templete/" title="Templete">
-Templete <span class="badge rounded-pill">8</span>
-</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/categories/vasplib/" title="vasplib">
-vasplib <span class="badge rounded-pill">5</span>
-</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/categories/computational-chemistry/" title="Computational Chemistry">
-Computational Chemistry <span class="badge rounded-pill">1</span>
-</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/categories/markdown/" title="Markdown">
-Markdown <span class="badge rounded-pill">1</span>
-</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/" title="文献阅读">
-文献阅读 <span class="badge rounded-pill">1</span>
-</a></div></section><section class="taxonomy-series row surface">
-<h4>
-<a href="https://parkman.top/en/series">Series</a>
-</h4><div><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/series/hugo/" title="Hugo">
-Hugo <span class="badge rounded-pill">13</span>
-</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/series/hr/" title="HR">
-HR <span class="badge rounded-pill">3</span>
-</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/series/reading/" title="Reading">
-Reading <span class="badge rounded-pill">2</span>
-</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/series/manual/" title="Manual">
-Manual <span class="badge rounded-pill">1</span>
-</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/series/vasplib/" title="vasplib">
-vasplib <span class="badge rounded-pill">1</span>
-</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/series/%E5%8D%8A%E7%BB%8F%E5%85%B8%E5%AD%A6%E4%B9%A0/" title="半经典学习">
-半经典学习 <span class="badge rounded-pill">1</span>
-</a></div></section><section class="taxonomy-tags row surface">
-<h4>
-<a href="https://parkman.top/en/tags">Tags</a>
-</h4><div><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/matlab/" title="matlab">
-matlab <span class="badge rounded-pill">10</span>
-</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/markdown/" title="Markdown">
-Markdown <span class="badge rounded-pill">4</span>
-</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/plot/" title="plot">
-plot <span class="badge rounded-pill">4</span>
-</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/python/" title="python">
-python <span class="badge rounded-pill">4</span>
-</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/dft/" title="DFT">
-DFT <span class="badge rounded-pill">3</span>
-</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/physics/" title="physics">
-physics <span class="badge rounded-pill">3</span>
-</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/tb/" title="TB">
-TB <span class="badge rounded-pill">3</span>
-</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/vasp/" title="VASP">
-VASP <span class="badge rounded-pill">3</span>
-</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/hr/" title="HR">
-HR <span class="badge rounded-pill">2</span>
-</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/vasplib/" title="vasplib">
-vasplib <span class="badge rounded-pill">2</span>
-</a></div></section><section class="featured-posts row surface">
-<h4>Featured Posts</h4><ul><li><a href="https://parkman.top/en/posts/berryphase/chern/">陈数！自旋陈数！镜陈数！谷陈数！
-</a></li><li><a href="https://parkman.top/en/posts/matlab/vasplib/vasplib_cheatsheet/">Vasplib Cheatsheet
-</a></li><li><a href="https://parkman.top/en/posts/%E7%A7%91%E7%A0%94%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/%E7%A7%91%E7%A0%94%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/">科研那些事儿-速览
-</a></li><li><a href="https://parkman.top/en/posts/berryphase/z2pack/">Z2pack 计算chern数
-</a></li><li><a href="https://parkman.top/en/posts/matlab/basic-tool/grouptheory/">Group Theory
-</a></li></ul></section></div></aside><h5 id="wc" style="font-size:1rem;text-align:center">400 Words|This article has been read <span id="busuanzi_value_page_pv"></span> times</h5><style type="text/css">.myfriends{text-align:center;background-color:#fff;opacity:.9}.myfriends a{color:#000}.myfriends p{display:none}.friendurl{text-decoration:none!important;color:#000}.myfriend{width:56px!important;height:56px!important;border-radius:50%;border:1px solid #ddd;padding:2px;box-shadow:1px 1px 1px rgba(0,0,0,.15);margin-top:14px!important;margin-left:14px!important;background-color:#fff}.frienddiv{height:92px;margin-top:10px;width:48%;display:inline-block!important}.frienddiv:hover{background:rgba(87,142,224,.15)}.frienddiv:hover .frienddivleft img{transition:.9s!important;-webkit-transition:.9s!important;-moz-transition:.9s!important;-o-transition:.9s!important;-ms-transition:.9s!important;transform:rotate(360deg)!important;-webkit-transform:rotate(360deg)!important;-moz-transform:rotate(360deg)!important;-o-transform:rotate(360deg)!important;-ms-transform:rotate(360deg)!important}.frienddivleft{width:92px;float:left}.frienddivleft{margin-right:2px}.frienddivright{margin-top:18px;margin-right:18px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap}</style></div></main><footer class="footer mt-auto py-3 text-center container"><nav class="social-links nav my-2 justify-content-center"><a class="nav-link social-link" href="https://space.bilibili.com/72389145" rel="noopener noreferrer" target="_blank" title="bilibili">
-<i class="fa-fw fa-2x fas fa-tv"></i>
-</a><a class="nav-link social-link" href="mailto:parkman@buaa.edu.cn" title="Email">
-<i class="fas fa-fw fa-2x fa-envelope"></i>
-</a><a class="nav-link social-link" href="https://github.com/https://github.com/parkman-auex" rel="noopener noreferrer" target="_blank" title="GitHub">
-<i class="fa-fw fa-2x fab fa-github"></i>
-</a><a class="nav-link social-link" href="https://gitlab.com/https://gitlab.com/parkman-auex" rel="noopener noreferrer" target="_blank" title="GitLab">
-<i class="fa-fw fa-2x fab fa-gitlab"></i>
-</a><a class="nav-link social-link" href="https://gitee.com/zeng-xutao" rel="noopener noreferrer" target="_blank" title="Medium">
-<i class="fab fa-fw fa-2x fa-medium-m"></i>
-</a><a class="nav-link social-link" href="http://wpa.qq.com/msgrd?v=3&amp;uin=383793132&amp;site=qq&amp;menu=yes" rel="noopener noreferrer" target="_blank" title="QQ">
-<i class="fa-fw fa-2x fab fa-qq"></i>
-</a><a class="nav-link social-link" href="https://www.zhihu.com/people/parkman-87" rel="noopener noreferrer" target="_blank" title="Zhihu">
-<i class="fa-fw fa-2x fab fa-zhihu"></i>
-</a></nav><span id="busuanzi_container_site_pv">
-Visits to this site：<span id="busuanzi_value_site_pv"></span>
-</span>
+格式详解见</p><blockquote><p><em>POSCAR_SSH</em><br/>1.0<br/>3 0.0000000000 0.0000000000<br/>0 3 0.0000000000<br/>0.0000000000 0.0000000000 20.0000000000<br/>C Si<br/>1 1<br/>Direct<br/>0.25 0.25 0.5<br/>0.75 0.75 0.5</p></blockquote><p><strong>Vesta 中可以看到</strong></p><p><img alt="" class="img-fluid" loading="lazy" src="https://i.loli.net/2021/09/08/mBQnlYfyqupLr94.png"/></p><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-matlab" data-lang="matlab"><span class="line"><span class="ln">1</span><span class="cl"> <span class="n">HR_TB</span> <span class="p">=</span> <span class="n">HR_TB</span> <span class="o">&lt;</span><span class="p">=</span> <span class="s">'POSCAR_SSH'</span><span class="p">;</span>
+</span></span></code></pre></div><p>我们也可以用matlab简单看下（TEST）</p><p><img alt="" class="img-fluid" loading="lazy" src="https://i.loli.net/2021/09/08/mBQnlYfyqupLr94.png"/></p><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-matlab" data-lang="matlab"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">HR_TB</span><span class="p">.</span><span class="n">show</span><span class="p">(</span><span class="s">'HOPPING'</span><span class="p">,</span><span class="s">'TwoD'</span><span class="p">,</span><span class="n">true</span><span class="p">);</span>
+</span></span></code></pre></div><h2 id="自动构建hr">自动构建HR</h2><h3 id="slater-koster">Slater Koster</h3><p>之前已经介绍过Slater Koster方法，HR支持自动SlaterKoster型的TB构建.</p><h3 id="通过对称性构建">通过对称性构建</h3><p>只要写出对称的矩阵表示，就可以构建包含在对称性允许下所有可能项的HR.</p></div><div aria-hidden="true" aria-labelledby="rewardModalLabel" class="modal fade" id="rewardModal" tabindex="-1"><div class="modal-dialog"><div class="modal-content surface"><div class="modal-header"><h5 class="modal-title" id="rewardModalLabel"><i class="fas fa-fw fa-medal"></i>Reward</h5><a aria-label="Close" data-bs-dismiss="modal" href="#"><i class="fas fa-fw fa-times"></i></a></div><div class="modal-body"><ul class="nav nav-tabs mb-3" role="tablist"><li class="nav-item" role="presentation"><a aria-controls="reward-alipay" aria-selected="true" class="nav-link active" data-bs-toggle="tab" href="#reward-alipay" id="reward-alipay-tab" role="tab"><i class="fab fa-fw fa-alipay"></i>Alipay</a></li><li class="nav-item" role="presentation"><a aria-controls="reward-wechat" aria-selected="true" class="nav-link" data-bs-toggle="tab" href="#reward-wechat" id="reward-wechat-tab" role="tab"><i class="fab fa-fw fa-weixin"></i>WeChat</a></li></ul><div class="tab-content" id="rewardTabContent"><div aria-labelledby="reward-alipay-tab" class="tab-pane fade post-reward-content show active" id="reward-alipay" role="tabpanel"><img class="img-fluid post-reward-img" loading="lazy" src="https://parkman.top/images/reward/alipay.png"/></div><div aria-labelledby="reward-wechat-tab" class="tab-pane fade post-reward-content show" id="reward-wechat" role="tabpanel"><img class="img-fluid post-reward-img" loading="lazy" src="https://parkman.top/images/reward/wechat.png"/></div></div></div></div></div></div><hr/><div class="post-navs d-flex mb-3 justify-content-between"><div class="post-nav w-50"><div class="prev-post btn btn-sm"><a href="https://parkman.top/en/posts/tb/tb_slaterkoster/">TB_SlaterKoster</a></div></div><div class="post-nav flex-row-reverse"><div class="next-post btn btn-sm"><a href="https://parkman.top/en/posts/matlab/vasplib/vasplib_hr_2/">Vasplib HR (2) Type of HR Class</a></div></div></div><section class="related-posts"><h3>Related Posts</h3><ul class="related-posts"><li><a href="https://parkman.top/en/posts/matlab/vasplib/vasplib_bandplot/">Vasplib Basic Bandplot</a></li><li><a href="https://parkman.top/en/posts/matlab/advanced_use/matlab_ppt/">Matlab vs PPT</a></li><li><a href="https://parkman.top/en/posts/tb/tb_slaterkoster/">TB_SlaterKoster</a></li><li><a href="https://parkman.top/en/posts/hugo/hugo_13_github_action/">Hugo 13 Github Action</a></li><li><a href="https://parkman.top/en/posts/hugo/hugo_12_online_ide/">Hugo 12 Online Ide</a></li></ul></section></article><div class="post-comments surface row"><script async="" crossorigin="anonymous" issue-term="pathname" label="comment" repo="parkman-auex/hugoblogtalks" src="https://utteranc.es/client.js" theme="github-light"></script></div></div></div><aside class="col-lg-4 sidebar d-flex"><div class="container"><section class="profile surface row text-center"><div class="col-12 d-flex align-items-center justify-content-center"><img alt="Xu-Tao Zeng" class="profile-avatar rounded-circle" height="132" loading="lazy" src="https://parkman.top/images/profile.png" width="132"/></div><div class="col-12 profile-meta"><div class="profile-name">Xu-Tao Zeng</div><div class="profile-bio">Student, Ph.D, Tech coolie, coder</div><div class="profile-company"><i class="fas fa-fw fa-building"></i>Beihang University</div><div class="profile-location"><i class="fas fa-fw fa-map-marker-alt"></i>Beijing, China</div><div class="profile-about"><i class="fas fa-fw fa-info-circle"></i><a href="https://parkman.top/en/about/">About</a></div></div></section><section class="recent-posts row surface"><h4>Recent Posts</h4><ul><li><a href="https://parkman.top/en/posts/%E6%8B%93%E6%89%91%E7%94%B5%E8%B7%AF/hspiceinstall/">Hspice 安装</a></li><li><a href="https://parkman.top/en/posts/%E7%A7%91%E7%A0%94%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/%E4%B8%80%E4%BA%9B%E5%81%9A%E7%A7%91%E7%A0%94%E7%9A%84%E6%84%9F%E6%83%B3/">Cheatsheet for Research in TCMP</a></li><li><a href="https://parkman.top/en/posts/berryphase/chern/">陈数！自旋陈数！镜陈数！谷陈数！</a></li><li><a href="https://parkman.top/en/posts/matlab/vasplib/vasplib_cheatsheet/">Vasplib Cheatsheet</a></li><li><a href="https://parkman.top/en/posts/%E7%A7%91%E7%A0%94%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/%E7%A7%91%E7%A0%94%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/">科研那些事儿-速览</a></li></ul></section><section class="taxonomy-categories row surface"><h4><a href="https://parkman.top/en/categories">Categories</a></h4><div><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/categories/hugo/" title="Hugo">Hugo <span class="badge rounded-pill">13</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/categories/templete/" title="Templete">Templete <span class="badge rounded-pill">8</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/categories/vasplib/" title="vasplib">vasplib <span class="badge rounded-pill">5</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/categories/%E7%BB%8F%E9%AA%8C%E8%B4%B4/" title="经验贴">经验贴 <span class="badge rounded-pill">2</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/categories/computational-chemistry/" title="Computational Chemistry">Computational Chemistry <span class="badge rounded-pill">1</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/categories/markdown/" title="Markdown">Markdown <span class="badge rounded-pill">1</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/" title="文献阅读">文献阅读 <span class="badge rounded-pill">1</span></a></div></section><section class="taxonomy-series row surface"><h4><a href="https://parkman.top/en/series">Series</a></h4><div><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/series/hugo/" title="Hugo">Hugo <span class="badge rounded-pill">13</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/series/hr/" title="HR">HR <span class="badge rounded-pill">3</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/series/reading/" title="Reading">Reading <span class="badge rounded-pill">2</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/series/manual/" title="Manual">Manual <span class="badge rounded-pill">1</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/series/vasplib/" title="vasplib">vasplib <span class="badge rounded-pill">1</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/series/%E5%8D%8A%E7%BB%8F%E5%85%B8%E5%AD%A6%E4%B9%A0/" title="半经典学习">半经典学习 <span class="badge rounded-pill">1</span></a></div></section><section class="taxonomy-tags row surface"><h4><a href="https://parkman.top/en/tags">Tags</a></h4><div><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/matlab/" title="matlab">matlab <span class="badge rounded-pill">10</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/markdown/" title="Markdown">Markdown <span class="badge rounded-pill">4</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/physics/" title="physics">physics <span class="badge rounded-pill">4</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/plot/" title="plot">plot <span class="badge rounded-pill">4</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/python/" title="python">python <span class="badge rounded-pill">4</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/dft/" title="DFT">DFT <span class="badge rounded-pill">3</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/tb/" title="TB">TB <span class="badge rounded-pill">3</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/vasp/" title="VASP">VASP <span class="badge rounded-pill">3</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/hr/" title="HR">HR <span class="badge rounded-pill">2</span>
+</a><a class="post-taxonomy rounded btn btn-sm me-2 mb-2" href="https://parkman.top/en/tags/vasplib/" title="vasplib">vasplib <span class="badge rounded-pill">2</span></a></div></section><section class="featured-posts row surface"><h4>Featured Posts</h4><ul><li><a href="https://parkman.top/en/posts/%E6%8B%93%E6%89%91%E7%94%B5%E8%B7%AF/hspiceinstall/">Hspice 安装</a></li><li><a href="https://parkman.top/en/posts/%E7%A7%91%E7%A0%94%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/%E4%B8%80%E4%BA%9B%E5%81%9A%E7%A7%91%E7%A0%94%E7%9A%84%E6%84%9F%E6%83%B3/">Cheatsheet for Research in TCMP</a></li><li><a href="https://parkman.top/en/posts/berryphase/chern/">陈数！自旋陈数！镜陈数！谷陈数！</a></li><li><a href="https://parkman.top/en/posts/matlab/vasplib/vasplib_cheatsheet/">Vasplib Cheatsheet</a></li><li><a href="https://parkman.top/en/posts/%E7%A7%91%E7%A0%94%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/%E7%A7%91%E7%A0%94%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/">科研那些事儿-速览</a></li></ul></section></div></aside><h5 id="wc" style="font-size:1rem;text-align:center">400 Words|This article has been read <span id="busuanzi_value_page_pv"></span> times</h5><style type="text/css">.myfriends{text-align:center;background-color:#fff;opacity:.9}.myfriends a{color:#000}.myfriends p{display:none}.friendurl{text-decoration:none!important;color:#000}.myfriend{width:56px!important;height:56px!important;border-radius:50%;border:1px solid #ddd;padding:2px;box-shadow:1px 1px 1px rgba(0,0,0,.15);margin-top:14px!important;margin-left:14px!important;background-color:#fff}.frienddiv{height:92px;margin-top:10px;width:48%;display:inline-block!important}.frienddiv:hover{background:rgba(87,142,224,.15)}.frienddiv:hover .frienddivleft img{transition:.9s!important;-webkit-transition:.9s!important;-moz-transition:.9s!important;-o-transition:.9s!important;-ms-transition:.9s!important;transform:rotate(360deg)!important;-webkit-transform:rotate(360deg)!important;-moz-transform:rotate(360deg)!important;-o-transform:rotate(360deg)!important;-ms-transform:rotate(360deg)!important}.frienddivleft{width:92px;float:left}.frienddivleft{margin-right:2px}.frienddivright{margin-top:18px;margin-right:18px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap}</style></div></main><footer class="footer mt-auto py-3 text-center container"><nav class="social-links nav my-2 justify-content-center"><a class="nav-link social-link" href="https://space.bilibili.com/72389145" rel="noopener noreferrer" target="_blank" title="bilibili"><i class="fa-fw fa-2x fas fa-tv"></i>
+</a><a class="nav-link social-link" href="mailto:parkman@buaa.edu.cn" title="Email"><i class="fas fa-fw fa-2x fa-envelope"></i>
+</a><a class="nav-link social-link" href="https://github.com/https://github.com/parkman-auex" rel="noopener noreferrer" target="_blank" title="GitHub"><i class="fa-fw fa-2x fab fa-github"></i>
+</a><a class="nav-link social-link" href="https://gitlab.com/https://gitlab.com/parkman-auex" rel="noopener noreferrer" target="_blank" title="GitLab"><i class="fa-fw fa-2x fab fa-gitlab"></i>
+</a><a class="nav-link social-link" href="https://gitee.com/zeng-xutao" rel="noopener noreferrer" target="_blank" title="Medium"><i class="fab fa-fw fa-2x fa-medium-m"></i>
+</a><a class="nav-link social-link" href="http://wpa.qq.com/msgrd?v=3&amp;uin=383793132&amp;site=qq&amp;menu=yes" rel="noopener noreferrer" target="_blank" title="QQ"><i class="fa-fw fa-2x fab fa-qq"></i>
+</a><a class="nav-link social-link" href="https://www.zhihu.com/people/parkman-87" rel="noopener noreferrer" target="_blank" title="Zhihu"><i class="fa-fw fa-2x fab fa-zhihu"></i></a></nav><span id="busuanzi_container_site_pv">Visits to this site：<span id="busuanzi_value_site_pv"></span></span>
  
-<span id="busuanzi_container_site_uv">
-You are the <span id="busuanzi_value_site_uv"></span> th visitor
-</span><div class="copyright mb-2">
-Copyright © 2021-2022 Xu-Tao Zeng. All Rights Reserved.
-</div></footer><a class="btn-scroll-to-top" id="btnScrollToTop">
-<i class="fas fa-fw fa-chevron-circle-up fa-2x"></i>
-</a>
+<span id="busuanzi_container_site_uv">You are the <span id="busuanzi_value_site_uv"></span> th visitor</span><div class="copyright mb-2">Copyright © 2021-2022 Xu-Tao Zeng. All Rights Reserved.</div></footer><a class="btn-scroll-to-top" id="btnScrollToTop"><i class="fas fa-fw fa-chevron-circle-up fa-2x"></i></a>
 <script async="" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6130842d8572b712"></script></body></html>
